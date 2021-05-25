@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/boobsnail.png" width=200 height=300>
+  <img src="assets/boobsnail.png" width=300 height=300>
 </p>
 
 ![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)
@@ -52,22 +52,22 @@ python boobsnail.py Excel4ExecGenerator --cmd "powershell.exe -c calc.exe" --out
 ### Saving output in Excel
 1. Dump output to CSV file.
 2. Copy content of CSV file.
-3. Run Excel and create new worksheet.
-4. Add new Excel 4.0 Macro (right click on Sheet1 -> Insert -> MS Excel 4.0 Macro).
-5. Paste content in cell A1 or R1C1.
+3. Run Excel and create a new worksheet.
+4. Add new Excel 4.0 Macro (right-click on Sheet1 -> Insert -> MS Excel 4.0 Macro).
+5. Paste the content in cell A1 or R1C1.
 6. Click Data -> Text to Columns.
 7. Click Next -> Set Semicolon as separator and click Finish.
 
 ## Library usage
-BoobSnail shares excel4lib library that allows to create your own Excel4 macro generator.
-excel4lib contains few classes that could be used during writting generator:
+BoobSnail shares the excel4lib library that allows creating your own Excel4 macro generator.
+excel4lib contains few classes that could be used during writing generator:
 - excel4lib.macro.Excel4Macro - allows to defining Excel4 formulas, values variables;
 - excel4lib.macro.obfuscator.Excel4Obfuscator - allows to obfuscate created instructions in Excel4Macro;
-- excel4lib.lang.Excel4Translator - allows to translate formulas to another language.
+- excel4lib.lang.Excel4Translator - allows translating formulas to another language.
 
-The main idea of this library is to represent Excel4 formulas, variables, formulas arguments and values as python objects.
-Thanks to that you are able to change instructions attributes such as: formulas or variables names, values, addresses etc. in easy way.
-For example let's create simple macro that runs calc.exe
+The main idea of this library is to represent Excel4 formulas, variables, formulas arguments, and values as python objects.
+Thanks to that you are able to change instructions attributes such as formulas or variables names, values, addresses, etc. in an easy way.
+For example, let's create a simple macro that runs calc.exe
 ```python
 from excel4lib.macro import *
 # Create macro object
@@ -84,7 +84,7 @@ Result:
 cmd="calc.exe";
 =EXEC(cmd);
 ```
-Now let's say that you want to obfuscate your macro. To do this you just need to import obfuscator and pass it to Excel4Macro object:
+Now let's say that you want to obfuscate your macro. To do this you just need to import obfuscator and pass it to the Excel4Macro object:
 ```python
 from excel4lib.macro import *
 from excel4lib.macro.obfuscator import *
@@ -97,14 +97,14 @@ macro.formula("EXEC", cmd)
 # Dump to CSV
 print(macro.to_csv())
 ```
-For now excel4lib shares two obfuscation clasess:
-- excel4lib.macro.obfuscator.Excel4Obfuscator uses Excel 4.0 functions such as: BITXOR, SUM etc to obfuscate your macro;
+For now excel4lib shares two obfuscation classes:
+- excel4lib.macro.obfuscator.Excel4Obfuscator uses Excel 4.0 functions such as BITXOR, SUM, etc to obfuscate your macro;
 - excel4lib.macro.obfuscator.Excel4Rc4Obfuscator uses RC4 encryption to obfusacte formulas.
 
 As you can see you can write your own obfuscator class and use it in Excel4Macro.
 
 Sometimes you will need to translate your macro to another language for example your native language, in my case it's Polish. With excel4lib it's pretty easy.
-You just need to import Excel4Translator class and call set_language.
+You just need to import Excel4Translator class and call set_language
 ```python
 from excel4lib.macro import *
 from excel4lib.lang.excel4_translator import *
@@ -124,9 +124,9 @@ Result:
 cmd="calc.exe";
 =URUCHOM.PROGRAM(cmd);
 ```
-For now only Polish language is supported. If you want to use other language you need to add translations in excel4lib/lang/langs directory.
+For now, only the Polish language is supported. If you want to use another language you need to add translations in the excel4lib/lang/langs directory.
 
-For sure, you will need to create formula that takes another formula as argument. You can do this by using Excel4Macro.argument function.
+For sure, you will need to create a formula that takes another formula as an argument. You can do this by using Excel4Macro.argument function.
 ```python
 from excel4lib.macro import *
 macro = Excel4Macro("test.csv")
@@ -188,3 +188,4 @@ cmd="calc";=EXEC(CONCATENATE(cmd,R2C1));
 
 ## Articles
 [The first step in Excel 4.0 for Red Team](https://blog.stmcyber.com/excel-4-0-for-red-team/)
+[BoobSnail - Excel 4.0 macro generator](https://blog.stmcyber.com/boobsnail-excel-4-0-macro-generator/)
