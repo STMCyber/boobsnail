@@ -1,0 +1,2495 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.9.2" />
+<title>excel4lib.macro.excel4_macro API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>excel4lib.macro.excel4_macro</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">from excel4lib.sheet import *
+from .excel4_instruction import *
+from .excel4_formula import *
+from .excel4_variable import *
+from .excel4_value import *
+from .excel4_argument import *
+from .excel4_register_formula import *
+from excel4lib.config import *
+from .excel4_argument import *
+
+class Excel4Macro(object):
+    &#39;&#39;&#39;
+    Allows to create obfusacted Excel 4.0 Macro.
+
+    During creating macro probably you will need a few things:
+    - a way to define variables, formulas;
+    - obfuscation;
+    - dumping results to file.
+
+    `Excel4Macro` class shares some basic functions which allow to do this:
+    - `Excel4Macro.formula`, `Excel4Macro.variable`;
+    - `Excel4Macro.obfuscate_all`;
+    - `Excel4Macro.to_csv_file`.
+
+    Creating simple macro with variable and formula:
+    ```
+    from excel4lib.macro import *
+
+    macro = Excel4Macro(&#34;test.csv&#34;)
+    cmd = macro.variable(&#34;cmd&#34;, &#34;calc.exe&#34;)
+    macro.formula(&#34;EXEC&#34;, cmd)
+    print(macro.to_csv())
+    ```
+
+    As you can see macro.variable function returns object that could be used as argument
+    in macro.formula function. This is the main idea of this library. Excel4 formulas, variables,
+    values and formula arguments are represented as python objects. Thanks to that you can create your
+    macro once and then dynamicly change attributes of thi objects, for example names of variables,
+    values of variables or even addresses.
+    &#39;&#39;&#39;
+
+    def __init__(self, name, obfuscator = None, analysis = None, routines=None):
+        &#39;&#39;&#39;
+
+        :param name: name of the macro
+
+        :param obfuscator: Excel4Obfuscator object to use during obfuscation process
+
+        :param analysis: Excel4AntiAnalysis object that allows to add anti-analysis instructions to the worksheet
+
+        :param routines: Excel4Routines object that allows to add additional macros
+        &#39;&#39;&#39;
+        self.name = name
+        self.worksheet = Worksheet(name)
+        self.obfuscator = obfuscator
+        self.analysis = analysis
+        self.routines = routines
+
+        if self.obfuscator:
+            self.obfuscator.set_macro(self)
+        if self.analysis:
+            self.analysis.set_macro(self)
+        if self.routines:
+            self.routines.set_macro(self)
+
+        # List of Excel4 instructions ordered by execution. Instructions should be called in this order.
+        self.ordered_calls = []
+        self.obfuscated_formulas = []
+
+        self.automatic_obfuscate = Excel4Config.obfuscator.automatic_obfuscation
+
+        self.config = Excel4Config
+        # Auto_Open or Auto_Close cell cords
+        self.trigger_x = 1
+        self.trigger_y = 1
+
+    def set_cords(self, x=None, y=None):
+        &#39;&#39;&#39;
+        Sets active cell(current cords) to x,y.
+
+        :param x: column
+
+        :param y: row
+        &#39;&#39;&#39;
+        if not x:
+            x = self.worksheet._curr_x
+        if not y:
+            y = self.worksheet._curr_y
+        self.worksheet.set_current_cords(x,y)
+
+    def set_trigger_cords(self, x, y):
+        &#39;&#39;&#39;
+        Sets column and row in which auto open or auto close function will be used.
+
+        :param x: number of column
+
+        :param y: number of row
+        &#39;&#39;&#39;
+        self.trigger_x = x
+        self.trigger_y = y
+
+    def to_csv(self):
+        &#39;&#39;&#39;
+        Dumps macro to CSV format
+
+        :return: macro as CSV string
+        &#39;&#39;&#39;
+        self.obfuscate_all()
+        return self.worksheet.to_csv(Excel4Config.csv_separator)
+
+    def to_csv_file(self, filename=None):
+        &#39;&#39;&#39;
+        Saves macro to CSV file
+
+        :param filename: output filename if None then it is set to `name` of the macro
+        &#39;&#39;&#39;
+        if not filename:
+            filename = self.name + &#34;.csv&#34;
+        write_file(filename, self.to_csv())
+
+    def _reserve_cells(self, x, y, amount):
+        &#39;&#39;&#39;
+        Reserves cells from (x, y+amount). Returns reserved cells
+
+        :param x: column
+
+        :param y: row
+
+        :param amount: number of cells to reserve
+
+        :return: list of Excel4Value formulas that reserves specified space
+        &#39;&#39;&#39;
+        formulas = []
+        if self.worksheet.is_reserved(x, y, amount):
+            # If we cant reserve then return empty list
+            return formulas
+
+        for i in range(0, amount):
+            formulas.append(Excel4Value(x,y+amount))
+            self.worksheet.add_cell(formulas[i])
+
+        return formulas
+
+
+    def random_add_to_worksheet(self, formulas):
+        &#39;&#39;&#39;
+        Adds formulas to the worksheet at random place
+
+        :param formulas: list of formulas to add
+        &#39;&#39;&#39;
+        # Backup cords
+        curr_x, curr_y = self.worksheet.get_current_cords()
+        # Find place where formulas could be placed
+        target_x, target_y = self._gen_random_cords(len(formulas))
+        # Add to the worksheet
+        for f in formulas:
+            f.x = target_x
+            f.y = target_y
+            self._add_to_worksheet(f)
+            target_y = target_y + 1
+        # Restore cords
+        self.worksheet.set_current_cords(curr_x, curr_y)
+
+    def _add_to_worksheet(self, cell):
+        &#39;&#39;&#39;
+        Adds formula to the worksheet
+
+        :param cell: formula to add
+        &#39;&#39;&#39;
+        if not issubclass(type(cell), Cell):
+            pass
+        self.worksheet.add_cell(cell)
+        self.ordered_calls.append(cell)
+
+
+    def _create_logical_test(self, value1, operator, value2):
+        &#39;&#39;&#39;
+        Creates Excel4LogicalTest object. Created object is not added to the worksheet.
+
+        :param value1: first value
+
+        :param operator: operator to use
+
+        :param value2: second value
+
+        :return: Excel4LogicalTest object
+        &#39;&#39;&#39;
+        o = Excel4LogicalTest(value1, operator, value2)
+        return o
+
+    def _create_argument_object(self, instruction, *args):
+        &#39;&#39;&#39;
+        Creates Excel4FormulaArgument object. Created object is not added to the worksheet
+
+        :param instruction: name of the instruction
+
+        :param args: arguments of the insturction
+
+        :return: Excel4FormulaArgument object
+        &#39;&#39;&#39;
+        o = Excel4FormulaArgument(instruction, *args)
+        return o
+
+    def _create_formula(self, x, y, instruction, *args):
+        &#39;&#39;&#39;
+        Creates Excel4Formula object. Created object is not added to the worksheet
+
+        :param x: column
+
+        :param y: row
+
+        :param instruction: name of the instruction
+
+        :param args: arguments of the insturction
+
+        :return: Excel4Formula object
+        &#39;&#39;&#39;
+        o = Excel4Formula(x, y,  instruction, *args)
+        return o
+
+    def _create_go_to(self, x, y, formula):
+        &#39;&#39;&#39;
+        Creates Excel4GoToFormula object. Created object is not added to the worksheet
+
+        :param x: column
+
+        :param y: row
+
+        :param formula: the formula to which to direct the macro execution
+
+        :return: Excel4GoToFormula object
+        &#39;&#39;&#39;
+        instruction_name = Excel4InstructionName(&#34;GOTO&#34;)
+        instruction_name.translate = True
+        o = Excel4GoToFormula(x, y, instruction_name, formula)
+        return o
+
+    def _create_loop(self, x, y, instruction, *args):
+        &#39;&#39;&#39;
+        Creates Excel4LoopFormula object. Created object is not added to the worksheet
+
+        :param x: column
+
+        :param y: row
+
+        :param instruction: name of the instruction
+
+        :param args: arguments of the insturction
+
+        :return: Excel4LoopFormula object
+        &#39;&#39;&#39;
+        o = Excel4LoopFormula(x, y,  instruction, *args)
+        return o
+
+    def _create_condition(self, x, y, instruction, *args):
+        &#39;&#39;&#39;
+        Creates Excel4ConditionFormula object. Created object is not added to the worksheet
+
+        :param x: column
+
+        :param y: row
+
+        :param instruction: name of the instruction
+
+        :param args: arguments of the insturction
+
+        :return: Excel4ConditionFormula object
+        &#39;&#39;&#39;
+        o = Excel4ConditionFormula(x, y,  instruction, *args)
+        return o
+
+    def _create_end_loop(self, x, y, instruction, *args):
+        &#39;&#39;&#39;
+        Creates Excel4EndLoopFormula object. Created object is not added to the worksheet
+
+        :param x: column
+
+        :param y: row
+
+        :param instruction: name of the instruction
+
+        :param args: arguments of the insturction
+
+        :return: Excel4EndLoopFormula object
+        &#39;&#39;&#39;
+        o = Excel4EndLoopFormula(x, y,  instruction, *args)
+        return o
+
+    def _create_value(self, x, y, value):
+        &#39;&#39;&#39;
+        Creates Excel4Value object. Created object is not added to the worksheet
+
+        :param x: column
+
+        :param y: row
+
+        :param value:
+
+        :return: Excel4Value object
+        &#39;&#39;&#39;
+        o = Excel4Value(x, y, value)
+        return o
+
+    def _create_variable(self, x, y, name, value):
+        &#39;&#39;&#39;
+        Creates Excel4Variable object. Created object is not added to the worksheet
+
+        :param x: column
+
+        :param y: row
+
+        :param instruction: name of the instruction
+
+        :param args: arguments of the insturction
+
+        :return: Excel4Variable object
+        &#39;&#39;&#39;
+        o = Excel4Variable(x, y,  name, value)
+        return o
+
+    def _create_register(self, x, y, dll_name, exported_function, type_text, function_text=&#34;&#34;):
+        &#39;&#39;&#39;
+        Creates Excel4RegisterFormula object. Created object is not added to the worksheet
+
+        :param x: column
+
+        :param y: row
+
+        :param dll_name: name of a DLL
+
+        :param exported_function: name of exported function that you want to import
+
+        :param type_text:  string representing the types of return value and arguments of function that you want to import;
+
+        :param function_text: custom name of function that you want to import. If empty then it will be randomly generated
+
+        :return: Excel4RegisterFormula object
+        &#39;&#39;&#39;
+        # Generate random function_text if it&#39;s empty
+        if not function_text:
+            function_text = random_string(random.randint(4, 8))
+        formula = Excel4RegisterFormula(x, y, dll_name, exported_function, type_text, function_text)
+        return formula
+
+    def obfuscate_all(self):
+        &#39;&#39;&#39;
+        Obfuscates macro.
+
+        Obfuscation process is splitted into few steps:
+
+        - obfuscation of variables names;
+        - obfuscation of function names;
+        - spread formulas across worksheet;
+        - add noise;
+        - obfuscation of values;
+        - obfuscation of formulas with arguments;
+        &#39;&#39;&#39;
+        if (not self.obfuscator) or (not self.config.obfuscator.enable):
+            return
+        # Set language to native
+        lang_b = Excel4Translator.language
+        Excel4Translator.language = Excel4Translator.native_language
+
+        # Change variable and values language
+        if not self.config.obfuscator.translate:
+            for f in self.ordered_calls:
+                if issubclass(type(f), Excel4Value):
+                    f.set_language(Excel4Translator.native_language)
+
+        # Obfuscate variable names
+        if self.config.obfuscator.obfuscate_variable_names:
+            self._obfuscate_variable_names()
+
+        # Obfuscate function names
+        if self.config.obfuscator.obfuscate_registered_functions:
+            self._obfuscate_function_names()
+
+        if self.config.obfuscator.spread_cells:
+            self._spread_cells()
+
+        if self.config.obfuscator.generate_noise:
+            self._generate_noise()
+
+        if self.config.obfuscator.obfuscate_variable_values:
+            self._obfuscate_variable_values()
+
+        if self.config.obfuscator.obfuscate_formulas:
+            self._obfuscate_formulas()
+        Excel4Translator.language = lang_b
+
+    def _spread_cells(self):
+        &#39;&#39;&#39;
+        Spreads cells across worksheet.
+        &#39;&#39;&#39;
+        if not self.obfuscator:
+            return
+
+        self.obfuscator._spread_formulas(self.trigger_x, self.trigger_y)
+
+    def _generate_noise(self):
+        &#39;&#39;&#39;
+        Generates noise in worksheet. It&#39;s simply adds some random values in cells.
+        &#39;&#39;&#39;
+        if not self.obfuscator:
+            return
+
+        self.obfuscator._generate_noise()
+
+    def _obfuscate_function_names(self):
+        &#39;&#39;&#39;
+        Obfuscates registered function names
+        &#39;&#39;&#39;
+        if not self.obfuscator:
+            return
+
+        for f in (self.ordered_calls):
+            if not f._obfuscate:
+                continue
+
+            if issubclass(type(f), Excel4RegisterFormula):
+                self.obfuscator.obfuscate_function_name(f)
+
+    def _obfuscate_variable_names(self):
+        &#39;&#39;&#39;
+        Obfuscates variable names
+        &#39;&#39;&#39;
+        if not self.obfuscator:
+            return
+
+        for f in (self.ordered_calls):
+            if not f._obfuscate:
+                continue
+
+            if issubclass(type(f), Excel4Variable):
+                self.obfuscator.obfuscate_variable_name(f)
+
+
+
+    def _obfuscate_variable_values(self):
+        &#39;&#39;&#39;
+        Obfuscates variable values
+        &#39;&#39;&#39;
+        if not self.obfuscator:
+            return
+
+        for f in (self.ordered_calls):
+            if not f._obfuscate:
+                continue
+
+            if issubclass(type(f), Excel4Variable):
+                # Obfuscate variable value
+                obfuscated = self.obfuscator.obfuscate_variable_value(f)
+                # obfuscated is a list of formulas that contains obfuscated value
+                # last element is cell in which deobfuscated value will be placed
+                # we need to add these formulas to worksheet, above variable initialization
+                for o in obfuscated:
+                    self.worksheet.add_above(o, f)
+
+    def _obfuscate_formulas(self):
+        &#39;&#39;&#39;
+        Obfuscates formulas
+        &#39;&#39;&#39;
+        if not self.obfuscator:
+            return
+        self.obfuscator.obfuscate_formulas(self.ordered_calls)
+
+    def logical(self, value1, operator, value2):
+        &#39;&#39;&#39;
+        Creates Excel4LogicalTest object and adds to the worksheet.
+
+        :param value1: first value
+
+        :param operator: operator to use
+
+        :param value2: second value
+
+        :return: Excel4LogicalTest object
+        &#39;&#39;&#39;
+        return self._create_logical_test(value1, operator, value2)
+
+    def goto(self, jump):
+        &#39;&#39;&#39;
+        Creates Excel4GoToFormula object and adds to the worksheet.
+
+        :param jump: the formula to which to direct the macro execution
+
+        :return: Excel4GoToFormula object
+        &#39;&#39;&#39;
+        formula = self._create_go_to(self.worksheet._curr_x, self.worksheet._curr_y, jump)
+        self._add_to_worksheet(formula)
+        return formula
+
+    def operator(self, value1, operator, value2):
+        &#39;&#39;&#39;
+        Creates Excel4LogicalTest object and adds to the worksheet.
+
+        :param value1: first value
+
+        :param operator: operator to use
+
+        :param value2: second value
+
+        :return: Excel4LogicalTest object
+        &#39;&#39;&#39;
+        return self._create_logical_test(value1, operator, value2)
+
+    def argument(self, instruction, *args):
+        &#39;&#39;&#39;
+        Creates Excel4FormulaArgument object and adds to the worksheet.
+
+        :param instruction: name of the instruction
+
+        :param args: arguments of the insturction
+
+        :return: Excel4FormulaArgument object
+        &#39;&#39;&#39;
+        if issubclass(type(instruction), Excel4RegisterFormula):
+            instruction = instruction.get_function_text()
+        return self._create_argument_object(instruction, *args)
+
+    def value(self, value):
+        &#39;&#39;&#39;
+        Creates Excel4Value object and adds to the worksheet.
+
+        :param value: value
+
+        :return: Excel4Value object pointing to value
+        &#39;&#39;&#39;
+        # Create formula
+        formula = self._create_value(self.worksheet._curr_x, self.worksheet._curr_y, value)
+        self._add_to_worksheet(formula)
+        return formula
+
+    def variable(self, name, value):
+        &#39;&#39;&#39;
+        Creates Excel4Variable object and adds to the worksheet.
+
+        :param name: name of the variable
+
+        :param value: value of the variable
+
+        :return: object pointing to variable definition
+        &#39;&#39;&#39;
+        # Create formula
+        formula = self._create_variable(self.worksheet._curr_x, self.worksheet._curr_y, name, value)
+        self._add_to_worksheet(formula)
+        return formula
+
+    def formula(self, formula, *args):
+        &#39;&#39;&#39;
+        Creates Excel4Formula object and adds to the worksheet.
+
+        :param formula: name of the formula
+
+        :param args: arguments of the formula
+
+        :return: Excel4Formula object
+        &#39;&#39;&#39;
+        if issubclass(type(formula), Excel4RegisterFormula):
+            formula = formula.get_function_text()
+        if str(formula).lower() in [&#34;for&#34;, &#34;while&#34;]:
+            return self.loop(formula, args)
+        elif str(formula).lower() in [&#34;next&#34;]:
+            return self.end_loop(formula, args)
+        elif str(formula).lower() in [&#34;if&#34;]:
+            return self.condition(formula, args)
+        elif str(formula).lower() in [&#34;goto&#34;]:
+            if len(args) &gt; 0:
+                return self.goto(args[0])
+
+        # Create formula
+        formula = self._create_formula(self.worksheet._curr_x, self.worksheet._curr_y, formula, *args)
+        self._add_to_worksheet(formula)
+        return formula
+
+    def loop(self, formula, *args):
+        &#39;&#39;&#39;
+        Creates Excel4LoopFormula object and adds to the worksheet.
+
+        :param formula: name of the formula
+
+        :param args: arguments of the formula
+
+        :return: Excel4LoopFormula object
+        &#39;&#39;&#39;
+        if issubclass(type(formula), Excel4RegisterFormula):
+            formula = formula.get_function_text()
+        # Create formula
+        formula = self._create_loop(self.worksheet._curr_x, self.worksheet._curr_y, formula, *args)
+        self._add_to_worksheet(formula)
+        return formula
+
+    def condition(self, formula, *args):
+        &#39;&#39;&#39;
+        Creates Excel4ConditionFormula object and adds to the worksheet.
+
+        :param formula: name of the formula
+
+        :param args: arguments of the formula
+
+        :return: Excel4ConditionFormula object
+        &#39;&#39;&#39;
+        if issubclass(type(formula), Excel4RegisterFormula):
+            formula = formula.get_function_text()
+        # Create formula
+        formula = self._create_condition(self.worksheet._curr_x, self.worksheet._curr_y, formula, *args)
+        self._add_to_worksheet(formula)
+        return formula
+
+    def end_loop(self, formula, *args):
+        &#39;&#39;&#39;
+        Creates Excel4EndLoopFormula object and adds to the worksheet.
+
+        :param formula: name of the formula
+
+        :param args: arguments of the formula
+
+        :return: Excel4EndLoopFormula object
+        &#39;&#39;&#39;
+        if issubclass(type(formula), Excel4RegisterFormula):
+            formula = formula.get_function_text()
+        # Create formula
+        formula = self._create_end_loop(self.worksheet._curr_x, self.worksheet._curr_y, formula, *args)
+        self._add_to_worksheet(formula)
+        return formula
+
+    def empty(self):
+        &#39;&#39;&#39;
+        Creates empty cell
+
+        :return: object pointing to empty cell
+        &#39;&#39;&#39;
+        # Create formula
+        formula = self._create_value(self.worksheet._curr_x, self.worksheet._curr_y, &#34;&#34;)
+        # Add to worksheet
+        self._add_to_worksheet(formula)
+        return formula
+
+    def register(self, dll_name, exported_function, type_text, function_text=&#34;&#34;):
+        &#39;&#39;&#39;
+        Creates Register formula and adds to the worksheet.
+
+        :param dll_name: name of a DLL
+
+        :param exported_function: name of exported function that you want to import
+
+        :param type_text:  string representing the types of return value and arguments of function that you want to import;
+
+        :param function_text: custom name of function that you want to import. If empty then it will be randomly generated
+
+        :return: Excel4RegisterFormula object
+        &#39;&#39;&#39;
+        formula = self._create_register(self.worksheet._curr_x, self.worksheet._curr_y, dll_name, exported_function, type_text, function_text)
+        # Add to worksheet
+        self._add_to_worksheet(formula)
+        return formula
+
+    def _create_check_architecture(self, x86_jump_formula, x64_jump_formula):
+        &#39;&#39;&#39;
+        Creates If formula that checks Excel architecture (x64 or x86)
+
+        :param x86_jump_formula: jump to this formula if architecture is x86
+
+        :param x64_jump_formula: jump to this formula if architecture is x64
+
+        :return: IF formula object
+        &#39;&#39;&#39;
+        # Create formula IF(ISNUMBER(SEARCH(&#34;32&#34;, GET.WORKSPACE(1))), x86_jump, x64_jump)
+        get_workspace = Excel4FormulaArgument(&#34;GET.WORKSPACE&#34;, 1)
+        search = Excel4FormulaArgument(&#34;SEARCH&#34;, &#34;32&#34;, get_workspace)
+        isnumber = Excel4FormulaArgument(&#34;ISNUMBER&#34;, search)
+        if_formula = self._create_condition(self.worksheet._curr_x, self.worksheet._curr_y, &#34;IF&#34;, isnumber, x86_jump_formula, x64_jump_formula)
+        return if_formula
+
+    def check_architecture(self, x86_jump_formula, x64_jump_formula):
+        &#39;&#39;&#39;
+        Creates If formula that checks Excel architecture (x64 or x86) and adds it to worksheet
+
+        :param x86_jump_formula: jump to this formula if architecture is x86
+
+        :param x64_jump_formula: jump to this formula if architecture is x64
+
+        :return: IF formula object
+        &#39;&#39;&#39;
+        formula = self._create_check_architecture(self.argument(&#34;GOTO&#34;, x86_jump_formula), self.argument(&#34;GOTO&#34;, x64_jump_formula))
+        # Add to worksheet
+        self._add_to_worksheet(formula)
+        return formula
+
+    def create_lang_detection(self, lang_num, true_jump, false_jump):
+        &#39;&#39;&#39;
+        Creates and returns language detection formula
+
+        :param lang_num: number of language
+
+        :param true_jump: jump if language is equal to lang_num
+
+        :param false_jump: jump if language is diffrent than lang_num
+
+        :return: IF formula object
+        &#39;&#39;&#39;
+        # Create formula =IF(INDEX(GET.WORKSPACE(37),1)&lt;&gt;lang_num,true_jump,false_jump)
+        val1 = Excel4FormulaArgument(&#34;GET.WORKSPACE&#34;, 37)
+        val1 = Excel4FormulaArgument(&#34;INDEX&#34;, val1, 1)
+        cond = Excel4LogicalTest(val1, &#34;&lt;&gt;&#34;, lang_num)
+        if_formula = self._create_condition(self.worksheet._curr_x, self.worksheet._curr_y, &#34;IF&#34;, cond, false_jump, true_jump)
+        return if_formula
+
+    def check_language(self, lang_num, true_jump, false_jump):
+        formula = self.create_lang_detection(lang_num, true_jump, false_jump)
+        self._add_to_worksheet(formula)
+        return formula
+
+    &#39;&#39;&#39;&#39;
+    WINAPI functions
+    &#39;&#39;&#39;
+    def register_virtual_alloc(self, function_text=&#34;&#34;):
+        &#39;&#39;&#39;
+        Register VirtualAlloc function
+
+        :param function_text: custom name of function that you want to import. If empty then it will be randomly generated
+
+        :return:
+        &#39;&#39;&#39;
+        return self.register(&#34;Kernel32&#34;, &#34;VirtualAlloc&#34;, &#34;JJJJJ&#34;, function_text)
+
+    def register_write_process_memory(self, function_text=&#34;&#34;):
+        &#39;&#39;&#39;
+        Register WriteProcessMemory function
+
+        :param function_text: custom name of function that you want to import. If empty then it will be randomly generated
+        &#39;&#39;&#39;
+        return self.register(&#34;Kernel32&#34;, &#34;WriteProcessMemory&#34;, &#34;JJJCJJ&#34;, function_text)
+
+    def register_create_thread(self, function_text=&#34;&#34;):
+        &#39;&#39;&#39;
+        Register CreateThread function
+
+        :param function_text: custom name of function that you want to import. If empty then it will be randomly generated
+        &#39;&#39;&#39;
+        return self.register(&#34;Kernel32&#34;, &#34;CreateThread&#34;, &#34;JJJJJJJ&#34;, function_text)
+
+    def register_url_download_to_file_a(self, function_text=&#34;&#34;):
+        &#39;&#39;&#39;
+        Register URLDownloadToFileA function
+
+        :param function_text: custom name of function that you want to import. If empty then it will be randomly generated
+        &#39;&#39;&#39;
+        return self.register(&#34;urlmon&#34;, &#34;URLDownloadToFileA&#34;, &#34;JJCCJJ&#34;, function_text)
+
+    def register_rtl_copy_memory(self, function_text=&#34;&#34;):
+        &#39;&#39;&#39;
+        Register RtlCopyMemory function
+
+        :param function_text: custom name of function that you want to import. If empty then it will be randomly generated
+        &#39;&#39;&#39;
+        return self.register(&#34;Kernel32&#34;, &#34;RtlCopyMemory&#34;, &#34;JJCJ&#34;, function_text)
+
+    def register_queue_user_apc(self, function_text=&#34;&#34;):
+        &#39;&#39;&#39;
+        Register QueueUserAPC function
+
+        :param function_text: custom name of function that you want to import. If empty then it will be randomly generated
+        &#39;&#39;&#39;
+        return self.register(&#34;Kernel32&#34;, &#34;QueueUserAPC&#34;, &#34;JJJJ&#34;, function_text)
+
+    def register_nt_test_alert(self, function_text=&#34;&#34;):
+        &#39;&#39;&#39;
+        Register NtTestAlert function
+
+        :param function_text: custom name of function that you want to import. If empty then it will be randomly generated
+        &#39;&#39;&#39;
+        return self.register(&#34;ntdll&#34;, &#34;NtTestAlert&#34;, &#34;J&#34;, function_text)
+
+    def register_shell_execute(self, function_text=&#34;&#34;):
+        &#39;&#39;&#39;
+        Register NtTestAlert function
+
+        :param function_text: custom name of function that you want to import. If empty then it will be randomly generated
+        &#39;&#39;&#39;
+        return self.register(&#34;Shell32&#34;, &#34;ShellExecuteA&#34;, &#34;JJCCCJJ&#34;, function_text)
+
+    def _gen_random_cords(self, height=2):
+        &#39;&#39;&#39;
+        Returns random cords
+
+        :param height:
+        &#39;&#39;&#39;
+        target_x = random.randint(self.config.obfuscator.spread_x_min, self.config.obfuscator.spread_x_max)
+        target_y = random.randint(self.config.obfuscator.spread_y_min, self.config.obfuscator.spread_y_max)
+        fail_cnt = 0
+        while self.worksheet.is_reserved(target_x, target_y, height + 1):
+            if fail_cnt &gt; 1000:
+                self.config.obfuscator.spread_x_max = self.config.obfuscator.spread_x_max + 1
+                target_x = self.config.obfuscator.spread_x_max
+            else:
+                target_x = random.randint(self.config.obfuscator.spread_x_min, self.config.obfuscator.spread_x_max)
+            target_y = random.randint(self.config.obfuscator.spread_y_min, self.config.obfuscator.spread_y_max)
+            fail_cnt = fail_cnt + 1
+
+        return (target_x, target_y)</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="excel4lib.macro.excel4_macro.Excel4Macro"><code class="flex name class">
+<span>class <span class="ident">Excel4Macro</span></span>
+<span>(</span><span>name, obfuscator=None, analysis=None, routines=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Allows to create obfusacted Excel 4.0 Macro.</p>
+<p>During creating macro probably you will need a few things:
+- a way to define variables, formulas;
+- obfuscation;
+- dumping results to file.</p>
+<p><code><a title="excel4lib.macro.excel4_macro.Excel4Macro" href="#excel4lib.macro.excel4_macro.Excel4Macro">Excel4Macro</a></code> class shares some basic functions which allow to do this:
+- <code><a title="excel4lib.macro.excel4_macro.Excel4Macro.formula" href="#excel4lib.macro.excel4_macro.Excel4Macro.formula">Excel4Macro.formula()</a></code>, <code><a title="excel4lib.macro.excel4_macro.Excel4Macro.variable" href="#excel4lib.macro.excel4_macro.Excel4Macro.variable">Excel4Macro.variable()</a></code>;
+- <code><a title="excel4lib.macro.excel4_macro.Excel4Macro.obfuscate_all" href="#excel4lib.macro.excel4_macro.Excel4Macro.obfuscate_all">Excel4Macro.obfuscate_all()</a></code>;
+- <code><a title="excel4lib.macro.excel4_macro.Excel4Macro.to_csv_file" href="#excel4lib.macro.excel4_macro.Excel4Macro.to_csv_file">Excel4Macro.to_csv_file()</a></code>.</p>
+<p>Creating simple macro with variable and formula:</p>
+<pre><code>from excel4lib.macro import *
+
+macro = Excel4Macro(&quot;test.csv&quot;)
+cmd = macro.variable(&quot;cmd&quot;, &quot;calc.exe&quot;)
+macro.formula(&quot;EXEC&quot;, cmd)
+print(macro.to_csv())
+</code></pre>
+<p>As you can see macro.variable function returns object that could be used as argument
+in macro.formula function. This is the main idea of this library. Excel4 formulas, variables,
+values and formula arguments are represented as python objects. Thanks to that you can create your
+macro once and then dynamicly change attributes of thi objects, for example names of variables,
+values of variables or even addresses.</p>
+<p>:param name: name of the macro</p>
+<p>:param obfuscator: Excel4Obfuscator object to use during obfuscation process</p>
+<p>:param analysis: Excel4AntiAnalysis object that allows to add anti-analysis instructions to the worksheet</p>
+<p>:param routines: Excel4Routines object that allows to add additional macros</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Excel4Macro(object):
+    &#39;&#39;&#39;
+    Allows to create obfusacted Excel 4.0 Macro.
+
+    During creating macro probably you will need a few things:
+    - a way to define variables, formulas;
+    - obfuscation;
+    - dumping results to file.
+
+    `Excel4Macro` class shares some basic functions which allow to do this:
+    - `Excel4Macro.formula`, `Excel4Macro.variable`;
+    - `Excel4Macro.obfuscate_all`;
+    - `Excel4Macro.to_csv_file`.
+
+    Creating simple macro with variable and formula:
+    ```
+    from excel4lib.macro import *
+
+    macro = Excel4Macro(&#34;test.csv&#34;)
+    cmd = macro.variable(&#34;cmd&#34;, &#34;calc.exe&#34;)
+    macro.formula(&#34;EXEC&#34;, cmd)
+    print(macro.to_csv())
+    ```
+
+    As you can see macro.variable function returns object that could be used as argument
+    in macro.formula function. This is the main idea of this library. Excel4 formulas, variables,
+    values and formula arguments are represented as python objects. Thanks to that you can create your
+    macro once and then dynamicly change attributes of thi objects, for example names of variables,
+    values of variables or even addresses.
+    &#39;&#39;&#39;
+
+    def __init__(self, name, obfuscator = None, analysis = None, routines=None):
+        &#39;&#39;&#39;
+
+        :param name: name of the macro
+
+        :param obfuscator: Excel4Obfuscator object to use during obfuscation process
+
+        :param analysis: Excel4AntiAnalysis object that allows to add anti-analysis instructions to the worksheet
+
+        :param routines: Excel4Routines object that allows to add additional macros
+        &#39;&#39;&#39;
+        self.name = name
+        self.worksheet = Worksheet(name)
+        self.obfuscator = obfuscator
+        self.analysis = analysis
+        self.routines = routines
+
+        if self.obfuscator:
+            self.obfuscator.set_macro(self)
+        if self.analysis:
+            self.analysis.set_macro(self)
+        if self.routines:
+            self.routines.set_macro(self)
+
+        # List of Excel4 instructions ordered by execution. Instructions should be called in this order.
+        self.ordered_calls = []
+        self.obfuscated_formulas = []
+
+        self.automatic_obfuscate = Excel4Config.obfuscator.automatic_obfuscation
+
+        self.config = Excel4Config
+        # Auto_Open or Auto_Close cell cords
+        self.trigger_x = 1
+        self.trigger_y = 1
+
+    def set_cords(self, x=None, y=None):
+        &#39;&#39;&#39;
+        Sets active cell(current cords) to x,y.
+
+        :param x: column
+
+        :param y: row
+        &#39;&#39;&#39;
+        if not x:
+            x = self.worksheet._curr_x
+        if not y:
+            y = self.worksheet._curr_y
+        self.worksheet.set_current_cords(x,y)
+
+    def set_trigger_cords(self, x, y):
+        &#39;&#39;&#39;
+        Sets column and row in which auto open or auto close function will be used.
+
+        :param x: number of column
+
+        :param y: number of row
+        &#39;&#39;&#39;
+        self.trigger_x = x
+        self.trigger_y = y
+
+    def to_csv(self):
+        &#39;&#39;&#39;
+        Dumps macro to CSV format
+
+        :return: macro as CSV string
+        &#39;&#39;&#39;
+        self.obfuscate_all()
+        return self.worksheet.to_csv(Excel4Config.csv_separator)
+
+    def to_csv_file(self, filename=None):
+        &#39;&#39;&#39;
+        Saves macro to CSV file
+
+        :param filename: output filename if None then it is set to `name` of the macro
+        &#39;&#39;&#39;
+        if not filename:
+            filename = self.name + &#34;.csv&#34;
+        write_file(filename, self.to_csv())
+
+    def _reserve_cells(self, x, y, amount):
+        &#39;&#39;&#39;
+        Reserves cells from (x, y+amount). Returns reserved cells
+
+        :param x: column
+
+        :param y: row
+
+        :param amount: number of cells to reserve
+
+        :return: list of Excel4Value formulas that reserves specified space
+        &#39;&#39;&#39;
+        formulas = []
+        if self.worksheet.is_reserved(x, y, amount):
+            # If we cant reserve then return empty list
+            return formulas
+
+        for i in range(0, amount):
+            formulas.append(Excel4Value(x,y+amount))
+            self.worksheet.add_cell(formulas[i])
+
+        return formulas
+
+
+    def random_add_to_worksheet(self, formulas):
+        &#39;&#39;&#39;
+        Adds formulas to the worksheet at random place
+
+        :param formulas: list of formulas to add
+        &#39;&#39;&#39;
+        # Backup cords
+        curr_x, curr_y = self.worksheet.get_current_cords()
+        # Find place where formulas could be placed
+        target_x, target_y = self._gen_random_cords(len(formulas))
+        # Add to the worksheet
+        for f in formulas:
+            f.x = target_x
+            f.y = target_y
+            self._add_to_worksheet(f)
+            target_y = target_y + 1
+        # Restore cords
+        self.worksheet.set_current_cords(curr_x, curr_y)
+
+    def _add_to_worksheet(self, cell):
+        &#39;&#39;&#39;
+        Adds formula to the worksheet
+
+        :param cell: formula to add
+        &#39;&#39;&#39;
+        if not issubclass(type(cell), Cell):
+            pass
+        self.worksheet.add_cell(cell)
+        self.ordered_calls.append(cell)
+
+
+    def _create_logical_test(self, value1, operator, value2):
+        &#39;&#39;&#39;
+        Creates Excel4LogicalTest object. Created object is not added to the worksheet.
+
+        :param value1: first value
+
+        :param operator: operator to use
+
+        :param value2: second value
+
+        :return: Excel4LogicalTest object
+        &#39;&#39;&#39;
+        o = Excel4LogicalTest(value1, operator, value2)
+        return o
+
+    def _create_argument_object(self, instruction, *args):
+        &#39;&#39;&#39;
+        Creates Excel4FormulaArgument object. Created object is not added to the worksheet
+
+        :param instruction: name of the instruction
+
+        :param args: arguments of the insturction
+
+        :return: Excel4FormulaArgument object
+        &#39;&#39;&#39;
+        o = Excel4FormulaArgument(instruction, *args)
+        return o
+
+    def _create_formula(self, x, y, instruction, *args):
+        &#39;&#39;&#39;
+        Creates Excel4Formula object. Created object is not added to the worksheet
+
+        :param x: column
+
+        :param y: row
+
+        :param instruction: name of the instruction
+
+        :param args: arguments of the insturction
+
+        :return: Excel4Formula object
+        &#39;&#39;&#39;
+        o = Excel4Formula(x, y,  instruction, *args)
+        return o
+
+    def _create_go_to(self, x, y, formula):
+        &#39;&#39;&#39;
+        Creates Excel4GoToFormula object. Created object is not added to the worksheet
+
+        :param x: column
+
+        :param y: row
+
+        :param formula: the formula to which to direct the macro execution
+
+        :return: Excel4GoToFormula object
+        &#39;&#39;&#39;
+        instruction_name = Excel4InstructionName(&#34;GOTO&#34;)
+        instruction_name.translate = True
+        o = Excel4GoToFormula(x, y, instruction_name, formula)
+        return o
+
+    def _create_loop(self, x, y, instruction, *args):
+        &#39;&#39;&#39;
+        Creates Excel4LoopFormula object. Created object is not added to the worksheet
+
+        :param x: column
+
+        :param y: row
+
+        :param instruction: name of the instruction
+
+        :param args: arguments of the insturction
+
+        :return: Excel4LoopFormula object
+        &#39;&#39;&#39;
+        o = Excel4LoopFormula(x, y,  instruction, *args)
+        return o
+
+    def _create_condition(self, x, y, instruction, *args):
+        &#39;&#39;&#39;
+        Creates Excel4ConditionFormula object. Created object is not added to the worksheet
+
+        :param x: column
+
+        :param y: row
+
+        :param instruction: name of the instruction
+
+        :param args: arguments of the insturction
+
+        :return: Excel4ConditionFormula object
+        &#39;&#39;&#39;
+        o = Excel4ConditionFormula(x, y,  instruction, *args)
+        return o
+
+    def _create_end_loop(self, x, y, instruction, *args):
+        &#39;&#39;&#39;
+        Creates Excel4EndLoopFormula object. Created object is not added to the worksheet
+
+        :param x: column
+
+        :param y: row
+
+        :param instruction: name of the instruction
+
+        :param args: arguments of the insturction
+
+        :return: Excel4EndLoopFormula object
+        &#39;&#39;&#39;
+        o = Excel4EndLoopFormula(x, y,  instruction, *args)
+        return o
+
+    def _create_value(self, x, y, value):
+        &#39;&#39;&#39;
+        Creates Excel4Value object. Created object is not added to the worksheet
+
+        :param x: column
+
+        :param y: row
+
+        :param value:
+
+        :return: Excel4Value object
+        &#39;&#39;&#39;
+        o = Excel4Value(x, y, value)
+        return o
+
+    def _create_variable(self, x, y, name, value):
+        &#39;&#39;&#39;
+        Creates Excel4Variable object. Created object is not added to the worksheet
+
+        :param x: column
+
+        :param y: row
+
+        :param instruction: name of the instruction
+
+        :param args: arguments of the insturction
+
+        :return: Excel4Variable object
+        &#39;&#39;&#39;
+        o = Excel4Variable(x, y,  name, value)
+        return o
+
+    def _create_register(self, x, y, dll_name, exported_function, type_text, function_text=&#34;&#34;):
+        &#39;&#39;&#39;
+        Creates Excel4RegisterFormula object. Created object is not added to the worksheet
+
+        :param x: column
+
+        :param y: row
+
+        :param dll_name: name of a DLL
+
+        :param exported_function: name of exported function that you want to import
+
+        :param type_text:  string representing the types of return value and arguments of function that you want to import;
+
+        :param function_text: custom name of function that you want to import. If empty then it will be randomly generated
+
+        :return: Excel4RegisterFormula object
+        &#39;&#39;&#39;
+        # Generate random function_text if it&#39;s empty
+        if not function_text:
+            function_text = random_string(random.randint(4, 8))
+        formula = Excel4RegisterFormula(x, y, dll_name, exported_function, type_text, function_text)
+        return formula
+
+    def obfuscate_all(self):
+        &#39;&#39;&#39;
+        Obfuscates macro.
+
+        Obfuscation process is splitted into few steps:
+
+        - obfuscation of variables names;
+        - obfuscation of function names;
+        - spread formulas across worksheet;
+        - add noise;
+        - obfuscation of values;
+        - obfuscation of formulas with arguments;
+        &#39;&#39;&#39;
+        if (not self.obfuscator) or (not self.config.obfuscator.enable):
+            return
+        # Set language to native
+        lang_b = Excel4Translator.language
+        Excel4Translator.language = Excel4Translator.native_language
+
+        # Change variable and values language
+        if not self.config.obfuscator.translate:
+            for f in self.ordered_calls:
+                if issubclass(type(f), Excel4Value):
+                    f.set_language(Excel4Translator.native_language)
+
+        # Obfuscate variable names
+        if self.config.obfuscator.obfuscate_variable_names:
+            self._obfuscate_variable_names()
+
+        # Obfuscate function names
+        if self.config.obfuscator.obfuscate_registered_functions:
+            self._obfuscate_function_names()
+
+        if self.config.obfuscator.spread_cells:
+            self._spread_cells()
+
+        if self.config.obfuscator.generate_noise:
+            self._generate_noise()
+
+        if self.config.obfuscator.obfuscate_variable_values:
+            self._obfuscate_variable_values()
+
+        if self.config.obfuscator.obfuscate_formulas:
+            self._obfuscate_formulas()
+        Excel4Translator.language = lang_b
+
+    def _spread_cells(self):
+        &#39;&#39;&#39;
+        Spreads cells across worksheet.
+        &#39;&#39;&#39;
+        if not self.obfuscator:
+            return
+
+        self.obfuscator._spread_formulas(self.trigger_x, self.trigger_y)
+
+    def _generate_noise(self):
+        &#39;&#39;&#39;
+        Generates noise in worksheet. It&#39;s simply adds some random values in cells.
+        &#39;&#39;&#39;
+        if not self.obfuscator:
+            return
+
+        self.obfuscator._generate_noise()
+
+    def _obfuscate_function_names(self):
+        &#39;&#39;&#39;
+        Obfuscates registered function names
+        &#39;&#39;&#39;
+        if not self.obfuscator:
+            return
+
+        for f in (self.ordered_calls):
+            if not f._obfuscate:
+                continue
+
+            if issubclass(type(f), Excel4RegisterFormula):
+                self.obfuscator.obfuscate_function_name(f)
+
+    def _obfuscate_variable_names(self):
+        &#39;&#39;&#39;
+        Obfuscates variable names
+        &#39;&#39;&#39;
+        if not self.obfuscator:
+            return
+
+        for f in (self.ordered_calls):
+            if not f._obfuscate:
+                continue
+
+            if issubclass(type(f), Excel4Variable):
+                self.obfuscator.obfuscate_variable_name(f)
+
+
+
+    def _obfuscate_variable_values(self):
+        &#39;&#39;&#39;
+        Obfuscates variable values
+        &#39;&#39;&#39;
+        if not self.obfuscator:
+            return
+
+        for f in (self.ordered_calls):
+            if not f._obfuscate:
+                continue
+
+            if issubclass(type(f), Excel4Variable):
+                # Obfuscate variable value
+                obfuscated = self.obfuscator.obfuscate_variable_value(f)
+                # obfuscated is a list of formulas that contains obfuscated value
+                # last element is cell in which deobfuscated value will be placed
+                # we need to add these formulas to worksheet, above variable initialization
+                for o in obfuscated:
+                    self.worksheet.add_above(o, f)
+
+    def _obfuscate_formulas(self):
+        &#39;&#39;&#39;
+        Obfuscates formulas
+        &#39;&#39;&#39;
+        if not self.obfuscator:
+            return
+        self.obfuscator.obfuscate_formulas(self.ordered_calls)
+
+    def logical(self, value1, operator, value2):
+        &#39;&#39;&#39;
+        Creates Excel4LogicalTest object and adds to the worksheet.
+
+        :param value1: first value
+
+        :param operator: operator to use
+
+        :param value2: second value
+
+        :return: Excel4LogicalTest object
+        &#39;&#39;&#39;
+        return self._create_logical_test(value1, operator, value2)
+
+    def goto(self, jump):
+        &#39;&#39;&#39;
+        Creates Excel4GoToFormula object and adds to the worksheet.
+
+        :param jump: the formula to which to direct the macro execution
+
+        :return: Excel4GoToFormula object
+        &#39;&#39;&#39;
+        formula = self._create_go_to(self.worksheet._curr_x, self.worksheet._curr_y, jump)
+        self._add_to_worksheet(formula)
+        return formula
+
+    def operator(self, value1, operator, value2):
+        &#39;&#39;&#39;
+        Creates Excel4LogicalTest object and adds to the worksheet.
+
+        :param value1: first value
+
+        :param operator: operator to use
+
+        :param value2: second value
+
+        :return: Excel4LogicalTest object
+        &#39;&#39;&#39;
+        return self._create_logical_test(value1, operator, value2)
+
+    def argument(self, instruction, *args):
+        &#39;&#39;&#39;
+        Creates Excel4FormulaArgument object and adds to the worksheet.
+
+        :param instruction: name of the instruction
+
+        :param args: arguments of the insturction
+
+        :return: Excel4FormulaArgument object
+        &#39;&#39;&#39;
+        if issubclass(type(instruction), Excel4RegisterFormula):
+            instruction = instruction.get_function_text()
+        return self._create_argument_object(instruction, *args)
+
+    def value(self, value):
+        &#39;&#39;&#39;
+        Creates Excel4Value object and adds to the worksheet.
+
+        :param value: value
+
+        :return: Excel4Value object pointing to value
+        &#39;&#39;&#39;
+        # Create formula
+        formula = self._create_value(self.worksheet._curr_x, self.worksheet._curr_y, value)
+        self._add_to_worksheet(formula)
+        return formula
+
+    def variable(self, name, value):
+        &#39;&#39;&#39;
+        Creates Excel4Variable object and adds to the worksheet.
+
+        :param name: name of the variable
+
+        :param value: value of the variable
+
+        :return: object pointing to variable definition
+        &#39;&#39;&#39;
+        # Create formula
+        formula = self._create_variable(self.worksheet._curr_x, self.worksheet._curr_y, name, value)
+        self._add_to_worksheet(formula)
+        return formula
+
+    def formula(self, formula, *args):
+        &#39;&#39;&#39;
+        Creates Excel4Formula object and adds to the worksheet.
+
+        :param formula: name of the formula
+
+        :param args: arguments of the formula
+
+        :return: Excel4Formula object
+        &#39;&#39;&#39;
+        if issubclass(type(formula), Excel4RegisterFormula):
+            formula = formula.get_function_text()
+        if str(formula).lower() in [&#34;for&#34;, &#34;while&#34;]:
+            return self.loop(formula, args)
+        elif str(formula).lower() in [&#34;next&#34;]:
+            return self.end_loop(formula, args)
+        elif str(formula).lower() in [&#34;if&#34;]:
+            return self.condition(formula, args)
+        elif str(formula).lower() in [&#34;goto&#34;]:
+            if len(args) &gt; 0:
+                return self.goto(args[0])
+
+        # Create formula
+        formula = self._create_formula(self.worksheet._curr_x, self.worksheet._curr_y, formula, *args)
+        self._add_to_worksheet(formula)
+        return formula
+
+    def loop(self, formula, *args):
+        &#39;&#39;&#39;
+        Creates Excel4LoopFormula object and adds to the worksheet.
+
+        :param formula: name of the formula
+
+        :param args: arguments of the formula
+
+        :return: Excel4LoopFormula object
+        &#39;&#39;&#39;
+        if issubclass(type(formula), Excel4RegisterFormula):
+            formula = formula.get_function_text()
+        # Create formula
+        formula = self._create_loop(self.worksheet._curr_x, self.worksheet._curr_y, formula, *args)
+        self._add_to_worksheet(formula)
+        return formula
+
+    def condition(self, formula, *args):
+        &#39;&#39;&#39;
+        Creates Excel4ConditionFormula object and adds to the worksheet.
+
+        :param formula: name of the formula
+
+        :param args: arguments of the formula
+
+        :return: Excel4ConditionFormula object
+        &#39;&#39;&#39;
+        if issubclass(type(formula), Excel4RegisterFormula):
+            formula = formula.get_function_text()
+        # Create formula
+        formula = self._create_condition(self.worksheet._curr_x, self.worksheet._curr_y, formula, *args)
+        self._add_to_worksheet(formula)
+        return formula
+
+    def end_loop(self, formula, *args):
+        &#39;&#39;&#39;
+        Creates Excel4EndLoopFormula object and adds to the worksheet.
+
+        :param formula: name of the formula
+
+        :param args: arguments of the formula
+
+        :return: Excel4EndLoopFormula object
+        &#39;&#39;&#39;
+        if issubclass(type(formula), Excel4RegisterFormula):
+            formula = formula.get_function_text()
+        # Create formula
+        formula = self._create_end_loop(self.worksheet._curr_x, self.worksheet._curr_y, formula, *args)
+        self._add_to_worksheet(formula)
+        return formula
+
+    def empty(self):
+        &#39;&#39;&#39;
+        Creates empty cell
+
+        :return: object pointing to empty cell
+        &#39;&#39;&#39;
+        # Create formula
+        formula = self._create_value(self.worksheet._curr_x, self.worksheet._curr_y, &#34;&#34;)
+        # Add to worksheet
+        self._add_to_worksheet(formula)
+        return formula
+
+    def register(self, dll_name, exported_function, type_text, function_text=&#34;&#34;):
+        &#39;&#39;&#39;
+        Creates Register formula and adds to the worksheet.
+
+        :param dll_name: name of a DLL
+
+        :param exported_function: name of exported function that you want to import
+
+        :param type_text:  string representing the types of return value and arguments of function that you want to import;
+
+        :param function_text: custom name of function that you want to import. If empty then it will be randomly generated
+
+        :return: Excel4RegisterFormula object
+        &#39;&#39;&#39;
+        formula = self._create_register(self.worksheet._curr_x, self.worksheet._curr_y, dll_name, exported_function, type_text, function_text)
+        # Add to worksheet
+        self._add_to_worksheet(formula)
+        return formula
+
+    def _create_check_architecture(self, x86_jump_formula, x64_jump_formula):
+        &#39;&#39;&#39;
+        Creates If formula that checks Excel architecture (x64 or x86)
+
+        :param x86_jump_formula: jump to this formula if architecture is x86
+
+        :param x64_jump_formula: jump to this formula if architecture is x64
+
+        :return: IF formula object
+        &#39;&#39;&#39;
+        # Create formula IF(ISNUMBER(SEARCH(&#34;32&#34;, GET.WORKSPACE(1))), x86_jump, x64_jump)
+        get_workspace = Excel4FormulaArgument(&#34;GET.WORKSPACE&#34;, 1)
+        search = Excel4FormulaArgument(&#34;SEARCH&#34;, &#34;32&#34;, get_workspace)
+        isnumber = Excel4FormulaArgument(&#34;ISNUMBER&#34;, search)
+        if_formula = self._create_condition(self.worksheet._curr_x, self.worksheet._curr_y, &#34;IF&#34;, isnumber, x86_jump_formula, x64_jump_formula)
+        return if_formula
+
+    def check_architecture(self, x86_jump_formula, x64_jump_formula):
+        &#39;&#39;&#39;
+        Creates If formula that checks Excel architecture (x64 or x86) and adds it to worksheet
+
+        :param x86_jump_formula: jump to this formula if architecture is x86
+
+        :param x64_jump_formula: jump to this formula if architecture is x64
+
+        :return: IF formula object
+        &#39;&#39;&#39;
+        formula = self._create_check_architecture(self.argument(&#34;GOTO&#34;, x86_jump_formula), self.argument(&#34;GOTO&#34;, x64_jump_formula))
+        # Add to worksheet
+        self._add_to_worksheet(formula)
+        return formula
+
+    def create_lang_detection(self, lang_num, true_jump, false_jump):
+        &#39;&#39;&#39;
+        Creates and returns language detection formula
+
+        :param lang_num: number of language
+
+        :param true_jump: jump if language is equal to lang_num
+
+        :param false_jump: jump if language is diffrent than lang_num
+
+        :return: IF formula object
+        &#39;&#39;&#39;
+        # Create formula =IF(INDEX(GET.WORKSPACE(37),1)&lt;&gt;lang_num,true_jump,false_jump)
+        val1 = Excel4FormulaArgument(&#34;GET.WORKSPACE&#34;, 37)
+        val1 = Excel4FormulaArgument(&#34;INDEX&#34;, val1, 1)
+        cond = Excel4LogicalTest(val1, &#34;&lt;&gt;&#34;, lang_num)
+        if_formula = self._create_condition(self.worksheet._curr_x, self.worksheet._curr_y, &#34;IF&#34;, cond, false_jump, true_jump)
+        return if_formula
+
+    def check_language(self, lang_num, true_jump, false_jump):
+        formula = self.create_lang_detection(lang_num, true_jump, false_jump)
+        self._add_to_worksheet(formula)
+        return formula
+
+    &#39;&#39;&#39;&#39;
+    WINAPI functions
+    &#39;&#39;&#39;
+    def register_virtual_alloc(self, function_text=&#34;&#34;):
+        &#39;&#39;&#39;
+        Register VirtualAlloc function
+
+        :param function_text: custom name of function that you want to import. If empty then it will be randomly generated
+
+        :return:
+        &#39;&#39;&#39;
+        return self.register(&#34;Kernel32&#34;, &#34;VirtualAlloc&#34;, &#34;JJJJJ&#34;, function_text)
+
+    def register_write_process_memory(self, function_text=&#34;&#34;):
+        &#39;&#39;&#39;
+        Register WriteProcessMemory function
+
+        :param function_text: custom name of function that you want to import. If empty then it will be randomly generated
+        &#39;&#39;&#39;
+        return self.register(&#34;Kernel32&#34;, &#34;WriteProcessMemory&#34;, &#34;JJJCJJ&#34;, function_text)
+
+    def register_create_thread(self, function_text=&#34;&#34;):
+        &#39;&#39;&#39;
+        Register CreateThread function
+
+        :param function_text: custom name of function that you want to import. If empty then it will be randomly generated
+        &#39;&#39;&#39;
+        return self.register(&#34;Kernel32&#34;, &#34;CreateThread&#34;, &#34;JJJJJJJ&#34;, function_text)
+
+    def register_url_download_to_file_a(self, function_text=&#34;&#34;):
+        &#39;&#39;&#39;
+        Register URLDownloadToFileA function
+
+        :param function_text: custom name of function that you want to import. If empty then it will be randomly generated
+        &#39;&#39;&#39;
+        return self.register(&#34;urlmon&#34;, &#34;URLDownloadToFileA&#34;, &#34;JJCCJJ&#34;, function_text)
+
+    def register_rtl_copy_memory(self, function_text=&#34;&#34;):
+        &#39;&#39;&#39;
+        Register RtlCopyMemory function
+
+        :param function_text: custom name of function that you want to import. If empty then it will be randomly generated
+        &#39;&#39;&#39;
+        return self.register(&#34;Kernel32&#34;, &#34;RtlCopyMemory&#34;, &#34;JJCJ&#34;, function_text)
+
+    def register_queue_user_apc(self, function_text=&#34;&#34;):
+        &#39;&#39;&#39;
+        Register QueueUserAPC function
+
+        :param function_text: custom name of function that you want to import. If empty then it will be randomly generated
+        &#39;&#39;&#39;
+        return self.register(&#34;Kernel32&#34;, &#34;QueueUserAPC&#34;, &#34;JJJJ&#34;, function_text)
+
+    def register_nt_test_alert(self, function_text=&#34;&#34;):
+        &#39;&#39;&#39;
+        Register NtTestAlert function
+
+        :param function_text: custom name of function that you want to import. If empty then it will be randomly generated
+        &#39;&#39;&#39;
+        return self.register(&#34;ntdll&#34;, &#34;NtTestAlert&#34;, &#34;J&#34;, function_text)
+
+    def register_shell_execute(self, function_text=&#34;&#34;):
+        &#39;&#39;&#39;
+        Register NtTestAlert function
+
+        :param function_text: custom name of function that you want to import. If empty then it will be randomly generated
+        &#39;&#39;&#39;
+        return self.register(&#34;Shell32&#34;, &#34;ShellExecuteA&#34;, &#34;JJCCCJJ&#34;, function_text)
+
+    def _gen_random_cords(self, height=2):
+        &#39;&#39;&#39;
+        Returns random cords
+
+        :param height:
+        &#39;&#39;&#39;
+        target_x = random.randint(self.config.obfuscator.spread_x_min, self.config.obfuscator.spread_x_max)
+        target_y = random.randint(self.config.obfuscator.spread_y_min, self.config.obfuscator.spread_y_max)
+        fail_cnt = 0
+        while self.worksheet.is_reserved(target_x, target_y, height + 1):
+            if fail_cnt &gt; 1000:
+                self.config.obfuscator.spread_x_max = self.config.obfuscator.spread_x_max + 1
+                target_x = self.config.obfuscator.spread_x_max
+            else:
+                target_x = random.randint(self.config.obfuscator.spread_x_min, self.config.obfuscator.spread_x_max)
+            target_y = random.randint(self.config.obfuscator.spread_y_min, self.config.obfuscator.spread_y_max)
+            fail_cnt = fail_cnt + 1
+
+        return (target_x, target_y)</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="excel4lib.macro.excel4_macro.Excel4Macro.argument"><code class="name flex">
+<span>def <span class="ident">argument</span></span>(<span>self, instruction, *args)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates Excel4FormulaArgument object and adds to the worksheet.</p>
+<p>:param instruction: name of the instruction</p>
+<p>:param args: arguments of the insturction</p>
+<p>:return: Excel4FormulaArgument object</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def argument(self, instruction, *args):
+    &#39;&#39;&#39;
+    Creates Excel4FormulaArgument object and adds to the worksheet.
+
+    :param instruction: name of the instruction
+
+    :param args: arguments of the insturction
+
+    :return: Excel4FormulaArgument object
+    &#39;&#39;&#39;
+    if issubclass(type(instruction), Excel4RegisterFormula):
+        instruction = instruction.get_function_text()
+    return self._create_argument_object(instruction, *args)</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.macro.excel4_macro.Excel4Macro.check_architecture"><code class="name flex">
+<span>def <span class="ident">check_architecture</span></span>(<span>self, x86_jump_formula, x64_jump_formula)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates If formula that checks Excel architecture (x64 or x86) and adds it to worksheet</p>
+<p>:param x86_jump_formula: jump to this formula if architecture is x86</p>
+<p>:param x64_jump_formula: jump to this formula if architecture is x64</p>
+<p>:return: IF formula object</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def check_architecture(self, x86_jump_formula, x64_jump_formula):
+    &#39;&#39;&#39;
+    Creates If formula that checks Excel architecture (x64 or x86) and adds it to worksheet
+
+    :param x86_jump_formula: jump to this formula if architecture is x86
+
+    :param x64_jump_formula: jump to this formula if architecture is x64
+
+    :return: IF formula object
+    &#39;&#39;&#39;
+    formula = self._create_check_architecture(self.argument(&#34;GOTO&#34;, x86_jump_formula), self.argument(&#34;GOTO&#34;, x64_jump_formula))
+    # Add to worksheet
+    self._add_to_worksheet(formula)
+    return formula</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.macro.excel4_macro.Excel4Macro.check_language"><code class="name flex">
+<span>def <span class="ident">check_language</span></span>(<span>self, lang_num, true_jump, false_jump)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def check_language(self, lang_num, true_jump, false_jump):
+    formula = self.create_lang_detection(lang_num, true_jump, false_jump)
+    self._add_to_worksheet(formula)
+    return formula</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.macro.excel4_macro.Excel4Macro.condition"><code class="name flex">
+<span>def <span class="ident">condition</span></span>(<span>self, formula, *args)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates Excel4ConditionFormula object and adds to the worksheet.</p>
+<p>:param formula: name of the formula</p>
+<p>:param args: arguments of the formula</p>
+<p>:return: Excel4ConditionFormula object</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def condition(self, formula, *args):
+    &#39;&#39;&#39;
+    Creates Excel4ConditionFormula object and adds to the worksheet.
+
+    :param formula: name of the formula
+
+    :param args: arguments of the formula
+
+    :return: Excel4ConditionFormula object
+    &#39;&#39;&#39;
+    if issubclass(type(formula), Excel4RegisterFormula):
+        formula = formula.get_function_text()
+    # Create formula
+    formula = self._create_condition(self.worksheet._curr_x, self.worksheet._curr_y, formula, *args)
+    self._add_to_worksheet(formula)
+    return formula</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.macro.excel4_macro.Excel4Macro.create_lang_detection"><code class="name flex">
+<span>def <span class="ident">create_lang_detection</span></span>(<span>self, lang_num, true_jump, false_jump)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates and returns language detection formula</p>
+<p>:param lang_num: number of language</p>
+<p>:param true_jump: jump if language is equal to lang_num</p>
+<p>:param false_jump: jump if language is diffrent than lang_num</p>
+<p>:return: IF formula object</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def create_lang_detection(self, lang_num, true_jump, false_jump):
+    &#39;&#39;&#39;
+    Creates and returns language detection formula
+
+    :param lang_num: number of language
+
+    :param true_jump: jump if language is equal to lang_num
+
+    :param false_jump: jump if language is diffrent than lang_num
+
+    :return: IF formula object
+    &#39;&#39;&#39;
+    # Create formula =IF(INDEX(GET.WORKSPACE(37),1)&lt;&gt;lang_num,true_jump,false_jump)
+    val1 = Excel4FormulaArgument(&#34;GET.WORKSPACE&#34;, 37)
+    val1 = Excel4FormulaArgument(&#34;INDEX&#34;, val1, 1)
+    cond = Excel4LogicalTest(val1, &#34;&lt;&gt;&#34;, lang_num)
+    if_formula = self._create_condition(self.worksheet._curr_x, self.worksheet._curr_y, &#34;IF&#34;, cond, false_jump, true_jump)
+    return if_formula</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.macro.excel4_macro.Excel4Macro.empty"><code class="name flex">
+<span>def <span class="ident">empty</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates empty cell</p>
+<p>:return: object pointing to empty cell</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def empty(self):
+    &#39;&#39;&#39;
+    Creates empty cell
+
+    :return: object pointing to empty cell
+    &#39;&#39;&#39;
+    # Create formula
+    formula = self._create_value(self.worksheet._curr_x, self.worksheet._curr_y, &#34;&#34;)
+    # Add to worksheet
+    self._add_to_worksheet(formula)
+    return formula</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.macro.excel4_macro.Excel4Macro.end_loop"><code class="name flex">
+<span>def <span class="ident">end_loop</span></span>(<span>self, formula, *args)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates Excel4EndLoopFormula object and adds to the worksheet.</p>
+<p>:param formula: name of the formula</p>
+<p>:param args: arguments of the formula</p>
+<p>:return: Excel4EndLoopFormula object</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def end_loop(self, formula, *args):
+    &#39;&#39;&#39;
+    Creates Excel4EndLoopFormula object and adds to the worksheet.
+
+    :param formula: name of the formula
+
+    :param args: arguments of the formula
+
+    :return: Excel4EndLoopFormula object
+    &#39;&#39;&#39;
+    if issubclass(type(formula), Excel4RegisterFormula):
+        formula = formula.get_function_text()
+    # Create formula
+    formula = self._create_end_loop(self.worksheet._curr_x, self.worksheet._curr_y, formula, *args)
+    self._add_to_worksheet(formula)
+    return formula</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.macro.excel4_macro.Excel4Macro.formula"><code class="name flex">
+<span>def <span class="ident">formula</span></span>(<span>self, formula, *args)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates Excel4Formula object and adds to the worksheet.</p>
+<p>:param formula: name of the formula</p>
+<p>:param args: arguments of the formula</p>
+<p>:return: Excel4Formula object</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def formula(self, formula, *args):
+    &#39;&#39;&#39;
+    Creates Excel4Formula object and adds to the worksheet.
+
+    :param formula: name of the formula
+
+    :param args: arguments of the formula
+
+    :return: Excel4Formula object
+    &#39;&#39;&#39;
+    if issubclass(type(formula), Excel4RegisterFormula):
+        formula = formula.get_function_text()
+    if str(formula).lower() in [&#34;for&#34;, &#34;while&#34;]:
+        return self.loop(formula, args)
+    elif str(formula).lower() in [&#34;next&#34;]:
+        return self.end_loop(formula, args)
+    elif str(formula).lower() in [&#34;if&#34;]:
+        return self.condition(formula, args)
+    elif str(formula).lower() in [&#34;goto&#34;]:
+        if len(args) &gt; 0:
+            return self.goto(args[0])
+
+    # Create formula
+    formula = self._create_formula(self.worksheet._curr_x, self.worksheet._curr_y, formula, *args)
+    self._add_to_worksheet(formula)
+    return formula</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.macro.excel4_macro.Excel4Macro.goto"><code class="name flex">
+<span>def <span class="ident">goto</span></span>(<span>self, jump)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates Excel4GoToFormula object and adds to the worksheet.</p>
+<p>:param jump: the formula to which to direct the macro execution</p>
+<p>:return: Excel4GoToFormula object</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def goto(self, jump):
+    &#39;&#39;&#39;
+    Creates Excel4GoToFormula object and adds to the worksheet.
+
+    :param jump: the formula to which to direct the macro execution
+
+    :return: Excel4GoToFormula object
+    &#39;&#39;&#39;
+    formula = self._create_go_to(self.worksheet._curr_x, self.worksheet._curr_y, jump)
+    self._add_to_worksheet(formula)
+    return formula</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.macro.excel4_macro.Excel4Macro.logical"><code class="name flex">
+<span>def <span class="ident">logical</span></span>(<span>self, value1, operator, value2)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates Excel4LogicalTest object and adds to the worksheet.</p>
+<p>:param value1: first value</p>
+<p>:param operator: operator to use</p>
+<p>:param value2: second value</p>
+<p>:return: Excel4LogicalTest object</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def logical(self, value1, operator, value2):
+    &#39;&#39;&#39;
+    Creates Excel4LogicalTest object and adds to the worksheet.
+
+    :param value1: first value
+
+    :param operator: operator to use
+
+    :param value2: second value
+
+    :return: Excel4LogicalTest object
+    &#39;&#39;&#39;
+    return self._create_logical_test(value1, operator, value2)</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.macro.excel4_macro.Excel4Macro.loop"><code class="name flex">
+<span>def <span class="ident">loop</span></span>(<span>self, formula, *args)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates Excel4LoopFormula object and adds to the worksheet.</p>
+<p>:param formula: name of the formula</p>
+<p>:param args: arguments of the formula</p>
+<p>:return: Excel4LoopFormula object</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def loop(self, formula, *args):
+    &#39;&#39;&#39;
+    Creates Excel4LoopFormula object and adds to the worksheet.
+
+    :param formula: name of the formula
+
+    :param args: arguments of the formula
+
+    :return: Excel4LoopFormula object
+    &#39;&#39;&#39;
+    if issubclass(type(formula), Excel4RegisterFormula):
+        formula = formula.get_function_text()
+    # Create formula
+    formula = self._create_loop(self.worksheet._curr_x, self.worksheet._curr_y, formula, *args)
+    self._add_to_worksheet(formula)
+    return formula</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.macro.excel4_macro.Excel4Macro.obfuscate_all"><code class="name flex">
+<span>def <span class="ident">obfuscate_all</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Obfuscates macro.</p>
+<p>Obfuscation process is splitted into few steps:</p>
+<ul>
+<li>obfuscation of variables names;</li>
+<li>obfuscation of function names;</li>
+<li>spread formulas across worksheet;</li>
+<li>add noise;</li>
+<li>obfuscation of values;</li>
+<li>obfuscation of formulas with arguments;</li>
+</ul></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def obfuscate_all(self):
+    &#39;&#39;&#39;
+    Obfuscates macro.
+
+    Obfuscation process is splitted into few steps:
+
+    - obfuscation of variables names;
+    - obfuscation of function names;
+    - spread formulas across worksheet;
+    - add noise;
+    - obfuscation of values;
+    - obfuscation of formulas with arguments;
+    &#39;&#39;&#39;
+    if (not self.obfuscator) or (not self.config.obfuscator.enable):
+        return
+    # Set language to native
+    lang_b = Excel4Translator.language
+    Excel4Translator.language = Excel4Translator.native_language
+
+    # Change variable and values language
+    if not self.config.obfuscator.translate:
+        for f in self.ordered_calls:
+            if issubclass(type(f), Excel4Value):
+                f.set_language(Excel4Translator.native_language)
+
+    # Obfuscate variable names
+    if self.config.obfuscator.obfuscate_variable_names:
+        self._obfuscate_variable_names()
+
+    # Obfuscate function names
+    if self.config.obfuscator.obfuscate_registered_functions:
+        self._obfuscate_function_names()
+
+    if self.config.obfuscator.spread_cells:
+        self._spread_cells()
+
+    if self.config.obfuscator.generate_noise:
+        self._generate_noise()
+
+    if self.config.obfuscator.obfuscate_variable_values:
+        self._obfuscate_variable_values()
+
+    if self.config.obfuscator.obfuscate_formulas:
+        self._obfuscate_formulas()
+    Excel4Translator.language = lang_b</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.macro.excel4_macro.Excel4Macro.operator"><code class="name flex">
+<span>def <span class="ident">operator</span></span>(<span>self, value1, operator, value2)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates Excel4LogicalTest object and adds to the worksheet.</p>
+<p>:param value1: first value</p>
+<p>:param operator: operator to use</p>
+<p>:param value2: second value</p>
+<p>:return: Excel4LogicalTest object</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def operator(self, value1, operator, value2):
+    &#39;&#39;&#39;
+    Creates Excel4LogicalTest object and adds to the worksheet.
+
+    :param value1: first value
+
+    :param operator: operator to use
+
+    :param value2: second value
+
+    :return: Excel4LogicalTest object
+    &#39;&#39;&#39;
+    return self._create_logical_test(value1, operator, value2)</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.macro.excel4_macro.Excel4Macro.random_add_to_worksheet"><code class="name flex">
+<span>def <span class="ident">random_add_to_worksheet</span></span>(<span>self, formulas)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Adds formulas to the worksheet at random place</p>
+<p>:param formulas: list of formulas to add</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def random_add_to_worksheet(self, formulas):
+    &#39;&#39;&#39;
+    Adds formulas to the worksheet at random place
+
+    :param formulas: list of formulas to add
+    &#39;&#39;&#39;
+    # Backup cords
+    curr_x, curr_y = self.worksheet.get_current_cords()
+    # Find place where formulas could be placed
+    target_x, target_y = self._gen_random_cords(len(formulas))
+    # Add to the worksheet
+    for f in formulas:
+        f.x = target_x
+        f.y = target_y
+        self._add_to_worksheet(f)
+        target_y = target_y + 1
+    # Restore cords
+    self.worksheet.set_current_cords(curr_x, curr_y)</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.macro.excel4_macro.Excel4Macro.register"><code class="name flex">
+<span>def <span class="ident">register</span></span>(<span>self, dll_name, exported_function, type_text, function_text='')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates Register formula and adds to the worksheet.</p>
+<p>:param dll_name: name of a DLL</p>
+<p>:param exported_function: name of exported function that you want to import</p>
+<p>:param type_text:
+string representing the types of return value and arguments of function that you want to import;</p>
+<p>:param function_text: custom name of function that you want to import. If empty then it will be randomly generated</p>
+<p>:return: Excel4RegisterFormula object</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def register(self, dll_name, exported_function, type_text, function_text=&#34;&#34;):
+    &#39;&#39;&#39;
+    Creates Register formula and adds to the worksheet.
+
+    :param dll_name: name of a DLL
+
+    :param exported_function: name of exported function that you want to import
+
+    :param type_text:  string representing the types of return value and arguments of function that you want to import;
+
+    :param function_text: custom name of function that you want to import. If empty then it will be randomly generated
+
+    :return: Excel4RegisterFormula object
+    &#39;&#39;&#39;
+    formula = self._create_register(self.worksheet._curr_x, self.worksheet._curr_y, dll_name, exported_function, type_text, function_text)
+    # Add to worksheet
+    self._add_to_worksheet(formula)
+    return formula</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.macro.excel4_macro.Excel4Macro.register_create_thread"><code class="name flex">
+<span>def <span class="ident">register_create_thread</span></span>(<span>self, function_text='')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Register CreateThread function</p>
+<p>:param function_text: custom name of function that you want to import. If empty then it will be randomly generated</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def register_create_thread(self, function_text=&#34;&#34;):
+    &#39;&#39;&#39;
+    Register CreateThread function
+
+    :param function_text: custom name of function that you want to import. If empty then it will be randomly generated
+    &#39;&#39;&#39;
+    return self.register(&#34;Kernel32&#34;, &#34;CreateThread&#34;, &#34;JJJJJJJ&#34;, function_text)</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.macro.excel4_macro.Excel4Macro.register_nt_test_alert"><code class="name flex">
+<span>def <span class="ident">register_nt_test_alert</span></span>(<span>self, function_text='')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Register NtTestAlert function</p>
+<p>:param function_text: custom name of function that you want to import. If empty then it will be randomly generated</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def register_nt_test_alert(self, function_text=&#34;&#34;):
+    &#39;&#39;&#39;
+    Register NtTestAlert function
+
+    :param function_text: custom name of function that you want to import. If empty then it will be randomly generated
+    &#39;&#39;&#39;
+    return self.register(&#34;ntdll&#34;, &#34;NtTestAlert&#34;, &#34;J&#34;, function_text)</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.macro.excel4_macro.Excel4Macro.register_queue_user_apc"><code class="name flex">
+<span>def <span class="ident">register_queue_user_apc</span></span>(<span>self, function_text='')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Register QueueUserAPC function</p>
+<p>:param function_text: custom name of function that you want to import. If empty then it will be randomly generated</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def register_queue_user_apc(self, function_text=&#34;&#34;):
+    &#39;&#39;&#39;
+    Register QueueUserAPC function
+
+    :param function_text: custom name of function that you want to import. If empty then it will be randomly generated
+    &#39;&#39;&#39;
+    return self.register(&#34;Kernel32&#34;, &#34;QueueUserAPC&#34;, &#34;JJJJ&#34;, function_text)</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.macro.excel4_macro.Excel4Macro.register_rtl_copy_memory"><code class="name flex">
+<span>def <span class="ident">register_rtl_copy_memory</span></span>(<span>self, function_text='')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Register RtlCopyMemory function</p>
+<p>:param function_text: custom name of function that you want to import. If empty then it will be randomly generated</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def register_rtl_copy_memory(self, function_text=&#34;&#34;):
+    &#39;&#39;&#39;
+    Register RtlCopyMemory function
+
+    :param function_text: custom name of function that you want to import. If empty then it will be randomly generated
+    &#39;&#39;&#39;
+    return self.register(&#34;Kernel32&#34;, &#34;RtlCopyMemory&#34;, &#34;JJCJ&#34;, function_text)</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.macro.excel4_macro.Excel4Macro.register_shell_execute"><code class="name flex">
+<span>def <span class="ident">register_shell_execute</span></span>(<span>self, function_text='')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Register NtTestAlert function</p>
+<p>:param function_text: custom name of function that you want to import. If empty then it will be randomly generated</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def register_shell_execute(self, function_text=&#34;&#34;):
+    &#39;&#39;&#39;
+    Register NtTestAlert function
+
+    :param function_text: custom name of function that you want to import. If empty then it will be randomly generated
+    &#39;&#39;&#39;
+    return self.register(&#34;Shell32&#34;, &#34;ShellExecuteA&#34;, &#34;JJCCCJJ&#34;, function_text)</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.macro.excel4_macro.Excel4Macro.register_url_download_to_file_a"><code class="name flex">
+<span>def <span class="ident">register_url_download_to_file_a</span></span>(<span>self, function_text='')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Register URLDownloadToFileA function</p>
+<p>:param function_text: custom name of function that you want to import. If empty then it will be randomly generated</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def register_url_download_to_file_a(self, function_text=&#34;&#34;):
+    &#39;&#39;&#39;
+    Register URLDownloadToFileA function
+
+    :param function_text: custom name of function that you want to import. If empty then it will be randomly generated
+    &#39;&#39;&#39;
+    return self.register(&#34;urlmon&#34;, &#34;URLDownloadToFileA&#34;, &#34;JJCCJJ&#34;, function_text)</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.macro.excel4_macro.Excel4Macro.register_virtual_alloc"><code class="name flex">
+<span>def <span class="ident">register_virtual_alloc</span></span>(<span>self, function_text='')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Register VirtualAlloc function</p>
+<p>:param function_text: custom name of function that you want to import. If empty then it will be randomly generated</p>
+<p>:return:</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def register_virtual_alloc(self, function_text=&#34;&#34;):
+    &#39;&#39;&#39;
+    Register VirtualAlloc function
+
+    :param function_text: custom name of function that you want to import. If empty then it will be randomly generated
+
+    :return:
+    &#39;&#39;&#39;
+    return self.register(&#34;Kernel32&#34;, &#34;VirtualAlloc&#34;, &#34;JJJJJ&#34;, function_text)</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.macro.excel4_macro.Excel4Macro.register_write_process_memory"><code class="name flex">
+<span>def <span class="ident">register_write_process_memory</span></span>(<span>self, function_text='')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Register WriteProcessMemory function</p>
+<p>:param function_text: custom name of function that you want to import. If empty then it will be randomly generated</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def register_write_process_memory(self, function_text=&#34;&#34;):
+    &#39;&#39;&#39;
+    Register WriteProcessMemory function
+
+    :param function_text: custom name of function that you want to import. If empty then it will be randomly generated
+    &#39;&#39;&#39;
+    return self.register(&#34;Kernel32&#34;, &#34;WriteProcessMemory&#34;, &#34;JJJCJJ&#34;, function_text)</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.macro.excel4_macro.Excel4Macro.set_cords"><code class="name flex">
+<span>def <span class="ident">set_cords</span></span>(<span>self, x=None, y=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Sets active cell(current cords) to x,y.</p>
+<p>:param x: column</p>
+<p>:param y: row</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_cords(self, x=None, y=None):
+    &#39;&#39;&#39;
+    Sets active cell(current cords) to x,y.
+
+    :param x: column
+
+    :param y: row
+    &#39;&#39;&#39;
+    if not x:
+        x = self.worksheet._curr_x
+    if not y:
+        y = self.worksheet._curr_y
+    self.worksheet.set_current_cords(x,y)</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.macro.excel4_macro.Excel4Macro.set_trigger_cords"><code class="name flex">
+<span>def <span class="ident">set_trigger_cords</span></span>(<span>self, x, y)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Sets column and row in which auto open or auto close function will be used.</p>
+<p>:param x: number of column</p>
+<p>:param y: number of row</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_trigger_cords(self, x, y):
+    &#39;&#39;&#39;
+    Sets column and row in which auto open or auto close function will be used.
+
+    :param x: number of column
+
+    :param y: number of row
+    &#39;&#39;&#39;
+    self.trigger_x = x
+    self.trigger_y = y</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.macro.excel4_macro.Excel4Macro.to_csv"><code class="name flex">
+<span>def <span class="ident">to_csv</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Dumps macro to CSV format</p>
+<p>:return: macro as CSV string</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def to_csv(self):
+    &#39;&#39;&#39;
+    Dumps macro to CSV format
+
+    :return: macro as CSV string
+    &#39;&#39;&#39;
+    self.obfuscate_all()
+    return self.worksheet.to_csv(Excel4Config.csv_separator)</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.macro.excel4_macro.Excel4Macro.to_csv_file"><code class="name flex">
+<span>def <span class="ident">to_csv_file</span></span>(<span>self, filename=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Saves macro to CSV file</p>
+<p>:param filename: output filename if None then it is set to <code>name</code> of the macro</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def to_csv_file(self, filename=None):
+    &#39;&#39;&#39;
+    Saves macro to CSV file
+
+    :param filename: output filename if None then it is set to `name` of the macro
+    &#39;&#39;&#39;
+    if not filename:
+        filename = self.name + &#34;.csv&#34;
+    write_file(filename, self.to_csv())</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.macro.excel4_macro.Excel4Macro.value"><code class="name flex">
+<span>def <span class="ident">value</span></span>(<span>self, value)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates Excel4Value object and adds to the worksheet.</p>
+<p>:param value: value</p>
+<p>:return: Excel4Value object pointing to value</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def value(self, value):
+    &#39;&#39;&#39;
+    Creates Excel4Value object and adds to the worksheet.
+
+    :param value: value
+
+    :return: Excel4Value object pointing to value
+    &#39;&#39;&#39;
+    # Create formula
+    formula = self._create_value(self.worksheet._curr_x, self.worksheet._curr_y, value)
+    self._add_to_worksheet(formula)
+    return formula</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.macro.excel4_macro.Excel4Macro.variable"><code class="name flex">
+<span>def <span class="ident">variable</span></span>(<span>self, name, value)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates Excel4Variable object and adds to the worksheet.</p>
+<p>:param name: name of the variable</p>
+<p>:param value: value of the variable</p>
+<p>:return: object pointing to variable definition</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def variable(self, name, value):
+    &#39;&#39;&#39;
+    Creates Excel4Variable object and adds to the worksheet.
+
+    :param name: name of the variable
+
+    :param value: value of the variable
+
+    :return: object pointing to variable definition
+    &#39;&#39;&#39;
+    # Create formula
+    formula = self._create_variable(self.worksheet._curr_x, self.worksheet._curr_y, name, value)
+    self._add_to_worksheet(formula)
+    return formula</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="excel4lib.macro" href="index.html">excel4lib.macro</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="excel4lib.macro.excel4_macro.Excel4Macro" href="#excel4lib.macro.excel4_macro.Excel4Macro">Excel4Macro</a></code></h4>
+<ul class="">
+<li><code><a title="excel4lib.macro.excel4_macro.Excel4Macro.argument" href="#excel4lib.macro.excel4_macro.Excel4Macro.argument">argument</a></code></li>
+<li><code><a title="excel4lib.macro.excel4_macro.Excel4Macro.check_architecture" href="#excel4lib.macro.excel4_macro.Excel4Macro.check_architecture">check_architecture</a></code></li>
+<li><code><a title="excel4lib.macro.excel4_macro.Excel4Macro.check_language" href="#excel4lib.macro.excel4_macro.Excel4Macro.check_language">check_language</a></code></li>
+<li><code><a title="excel4lib.macro.excel4_macro.Excel4Macro.condition" href="#excel4lib.macro.excel4_macro.Excel4Macro.condition">condition</a></code></li>
+<li><code><a title="excel4lib.macro.excel4_macro.Excel4Macro.create_lang_detection" href="#excel4lib.macro.excel4_macro.Excel4Macro.create_lang_detection">create_lang_detection</a></code></li>
+<li><code><a title="excel4lib.macro.excel4_macro.Excel4Macro.empty" href="#excel4lib.macro.excel4_macro.Excel4Macro.empty">empty</a></code></li>
+<li><code><a title="excel4lib.macro.excel4_macro.Excel4Macro.end_loop" href="#excel4lib.macro.excel4_macro.Excel4Macro.end_loop">end_loop</a></code></li>
+<li><code><a title="excel4lib.macro.excel4_macro.Excel4Macro.formula" href="#excel4lib.macro.excel4_macro.Excel4Macro.formula">formula</a></code></li>
+<li><code><a title="excel4lib.macro.excel4_macro.Excel4Macro.goto" href="#excel4lib.macro.excel4_macro.Excel4Macro.goto">goto</a></code></li>
+<li><code><a title="excel4lib.macro.excel4_macro.Excel4Macro.logical" href="#excel4lib.macro.excel4_macro.Excel4Macro.logical">logical</a></code></li>
+<li><code><a title="excel4lib.macro.excel4_macro.Excel4Macro.loop" href="#excel4lib.macro.excel4_macro.Excel4Macro.loop">loop</a></code></li>
+<li><code><a title="excel4lib.macro.excel4_macro.Excel4Macro.obfuscate_all" href="#excel4lib.macro.excel4_macro.Excel4Macro.obfuscate_all">obfuscate_all</a></code></li>
+<li><code><a title="excel4lib.macro.excel4_macro.Excel4Macro.operator" href="#excel4lib.macro.excel4_macro.Excel4Macro.operator">operator</a></code></li>
+<li><code><a title="excel4lib.macro.excel4_macro.Excel4Macro.random_add_to_worksheet" href="#excel4lib.macro.excel4_macro.Excel4Macro.random_add_to_worksheet">random_add_to_worksheet</a></code></li>
+<li><code><a title="excel4lib.macro.excel4_macro.Excel4Macro.register" href="#excel4lib.macro.excel4_macro.Excel4Macro.register">register</a></code></li>
+<li><code><a title="excel4lib.macro.excel4_macro.Excel4Macro.register_create_thread" href="#excel4lib.macro.excel4_macro.Excel4Macro.register_create_thread">register_create_thread</a></code></li>
+<li><code><a title="excel4lib.macro.excel4_macro.Excel4Macro.register_nt_test_alert" href="#excel4lib.macro.excel4_macro.Excel4Macro.register_nt_test_alert">register_nt_test_alert</a></code></li>
+<li><code><a title="excel4lib.macro.excel4_macro.Excel4Macro.register_queue_user_apc" href="#excel4lib.macro.excel4_macro.Excel4Macro.register_queue_user_apc">register_queue_user_apc</a></code></li>
+<li><code><a title="excel4lib.macro.excel4_macro.Excel4Macro.register_rtl_copy_memory" href="#excel4lib.macro.excel4_macro.Excel4Macro.register_rtl_copy_memory">register_rtl_copy_memory</a></code></li>
+<li><code><a title="excel4lib.macro.excel4_macro.Excel4Macro.register_shell_execute" href="#excel4lib.macro.excel4_macro.Excel4Macro.register_shell_execute">register_shell_execute</a></code></li>
+<li><code><a title="excel4lib.macro.excel4_macro.Excel4Macro.register_url_download_to_file_a" href="#excel4lib.macro.excel4_macro.Excel4Macro.register_url_download_to_file_a">register_url_download_to_file_a</a></code></li>
+<li><code><a title="excel4lib.macro.excel4_macro.Excel4Macro.register_virtual_alloc" href="#excel4lib.macro.excel4_macro.Excel4Macro.register_virtual_alloc">register_virtual_alloc</a></code></li>
+<li><code><a title="excel4lib.macro.excel4_macro.Excel4Macro.register_write_process_memory" href="#excel4lib.macro.excel4_macro.Excel4Macro.register_write_process_memory">register_write_process_memory</a></code></li>
+<li><code><a title="excel4lib.macro.excel4_macro.Excel4Macro.set_cords" href="#excel4lib.macro.excel4_macro.Excel4Macro.set_cords">set_cords</a></code></li>
+<li><code><a title="excel4lib.macro.excel4_macro.Excel4Macro.set_trigger_cords" href="#excel4lib.macro.excel4_macro.Excel4Macro.set_trigger_cords">set_trigger_cords</a></code></li>
+<li><code><a title="excel4lib.macro.excel4_macro.Excel4Macro.to_csv" href="#excel4lib.macro.excel4_macro.Excel4Macro.to_csv">to_csv</a></code></li>
+<li><code><a title="excel4lib.macro.excel4_macro.Excel4Macro.to_csv_file" href="#excel4lib.macro.excel4_macro.Excel4Macro.to_csv_file">to_csv_file</a></code></li>
+<li><code><a title="excel4lib.macro.excel4_macro.Excel4Macro.value" href="#excel4lib.macro.excel4_macro.Excel4Macro.value">value</a></code></li>
+<li><code><a title="excel4lib.macro.excel4_macro.Excel4Macro.variable" href="#excel4lib.macro.excel4_macro.Excel4Macro.variable">variable</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.9.2" />
+<title>excel4lib.utils.utils API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>excel4lib.utils.utils</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import hashlib
+import random
+import string
+import os
+import json
+import pathlib
+import io
+
+class Boobsnail():
+    banner = &#34;&#34;&#34;
+    ___.                ___.     _________             .__.__   
+    \_ |__   ____   ____\_ |__  /   _____/ ____ _____  |__|  |  
+     | __ \ /  _ \ /  _ \| __ \ \_____  \ /    \\__  \ |  |  |  
+     | \_\ (  &lt;_&gt; |  &lt;_&gt; ) \_\ \/        \   |  \/ __ \|  |  |__
+     |___  /\____/ \____/|___  /_______  /___|  (____  /__|____/
+         \/                  \/        \/     \/     \/         
+         Author: @_mzer0 @stm_cyber
+         &#34;&#34;&#34;
+
+    @staticmethod
+    def print_banner():
+        print(Boobsnail.banner)
+
+def is_number(val):
+    if type(val) in (int, float, complex):
+        return True
+    return False
+
+
+def md5(val):
+    if type(val) == str:
+        val = val.encode(&#34;utf-8&#34;)
+    return hashlib.md5(val).digest().hex()
+
+def random_string(length=6):
+    letters = string.ascii_lowercase
+    return &#39;&#39;.join(random.choice(letters) for i in range(length))
+
+def random_tag(prefix):
+    return md5(prefix+random_string())[:16]
+
+def split_blocks(data, block_len):
+    for i in range(0, len(data), block_len):
+        yield data[i:i+block_len]
+
+def split_data(data, block_len):
+    r = []
+    for block in split_blocks(data, block_len):
+        r.append(block)
+
+    return r
+
+def is_path(p):
+    &#39;&#39;&#39;
+    Checks if path exists
+    :param p:
+    :return:
+    &#39;&#39;&#39;
+    return os.path.exists(p)
+
+def join_path(p1, p2):
+    return os.path.join(p1,p2)
+
+def load_json_file(p):
+    &#39;&#39;&#39;
+    Loads json file and returns dictionary
+    :param p:
+    :return: dictionary
+    &#39;&#39;&#39;
+
+    with io.open(p, &#34;r&#34;, encoding=&#34;utf-8&#34;) as json_file:
+        data = json_file.read()
+    return json.loads(data)
+
+def current_dir():
+    return pathlib.Path.cwd()
+
+def write_file(filename, data):
+    with io.open(filename, &#34;w&#34;, encoding=&#34;utf-8&#34;) as f:
+        f.write(data)
+
+
+def read_file(filename, mode=&#34;r&#34;):
+    f = open(filename, mode)
+    data = f.read()
+    f.close()
+    return data</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="excel4lib.utils.utils.current_dir"><code class="name flex">
+<span>def <span class="ident">current_dir</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def current_dir():
+    return pathlib.Path.cwd()</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.utils.utils.is_number"><code class="name flex">
+<span>def <span class="ident">is_number</span></span>(<span>val)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def is_number(val):
+    if type(val) in (int, float, complex):
+        return True
+    return False</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.utils.utils.is_path"><code class="name flex">
+<span>def <span class="ident">is_path</span></span>(<span>p)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Checks if path exists
+:param p:
+:return:</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def is_path(p):
+    &#39;&#39;&#39;
+    Checks if path exists
+    :param p:
+    :return:
+    &#39;&#39;&#39;
+    return os.path.exists(p)</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.utils.utils.join_path"><code class="name flex">
+<span>def <span class="ident">join_path</span></span>(<span>p1, p2)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def join_path(p1, p2):
+    return os.path.join(p1,p2)</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.utils.utils.load_json_file"><code class="name flex">
+<span>def <span class="ident">load_json_file</span></span>(<span>p)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Loads json file and returns dictionary
+:param p:
+:return: dictionary</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def load_json_file(p):
+    &#39;&#39;&#39;
+    Loads json file and returns dictionary
+    :param p:
+    :return: dictionary
+    &#39;&#39;&#39;
+
+    with io.open(p, &#34;r&#34;, encoding=&#34;utf-8&#34;) as json_file:
+        data = json_file.read()
+    return json.loads(data)</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.utils.utils.md5"><code class="name flex">
+<span>def <span class="ident">md5</span></span>(<span>val)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def md5(val):
+    if type(val) == str:
+        val = val.encode(&#34;utf-8&#34;)
+    return hashlib.md5(val).digest().hex()</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.utils.utils.random_string"><code class="name flex">
+<span>def <span class="ident">random_string</span></span>(<span>length=6)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def random_string(length=6):
+    letters = string.ascii_lowercase
+    return &#39;&#39;.join(random.choice(letters) for i in range(length))</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.utils.utils.random_tag"><code class="name flex">
+<span>def <span class="ident">random_tag</span></span>(<span>prefix)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def random_tag(prefix):
+    return md5(prefix+random_string())[:16]</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.utils.utils.read_file"><code class="name flex">
+<span>def <span class="ident">read_file</span></span>(<span>filename, mode='r')</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def read_file(filename, mode=&#34;r&#34;):
+    f = open(filename, mode)
+    data = f.read()
+    f.close()
+    return data</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.utils.utils.split_blocks"><code class="name flex">
+<span>def <span class="ident">split_blocks</span></span>(<span>data, block_len)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def split_blocks(data, block_len):
+    for i in range(0, len(data), block_len):
+        yield data[i:i+block_len]</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.utils.utils.split_data"><code class="name flex">
+<span>def <span class="ident">split_data</span></span>(<span>data, block_len)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def split_data(data, block_len):
+    r = []
+    for block in split_blocks(data, block_len):
+        r.append(block)
+
+    return r</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.utils.utils.write_file"><code class="name flex">
+<span>def <span class="ident">write_file</span></span>(<span>filename, data)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def write_file(filename, data):
+    with io.open(filename, &#34;w&#34;, encoding=&#34;utf-8&#34;) as f:
+        f.write(data)</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="excel4lib.utils.utils.Boobsnail"><code class="flex name class">
+<span>class <span class="ident">Boobsnail</span></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Boobsnail():
+    banner = &#34;&#34;&#34;
+    ___.                ___.     _________             .__.__   
+    \_ |__   ____   ____\_ |__  /   _____/ ____ _____  |__|  |  
+     | __ \ /  _ \ /  _ \| __ \ \_____  \ /    \\__  \ |  |  |  
+     | \_\ (  &lt;_&gt; |  &lt;_&gt; ) \_\ \/        \   |  \/ __ \|  |  |__
+     |___  /\____/ \____/|___  /_______  /___|  (____  /__|____/
+         \/                  \/        \/     \/     \/         
+         Author: @_mzer0 @stm_cyber
+         &#34;&#34;&#34;
+
+    @staticmethod
+    def print_banner():
+        print(Boobsnail.banner)</code></pre>
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="excel4lib.utils.utils.Boobsnail.banner"><code class="name">var <span class="ident">banner</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Static methods</h3>
+<dl>
+<dt id="excel4lib.utils.utils.Boobsnail.print_banner"><code class="name flex">
+<span>def <span class="ident">print_banner</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def print_banner():
+    print(Boobsnail.banner)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="excel4lib.utils" href="index.html">excel4lib.utils</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="two-column">
+<li><code><a title="excel4lib.utils.utils.current_dir" href="#excel4lib.utils.utils.current_dir">current_dir</a></code></li>
+<li><code><a title="excel4lib.utils.utils.is_number" href="#excel4lib.utils.utils.is_number">is_number</a></code></li>
+<li><code><a title="excel4lib.utils.utils.is_path" href="#excel4lib.utils.utils.is_path">is_path</a></code></li>
+<li><code><a title="excel4lib.utils.utils.join_path" href="#excel4lib.utils.utils.join_path">join_path</a></code></li>
+<li><code><a title="excel4lib.utils.utils.load_json_file" href="#excel4lib.utils.utils.load_json_file">load_json_file</a></code></li>
+<li><code><a title="excel4lib.utils.utils.md5" href="#excel4lib.utils.utils.md5">md5</a></code></li>
+<li><code><a title="excel4lib.utils.utils.random_string" href="#excel4lib.utils.utils.random_string">random_string</a></code></li>
+<li><code><a title="excel4lib.utils.utils.random_tag" href="#excel4lib.utils.utils.random_tag">random_tag</a></code></li>
+<li><code><a title="excel4lib.utils.utils.read_file" href="#excel4lib.utils.utils.read_file">read_file</a></code></li>
+<li><code><a title="excel4lib.utils.utils.split_blocks" href="#excel4lib.utils.utils.split_blocks">split_blocks</a></code></li>
+<li><code><a title="excel4lib.utils.utils.split_data" href="#excel4lib.utils.utils.split_data">split_data</a></code></li>
+<li><code><a title="excel4lib.utils.utils.write_file" href="#excel4lib.utils.utils.write_file">write_file</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="excel4lib.utils.utils.Boobsnail" href="#excel4lib.utils.utils.Boobsnail">Boobsnail</a></code></h4>
+<ul class="">
+<li><code><a title="excel4lib.utils.utils.Boobsnail.banner" href="#excel4lib.utils.utils.Boobsnail.banner">banner</a></code></li>
+<li><code><a title="excel4lib.utils.utils.Boobsnail.print_banner" href="#excel4lib.utils.utils.Boobsnail.print_banner">print_banner</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+</footer>
+</body>
+</html>

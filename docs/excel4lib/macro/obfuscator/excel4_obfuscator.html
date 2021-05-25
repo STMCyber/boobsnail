@@ -1,0 +1,1764 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.9.2" />
+<title>excel4lib.macro.obfuscator.excel4_obfuscator API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>excel4lib.macro.obfuscator.excel4_obfuscator</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import random
+
+from excel4lib.macro.excel4_macro_extension import *
+
+from excel4lib.utils import *
+from excel4lib.macro.excel4_instruction import  *
+from excel4lib.macro.excel4_argument import  *
+from excel4lib.macro.excel4_formula import  *
+from excel4lib.macro.excel4_value import *
+from excel4lib.macro.excel4_variable import *
+from excel4lib.exception import *
+from excel4lib.config import *
+from excel4lib.macro.excel4_result import *
+from excel4lib.macro.excel4_register_formula import *
+from excel4lib.sheet import *
+
+class Excel4Obfuscator(Excel4MacroExtension):
+
+    name = &#34;standard&#34;
+    description = &#34;Allows to obfuscate macro with standard Excel4.0 formulas suchas BITXOR, SUM, MID etc.&#34;
+
+    &#39;&#39;&#39;
+    Allows to obfuscate formulas,  scatter them across worksheet, obfuscate variable names and values.
+    &#39;&#39;&#39;
+    def __init__(self, config=Excel4Config.obfuscator):
+        Excel4MacroExtension.__init__(self)
+
+        # Obfuscator configuration
+        self.config = config
+        # List of char obfuscation methods
+        self.ob_tech = []
+        # Max length of cell
+        self.cell_max_length = self.config.cell_limit
+
+
+    def _generate_noise(self, only_empty = False):
+        &#39;&#39;&#39;
+        Adds random values to worksheet cells
+
+        :param only_empty: flags that tells if add noise only to empty cells ( not reserved)
+        &#39;&#39;&#39;
+        # Walk through worksheet cell by cell
+        for cords in self.worksheet.worksheet_iterate():
+            # Choose whether add noise to this cell or not
+            if random.randint(0,10) != 1:
+                continue
+            noise = random_string(random.randint(4, 20))
+            noise_cell = self._create_value(cords[0], cords[1], noise)
+            # Check if cell is reserved
+            if self.worksheet.is_reserved(cords[0], cords[1]):
+                if only_empty:
+                    continue
+                # Check if obfuscation of cell is enabled
+                cell = self.worksheet.get_cell(cords[0], cords[1])
+                if not cell._spread or not cell._obfuscate:
+                    continue
+                try:
+                    # Move cell to the next cell if reserved
+                    self.worksheet.move_cell(cell)
+                except CouldNotMoveCellException as ex:
+                    continue
+            curr_cords = self.worksheet.get_current_cords()
+            # Add noise
+            self.worksheet.add_cell(noise_cell)
+            self.worksheet.set_current_cords(curr_cords[0], curr_cords[1])
+
+    def _spread_formulas(self, trigger_x, trigger_y):
+        &#39;&#39;&#39;
+        Spreads formulas across cells in worksheet
+
+        :param trigger_x: number of column in which first call is placed
+
+        :param trigger_y: number of row in which first call is placed
+
+        &#39;&#39;&#39;
+        # Get current cords. We need to remember current cord cause we will want to back execution to this cell.
+        cords_backup = self.worksheet.get_current_cords()
+        cells_cache = {}
+
+
+        # Get cells to spread
+        # For each column in worksheet
+        for t in self.worksheet.column_iterate():
+            # Get column number
+            c_num = t[0]
+            # Get cells in column
+            cells_temp = t[1]
+            if not cells_temp:
+                continue
+            values = cells_temp.values()
+            # For each cell in column
+            for cell in values:
+                # Check if obfuscation of cell/formula is enabled
+                if (not cell._spread) or (not cell._obfuscate):
+                    continue
+                # Save cell in cache
+                try:
+                    cells_cache[c_num][cell.y] = cell
+                except KeyError:
+                    cells_cache[c_num] = {cell.y : cell}
+
+        # Remove cells from worksheet
+        # For each column in cache
+        for c in cells_cache.keys():
+            for cell in cells_cache[c].values():
+                # Remove cell from worksheet
+                # x,y of cell will be changed, and cell will be placed at another cords
+                self.worksheet.remove_cell(cell)
+
+        trigger_cell = None
+        # Add jump to first call
+        if trigger_x in cells_cache:
+            # Find first call
+            for row in cells_cache[trigger_x]:
+                if row &gt;= trigger_y:
+                    trigger_cell = self._go_to(trigger_x, row, cells_cache[trigger_x][row])
+                    self.worksheet.add_cell(trigger_cell)
+                    break
+
+        # Spread cells across worksheet
+        # For each column in cache
+        for c in cells_cache.keys():
+            self._spread_column(list(cells_cache[c].values()), trigger_x, trigger_y, trigger_cell)
+
+        # Restore original cords
+        self.worksheet.set_current_cords(cords_backup[0], cords_backup[1])
+
+    def _spread_column(self, cells, trigger_x, trigger_y, trigger_cell):
+        &#39;&#39;&#39;
+        Spread `cells` across worksheet.
+        :param cells: list of cells that are in the same column
+
+        :param trigger_x: auto_open or auto_close function column
+
+        :param trigger_y: auto_open or auto_close function row
+
+        :param trigger_cell: auto_open or auto_close cell
+
+        &#39;&#39;&#39;
+        # Number of cells
+        cells_num = len(cells)
+        # The number of formulas that have already been spread across sheet
+        cnt = 0
+        fail_cnt = 0
+        for_loop_cache = []
+        if not cells:
+            return
+        while cnt &lt; cells_num:
+            # Generate random cords
+            # IF all columns are reserved then add new one and place payoad there
+            if fail_cnt &gt; 1000:
+                self.config.spread_x_max = self.config.spread_x_max + 1
+                target_x = self.config.spread_x_max
+            else:
+                target_x = random.randint(self.config.spread_x_min, self.config.spread_x_max)
+            target_y = random.randint(self.config.spread_y_min, self.config.spread_y_max)
+
+            # Space between auto_open/auto_close cell and first call should be empty
+            if(target_x == trigger_x) and (target_y in range(trigger_y, trigger_cell.y)):
+                continue
+            # If the same coordinates are drawn then randomize again
+            if (target_x == self.worksheet._curr_x) and (target_y == self.worksheet._curr_y):
+                # Inc failure counter
+                fail_cnt = fail_cnt + 1
+                continue
+
+            height = random.randint(1, cells_num - cnt)
+
+            # Check if cells are free
+            # We need to add 1 to height since we need additional cell for GOTO formula
+            if self.worksheet.is_reserved(target_x, target_y, height + 1 + 1 + 1):
+                # Inc failure counter
+                fail_cnt = fail_cnt + 1
+                continue
+
+            self.worksheet.set_current_cords(target_x, target_y)
+            cnt_h = cnt+height
+            # Add random number of cells to worksheet at random cords
+            for cell in cells[cnt:cnt_h]:
+                # Loops require end statement in the same column
+                # So we need to place them in the same one
+                if issubclass(type(cell), Excel4LoopFormula):
+                    # Save column and row number of this loop
+                    for_loop_cache.append((self.worksheet._curr_x, self.worksheet._curr_y + (cnt_h - cnt) + 2))
+                elif issubclass(type(cell), Excel4EndLoopFormula):
+                    break
+
+                self.worksheet.add_next_cell(cell)
+                cnt = cnt + 1
+            # If there are more cells to spread
+            if cnt &lt; cells_num:
+                # @HACK
+                # If cells[cnt] is Ecel4Variable then get_reference function will return variable name
+                # But if this variable name is not defined or this variable name is not storing address of another cell
+                # then we can&#39;t GOTO to this formula(we need address of this formula).
+                # So to bypass this we need to add an empty Excel4Value, because then get_reference function will return address of cell
+                if issubclass(type(cells[cnt]), Excel4Variable):
+                    empty = self._create_empty_formula(cells[cnt].x, cells[cnt].y)
+                    cells.insert(cnt, empty)
+                    cells_num = cells_num + 1
+                # If there are more cells to spread, then redirect macro execution
+                # to the next cell.
+                self.worksheet.add_next_cell(self._go_to(-1, -1, cells[cnt]))
+            else:
+                break
+
+            if issubclass(type(cells[cnt]), Excel4EndLoopFormula):
+                if len(for_loop_cache) &lt; 1:
+                    raise Excel4LoopFormulaMissing(&#34;Excel4EndLoopFormula detected but Excel4LoopFormula is missing. Excel4 requires that the loops and NEXT() formula be in the same column.&#34;)
+                cords = for_loop_cache.pop()
+                cells[cnt].x = cords[0]
+                cells[cnt].y = cords[1]
+                self.worksheet.add_cell(cells[cnt])
+                cnt = cnt + 1
+                # If there are more cells to spread
+                if cnt &lt; cells_num:
+                    # @HACK
+                    # If cells[cnt] is Ecel4Variable then get_reference function will return variable name
+                    # But if this variable name is not defined or this variable name is not storing address of another cell
+                    # then we can&#39;t GOTO to this formula(we need address of this formula).
+                    # So to bypass this we need to add an empty Excel4Value, because then get_reference function will return address of cell
+                    if issubclass(type(cells[cnt]), Excel4Variable):
+                        empty = self._create_empty_formula(cells[cnt].x, cells[cnt].y)
+                        cells.insert(cnt, empty)
+                        cells_num = cells_num + 1
+                    # If there are more cells to spread, then redirect macro execution
+                    # to the next cell.
+                    self.worksheet.add_cell(self._go_to(cells[cnt-1].x, cells[cnt-1].y + 1, cells[cnt]))
+                else:
+                    break
+        # ADD RETURN
+        self.worksheet.add_next_cell(self._create_formula(-1, -1, &#34;RETURN&#34;))
+
+    def _create_argument_object(self, instruction, *args):
+        instruction_name = Excel4InstructionName(instruction, self.config.translate)
+        o = Excel4FormulaArgument(instruction_name, *args)
+        if not self.config.translate:
+            # Do not translate obfuscator objects
+            o.revert_translation()
+        return o
+
+    def _create_formula(self,x, y, instruction, *args):
+        instruction_name = Excel4InstructionName(instruction, self.config.translate)
+        o = Excel4Formula(x, y, instruction_name, *args)
+        if not self.config.translate:
+            # Do not translate obfuscator objects
+            o.revert_translation()
+        return o
+
+    def _create_value(self, x, y, value):
+        o = Excel4Value(x,y, value)
+        if not self.config.translate:
+            # Do not translate obfuscator objects
+            o.revert_address_translation()
+        return o
+
+    def _create_empty_formula(self, x, y):
+        return self._create_value(x,y,&#34;&#34;)
+
+    def _create_result_formula(self, x, y):
+        o = Excel4Result(x,y)
+        if not self.config.translate:
+            # Do not translate obfuscator objects
+            o.revert_address_translation()
+        return o
+
+    def _go_to(self, x, y, formula):
+        instruction_name = Excel4InstructionName(&#34;GOTO&#34;, self.config.translate)
+        o = Excel4GoToFormula(x, y, instruction_name, formula)
+        if not self.config.translate:
+            # Do not translate obfuscator objects
+            o.revert_translation()
+        return o
+
+    def _char(self, s):
+        &#39;&#39;&#39;
+        Returns CHAR formula
+        :param s: string, char
+        :return:
+        &#39;&#39;&#39;
+        return self._create_argument_object(&#34;CHAR&#34;, s)
+
+    def char(self, c):
+        &#39;&#39;&#39;
+        Puts c character in CHAR formula
+
+        :param c: charcater
+
+        :return: CHAR formula call
+        &#39;&#39;&#39;
+        if not is_number(c):
+            c = ord(c)
+        return self._char(c)
+
+    def int(self, c):
+        &#39;&#39;&#39;
+        Converts c character to CHAR(INT(C)) call
+
+        :param c: charcater
+
+        :return:
+        &#39;&#39;&#39;
+        if not is_number(c):
+            c = ord(c)
+
+        return self._char(self._create_argument_object(&#34;INT&#34;, str(c)))
+
+    def sum(self, c):
+        &#39;&#39;&#39;
+        Converts c character to CHAR(SUM(R, c-k/k-c) call
+
+        :param c: charcater
+
+        :return:
+        &#39;&#39;&#39;
+        if not is_number(c):
+            c = ord(c)
+
+        k = random.randint(1, 1000)
+        while k == c:
+            k = random.randint(1, 1000)
+
+        if k &lt; c:
+            r = c - k
+        else:
+            r = k - c
+
+        return self._char(self._create_argument_object(&#34;SUM&#34;, r, k))
+
+    def mid(self, c):
+        &#39;&#39;&#39;
+        Converts c character to MID(STR, RAND_INDEX,1) call
+
+        :param c: charcater
+
+        :return:
+        &#39;&#39;&#39;
+        if is_number(c):
+            c = chr(c)
+
+        length = random.randint(3, 8)
+        rand_str = random_string(length)
+        rand_ind = random.randint(0, length)
+        rand_str = rand_str[:rand_ind] + c + rand_str[rand_ind:]
+
+        return self._create_argument_object(&#34;MID&#34;, rand_str, rand_ind+1, 1)
+
+    def xor(self, c):
+        &#39;&#39;&#39;
+        Converts c character to CHAR(BITXOR(R,K) call
+
+        :param c: charcater
+
+        :return:
+        &#39;&#39;&#39;
+        if not is_number(c):
+            c = ord(c)
+
+        k = random.randint(1, 1000)
+        while k == c:
+            k = random.randint(1, 1000)
+        r = k ^ c
+        return self._char(self._create_argument_object(&#34;BITXOR&#34;, r, k))
+
+    def mod(self, c):
+        &#39;&#39;&#39;
+        Converts c character to CHAR(MOD(R,K) call
+
+        :param c: charcater
+
+        :return:
+        &#39;&#39;&#39;
+        if not is_number(c):
+            c = ord(c)
+        k = random.randint(c + 1, 600)
+        r = k + c
+        return self._char(self._create_argument_object(&#34;MOD&#34;, r, k))
+
+    def evaluate(self, c):
+        #=CHAR(EVALUATE(&#34;1+64&#34;))
+        pass
+
+    def concat(self, x, y, *args):
+        &#39;&#39;&#39;
+        Creates CONCATENATE formula
+        &#39;&#39;&#39;
+        return self._create_formula(x, y, &#34;CONCATENATE&#34;, *args)
+
+    def _update_obfuscation_tech(self):
+        self.ob_tech = []
+        if self.config.obfuscate_int:
+            self.ob_tech.append(self.int)
+        if self.config.obfuscate_char:
+            self.ob_tech.append(self.char)
+        if self.config.obfuscate_mid:
+            self.ob_tech.append(self.mid)
+        if self.config.obfuscate_xor:
+            self.ob_tech.append(self.xor)
+        if self.config.obfuscate_mod:
+            self.ob_tech.append(self.mod)
+
+    def _obfuscate_char(self, c):
+
+        if c == &#39;&#34;&#39;:
+            formula = self.char(c)
+        else:
+            self._update_obfuscation_tech()
+            func = random.choice(self.ob_tech)
+            formula = func(c)
+
+        return formula
+
+    def _split_instructions(self, objects, block_size):
+        i = 0
+        temp = []
+        for o in objects:
+            if issubclass(type(o),  Excel4FormulaArgument):
+                # For arguments we need to compute length of full instruction with arguments
+                o_len = o.get_length()
+            elif issubclass(type(o), Cell):
+                # For calls (instructions in cells) we will use references so length we be equal to address of the cell
+                o_len = len(o.get_address())
+            else:
+                raise Excel4UnsupportedTypeException(&#34;Received unsupported type: {}&#34;.format(type(o)))
+
+            if (i+o_len) &gt; block_size:
+                yield temp
+                i = 0
+                temp = []
+            i = i + o_len
+            temp.append(o)
+        if temp:
+            yield temp
+
+    def _obfuscate_formula(self, formula):
+        &#39;&#39;&#39;
+        Obfuscates formula object. Should work for all classes that inherit from Excel4Formula.
+        _obfuscate_formula works as follow:
+        - convert formula with arguments to string ex: =TEST(&#34;A&#34;,&#34;B&#34;);
+        - for each character in formula string:
+         - obfuscate character with random function such as: MID, SUM, MOD etc.
+        - end of loop
+        - generate CONCATENATE formulas in order to concatenate all characters during excel 4.0 macro execution;
+        - pass deobfuscated string to FORMULA call ex: =FORMULA(DEOBFUSCATED, ADDRESS_TO_SAVE_FORMULA)
+
+        :param formula:
+        :return:
+        &#39;&#39;&#39;
+        if not formula._obfuscate_formula:
+            return  []
+        formulas = self._obfuscate_text(str(formula), formula.tag)
+
+        # Obfusacted formula will be deobfusacted and saved into following cell
+        # So you can get result of your formula from this cell
+        # This one is empty because cell will be filled after excel 4.0 macro execute
+        # @HACK
+        if issubclass(type(formula), Excel4LoopFormula):
+            call_reference = Excel4ResultLoop(0, 0)
+        elif issubclass(type(formula), Excel4ConditionFormula):
+            call_reference = Excel4ResultCondition(0, 0)
+        elif issubclass(type(formula), Excel4EndLoopFormula):
+            call_reference = Excel4ResultEndLoop(0, 0)
+        else:
+            call_reference = self._create_result_formula(0, 0)
+        call_reference.tag = formula.tag
+        result_formula = self._create_formula(0, 0, &#34;FORMULA&#34;, formulas[-1], call_reference)
+        call_reference.start_cell = formulas[0]
+        formulas.append(result_formula)
+        formulas.append(call_reference)
+        return formulas
+
+
+    def obfuscate_formula(self, formula):
+        &#39;&#39;&#39;
+
+        :param formula:
+        :return:
+        &#39;&#39;&#39;
+
+        formulas = self._obfuscate_formula(formula)
+        if formulas:
+            formulas[-1].x = formula.x
+            formulas[-1].y = formula.y
+        return formulas
+
+    def obfuscate_formulas(self, fomulas):
+        &#39;&#39;&#39;
+        Obfuscates formulas. Formulas should be ordered by execution. This function also adds obfusacted formulas to the worksheet.
+        :param fomulas:
+        :return:
+        &#39;&#39;&#39;
+        obfuscated_formulas = []
+        column = self.worksheet.get_column(self.macro.trigger_x)
+        if not column:
+            # Raise exception
+            return
+        start_of_macro = None
+        # Find first call in trigger column
+        for cell in column.values():
+            if cell.y &gt;= self.macro.trigger_y:
+                start_of_macro = cell
+                break
+        for f in fomulas:
+            if not f._obfuscate:
+                continue
+
+            if issubclass(type(f), Excel4Formula):
+                # Obfuscate formula call
+                obfuscated = self.obfuscate_formula(f)
+                # If formula is not obfuscated, then continue execution
+                if not obfuscated:
+                    continue
+                # If obfuscated, then formula is splitted into multiple CONCATENATE and FORMULA calls.
+                # Last element in obfuscated variable(list) is cell in which deobfuscated formula
+                # will be placed during macro execution.
+                obfuscated_ref = obfuscated[-1]
+                # Add all formulas to worksheet
+                for o in obfuscated[:-1]:
+                    #self.worksheet.add_above(o, f)
+                    obfuscated_formulas.append(o)
+                # Replace formula f with obfuscated_ref in worksheet
+                self.worksheet.replace_cell(f, obfuscated_ref)
+                # Update references
+                # Formula object (f) holds references to objects in which is used.
+                # We need to change these references to point to the obfuscated_ref
+                obfuscated_ref.x = f.x
+                obfuscated_ref.y = f.y
+                f._change_reference(obfuscated_ref)
+                if start_of_macro == f:
+                    start_of_macro = obfuscated_ref
+
+        # Spread obfuscated formulas across the worksheet
+        self._spread_column(obfuscated_formulas, self.macro.trigger_x, self.macro.trigger_y, start_of_macro)
+        # Redirect macro 4 execution to deobfuscate formulas
+        self.worksheet.replace_cell(start_of_macro, self.macro._create_go_to(start_of_macro.x, start_of_macro.y, obfuscated_formulas[0]))
+        # After deobfuscation redirect execution to original formula
+        start_of_macro.x = obfuscated_formulas[-1].x
+        start_of_macro.y = obfuscated_formulas[-1].y + 1
+        return_stm = self.worksheet.get_cell(obfuscated_formulas[-1].x, obfuscated_formulas[-1].y+1)
+
+        #self.worksheet.add_above(self._create_formula(return_stm,return_stm.y, &#34;PAUSE&#34;), return_stm)
+        self.worksheet.add_above(start_of_macro, return_stm)
+
+
+    def obfuscate_function_name(self, formula):
+        if not issubclass(type(formula), Excel4RegisterFormula):
+            raise Excel4WrongVariableType(&#34;Only instances of Excel4RegisterFormula could be obfuscated. Provided: {}&#34;.format(type(formula)))
+
+        if formula._obfuscate:
+            formula.set_function_text(random_string(random.randint(4, 10)))
+
+        return formula
+
+    def obfuscate_variable_name(self, formula):
+        if not issubclass(type(formula), Excel4Variable):
+            raise Excel4WrongVariableType(&#34;Only instances of Excel4Variable could be obfuscated. Provided: {}&#34;.format(type(formula)))
+
+        if formula._obfuscate:
+            formula.set_name(random_string(random.randint(4, 10)))
+
+        return formula
+
+    def obfuscate_variable_value(self, formula):
+        if not issubclass(type(formula), Excel4Variable):
+            raise Excel4WrongVariableType(&#34;Only instances of Excel4Variable could be obfuscated. Provided: {}&#34;.format(type(formula)))
+
+        formulas = []
+        if formula._obfuscate:
+            # Do not obfuscate numbers
+            try:
+                if is_number(formula.value):
+                    raise Exception(&#34;Obfuscation of numbers not supported&#34;)
+                elif issubclass(type(formula.value), Cell):
+                    # Obufscate address
+                    raise Exception(&#34;Obfuscation of Cell objects not supported&#34;)
+
+                formulas = self._obfuscate_text(formula.value, formula.tag)
+                # Set value as address of cell in which deobfuscated value will be saved
+                formula.value = formulas[-1]
+            except:
+                pass
+        return formulas
+
+    def _obfuscate_variable(self, formula):
+        # Obfuscate variable name
+        #formula.name = random_string(random.randint(4,10))
+        # Obfuscate variable value if it&#39;s behaviour is similar to str
+        formulas = []
+        try:
+            if issubclass(type(formula.value), Excel4Value):
+                if formula.value.is_num():
+                    raise Exception()
+            formulas = self._obfuscate_text(formula.value, formula.tag)
+            # Set value as address of cell in which deobfuscated value will be saved
+            formula.value = formulas[-1]
+        except:
+            pass
+        # Add variable as last call
+        formulas.append(formula)
+        return formulas
+
+
+
+
+    def _obfuscate_text(self, text, tag=&#34;&#34;):
+        &#39;&#39;&#39;
+        Obfuscates every char in text and returns concat formulas that allows to restore original string
+        :param text: string to obfuscate
+        :return:
+        &#39;&#39;&#39;
+
+        text_len = len(text)
+        block_len = self.cell_max_length
+        # Obfusacted characters
+        obfuscated_chars = []
+        # List of concat formulas which allows to restore original string
+        concat_objects = [[]]
+        # Obfusacte every char in text
+        for i in range(0, text_len):
+            c = text[i]
+            obfuscated_chars.append(self._obfuscate_char(c))
+
+        # Pass obfusacted chars to concat formula
+        for o in self._split_instructions(obfuscated_chars, block_len):
+            concat_objects[0].append(self.concat(0, 0, *o))
+
+        # If there is more than one concatenate formula then we need to concatenate these formulas
+        # Here is a little bug. At this stage we don&#39;t know what address has concatenate formula.
+        # So we don&#39;t know the exact length of this formula.
+        i = 0
+        while True:
+            concat_objects.append([])
+            for o in self._split_instructions(concat_objects[i], block_len):
+                concat_objects[i + 1].append(self.concat(0, 0, *o))
+            if len(concat_objects[i + 1]) &lt; 2:
+                break
+            i = i + 1
+        r = []
+        if not tag:
+            tag = random_tag(text)
+        for o in concat_objects:
+            for x in o:
+                x.tag = tag
+                r.append(x)
+        return r</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="excel4lib.macro.obfuscator.excel4_obfuscator.Excel4Obfuscator"><code class="flex name class">
+<span>class <span class="ident">Excel4Obfuscator</span></span>
+<span>(</span><span>config=excel4lib.config.excel4_obfuscator_config.Excel4ObfuscatorConfig)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Basic class for Excel4Macro extensions.
+Extensions allows to extend <code>Excel4Macro</code> functionality.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Excel4Obfuscator(Excel4MacroExtension):
+
+    name = &#34;standard&#34;
+    description = &#34;Allows to obfuscate macro with standard Excel4.0 formulas suchas BITXOR, SUM, MID etc.&#34;
+
+    &#39;&#39;&#39;
+    Allows to obfuscate formulas,  scatter them across worksheet, obfuscate variable names and values.
+    &#39;&#39;&#39;
+    def __init__(self, config=Excel4Config.obfuscator):
+        Excel4MacroExtension.__init__(self)
+
+        # Obfuscator configuration
+        self.config = config
+        # List of char obfuscation methods
+        self.ob_tech = []
+        # Max length of cell
+        self.cell_max_length = self.config.cell_limit
+
+
+    def _generate_noise(self, only_empty = False):
+        &#39;&#39;&#39;
+        Adds random values to worksheet cells
+
+        :param only_empty: flags that tells if add noise only to empty cells ( not reserved)
+        &#39;&#39;&#39;
+        # Walk through worksheet cell by cell
+        for cords in self.worksheet.worksheet_iterate():
+            # Choose whether add noise to this cell or not
+            if random.randint(0,10) != 1:
+                continue
+            noise = random_string(random.randint(4, 20))
+            noise_cell = self._create_value(cords[0], cords[1], noise)
+            # Check if cell is reserved
+            if self.worksheet.is_reserved(cords[0], cords[1]):
+                if only_empty:
+                    continue
+                # Check if obfuscation of cell is enabled
+                cell = self.worksheet.get_cell(cords[0], cords[1])
+                if not cell._spread or not cell._obfuscate:
+                    continue
+                try:
+                    # Move cell to the next cell if reserved
+                    self.worksheet.move_cell(cell)
+                except CouldNotMoveCellException as ex:
+                    continue
+            curr_cords = self.worksheet.get_current_cords()
+            # Add noise
+            self.worksheet.add_cell(noise_cell)
+            self.worksheet.set_current_cords(curr_cords[0], curr_cords[1])
+
+    def _spread_formulas(self, trigger_x, trigger_y):
+        &#39;&#39;&#39;
+        Spreads formulas across cells in worksheet
+
+        :param trigger_x: number of column in which first call is placed
+
+        :param trigger_y: number of row in which first call is placed
+
+        &#39;&#39;&#39;
+        # Get current cords. We need to remember current cord cause we will want to back execution to this cell.
+        cords_backup = self.worksheet.get_current_cords()
+        cells_cache = {}
+
+
+        # Get cells to spread
+        # For each column in worksheet
+        for t in self.worksheet.column_iterate():
+            # Get column number
+            c_num = t[0]
+            # Get cells in column
+            cells_temp = t[1]
+            if not cells_temp:
+                continue
+            values = cells_temp.values()
+            # For each cell in column
+            for cell in values:
+                # Check if obfuscation of cell/formula is enabled
+                if (not cell._spread) or (not cell._obfuscate):
+                    continue
+                # Save cell in cache
+                try:
+                    cells_cache[c_num][cell.y] = cell
+                except KeyError:
+                    cells_cache[c_num] = {cell.y : cell}
+
+        # Remove cells from worksheet
+        # For each column in cache
+        for c in cells_cache.keys():
+            for cell in cells_cache[c].values():
+                # Remove cell from worksheet
+                # x,y of cell will be changed, and cell will be placed at another cords
+                self.worksheet.remove_cell(cell)
+
+        trigger_cell = None
+        # Add jump to first call
+        if trigger_x in cells_cache:
+            # Find first call
+            for row in cells_cache[trigger_x]:
+                if row &gt;= trigger_y:
+                    trigger_cell = self._go_to(trigger_x, row, cells_cache[trigger_x][row])
+                    self.worksheet.add_cell(trigger_cell)
+                    break
+
+        # Spread cells across worksheet
+        # For each column in cache
+        for c in cells_cache.keys():
+            self._spread_column(list(cells_cache[c].values()), trigger_x, trigger_y, trigger_cell)
+
+        # Restore original cords
+        self.worksheet.set_current_cords(cords_backup[0], cords_backup[1])
+
+    def _spread_column(self, cells, trigger_x, trigger_y, trigger_cell):
+        &#39;&#39;&#39;
+        Spread `cells` across worksheet.
+        :param cells: list of cells that are in the same column
+
+        :param trigger_x: auto_open or auto_close function column
+
+        :param trigger_y: auto_open or auto_close function row
+
+        :param trigger_cell: auto_open or auto_close cell
+
+        &#39;&#39;&#39;
+        # Number of cells
+        cells_num = len(cells)
+        # The number of formulas that have already been spread across sheet
+        cnt = 0
+        fail_cnt = 0
+        for_loop_cache = []
+        if not cells:
+            return
+        while cnt &lt; cells_num:
+            # Generate random cords
+            # IF all columns are reserved then add new one and place payoad there
+            if fail_cnt &gt; 1000:
+                self.config.spread_x_max = self.config.spread_x_max + 1
+                target_x = self.config.spread_x_max
+            else:
+                target_x = random.randint(self.config.spread_x_min, self.config.spread_x_max)
+            target_y = random.randint(self.config.spread_y_min, self.config.spread_y_max)
+
+            # Space between auto_open/auto_close cell and first call should be empty
+            if(target_x == trigger_x) and (target_y in range(trigger_y, trigger_cell.y)):
+                continue
+            # If the same coordinates are drawn then randomize again
+            if (target_x == self.worksheet._curr_x) and (target_y == self.worksheet._curr_y):
+                # Inc failure counter
+                fail_cnt = fail_cnt + 1
+                continue
+
+            height = random.randint(1, cells_num - cnt)
+
+            # Check if cells are free
+            # We need to add 1 to height since we need additional cell for GOTO formula
+            if self.worksheet.is_reserved(target_x, target_y, height + 1 + 1 + 1):
+                # Inc failure counter
+                fail_cnt = fail_cnt + 1
+                continue
+
+            self.worksheet.set_current_cords(target_x, target_y)
+            cnt_h = cnt+height
+            # Add random number of cells to worksheet at random cords
+            for cell in cells[cnt:cnt_h]:
+                # Loops require end statement in the same column
+                # So we need to place them in the same one
+                if issubclass(type(cell), Excel4LoopFormula):
+                    # Save column and row number of this loop
+                    for_loop_cache.append((self.worksheet._curr_x, self.worksheet._curr_y + (cnt_h - cnt) + 2))
+                elif issubclass(type(cell), Excel4EndLoopFormula):
+                    break
+
+                self.worksheet.add_next_cell(cell)
+                cnt = cnt + 1
+            # If there are more cells to spread
+            if cnt &lt; cells_num:
+                # @HACK
+                # If cells[cnt] is Ecel4Variable then get_reference function will return variable name
+                # But if this variable name is not defined or this variable name is not storing address of another cell
+                # then we can&#39;t GOTO to this formula(we need address of this formula).
+                # So to bypass this we need to add an empty Excel4Value, because then get_reference function will return address of cell
+                if issubclass(type(cells[cnt]), Excel4Variable):
+                    empty = self._create_empty_formula(cells[cnt].x, cells[cnt].y)
+                    cells.insert(cnt, empty)
+                    cells_num = cells_num + 1
+                # If there are more cells to spread, then redirect macro execution
+                # to the next cell.
+                self.worksheet.add_next_cell(self._go_to(-1, -1, cells[cnt]))
+            else:
+                break
+
+            if issubclass(type(cells[cnt]), Excel4EndLoopFormula):
+                if len(for_loop_cache) &lt; 1:
+                    raise Excel4LoopFormulaMissing(&#34;Excel4EndLoopFormula detected but Excel4LoopFormula is missing. Excel4 requires that the loops and NEXT() formula be in the same column.&#34;)
+                cords = for_loop_cache.pop()
+                cells[cnt].x = cords[0]
+                cells[cnt].y = cords[1]
+                self.worksheet.add_cell(cells[cnt])
+                cnt = cnt + 1
+                # If there are more cells to spread
+                if cnt &lt; cells_num:
+                    # @HACK
+                    # If cells[cnt] is Ecel4Variable then get_reference function will return variable name
+                    # But if this variable name is not defined or this variable name is not storing address of another cell
+                    # then we can&#39;t GOTO to this formula(we need address of this formula).
+                    # So to bypass this we need to add an empty Excel4Value, because then get_reference function will return address of cell
+                    if issubclass(type(cells[cnt]), Excel4Variable):
+                        empty = self._create_empty_formula(cells[cnt].x, cells[cnt].y)
+                        cells.insert(cnt, empty)
+                        cells_num = cells_num + 1
+                    # If there are more cells to spread, then redirect macro execution
+                    # to the next cell.
+                    self.worksheet.add_cell(self._go_to(cells[cnt-1].x, cells[cnt-1].y + 1, cells[cnt]))
+                else:
+                    break
+        # ADD RETURN
+        self.worksheet.add_next_cell(self._create_formula(-1, -1, &#34;RETURN&#34;))
+
+    def _create_argument_object(self, instruction, *args):
+        instruction_name = Excel4InstructionName(instruction, self.config.translate)
+        o = Excel4FormulaArgument(instruction_name, *args)
+        if not self.config.translate:
+            # Do not translate obfuscator objects
+            o.revert_translation()
+        return o
+
+    def _create_formula(self,x, y, instruction, *args):
+        instruction_name = Excel4InstructionName(instruction, self.config.translate)
+        o = Excel4Formula(x, y, instruction_name, *args)
+        if not self.config.translate:
+            # Do not translate obfuscator objects
+            o.revert_translation()
+        return o
+
+    def _create_value(self, x, y, value):
+        o = Excel4Value(x,y, value)
+        if not self.config.translate:
+            # Do not translate obfuscator objects
+            o.revert_address_translation()
+        return o
+
+    def _create_empty_formula(self, x, y):
+        return self._create_value(x,y,&#34;&#34;)
+
+    def _create_result_formula(self, x, y):
+        o = Excel4Result(x,y)
+        if not self.config.translate:
+            # Do not translate obfuscator objects
+            o.revert_address_translation()
+        return o
+
+    def _go_to(self, x, y, formula):
+        instruction_name = Excel4InstructionName(&#34;GOTO&#34;, self.config.translate)
+        o = Excel4GoToFormula(x, y, instruction_name, formula)
+        if not self.config.translate:
+            # Do not translate obfuscator objects
+            o.revert_translation()
+        return o
+
+    def _char(self, s):
+        &#39;&#39;&#39;
+        Returns CHAR formula
+        :param s: string, char
+        :return:
+        &#39;&#39;&#39;
+        return self._create_argument_object(&#34;CHAR&#34;, s)
+
+    def char(self, c):
+        &#39;&#39;&#39;
+        Puts c character in CHAR formula
+
+        :param c: charcater
+
+        :return: CHAR formula call
+        &#39;&#39;&#39;
+        if not is_number(c):
+            c = ord(c)
+        return self._char(c)
+
+    def int(self, c):
+        &#39;&#39;&#39;
+        Converts c character to CHAR(INT(C)) call
+
+        :param c: charcater
+
+        :return:
+        &#39;&#39;&#39;
+        if not is_number(c):
+            c = ord(c)
+
+        return self._char(self._create_argument_object(&#34;INT&#34;, str(c)))
+
+    def sum(self, c):
+        &#39;&#39;&#39;
+        Converts c character to CHAR(SUM(R, c-k/k-c) call
+
+        :param c: charcater
+
+        :return:
+        &#39;&#39;&#39;
+        if not is_number(c):
+            c = ord(c)
+
+        k = random.randint(1, 1000)
+        while k == c:
+            k = random.randint(1, 1000)
+
+        if k &lt; c:
+            r = c - k
+        else:
+            r = k - c
+
+        return self._char(self._create_argument_object(&#34;SUM&#34;, r, k))
+
+    def mid(self, c):
+        &#39;&#39;&#39;
+        Converts c character to MID(STR, RAND_INDEX,1) call
+
+        :param c: charcater
+
+        :return:
+        &#39;&#39;&#39;
+        if is_number(c):
+            c = chr(c)
+
+        length = random.randint(3, 8)
+        rand_str = random_string(length)
+        rand_ind = random.randint(0, length)
+        rand_str = rand_str[:rand_ind] + c + rand_str[rand_ind:]
+
+        return self._create_argument_object(&#34;MID&#34;, rand_str, rand_ind+1, 1)
+
+    def xor(self, c):
+        &#39;&#39;&#39;
+        Converts c character to CHAR(BITXOR(R,K) call
+
+        :param c: charcater
+
+        :return:
+        &#39;&#39;&#39;
+        if not is_number(c):
+            c = ord(c)
+
+        k = random.randint(1, 1000)
+        while k == c:
+            k = random.randint(1, 1000)
+        r = k ^ c
+        return self._char(self._create_argument_object(&#34;BITXOR&#34;, r, k))
+
+    def mod(self, c):
+        &#39;&#39;&#39;
+        Converts c character to CHAR(MOD(R,K) call
+
+        :param c: charcater
+
+        :return:
+        &#39;&#39;&#39;
+        if not is_number(c):
+            c = ord(c)
+        k = random.randint(c + 1, 600)
+        r = k + c
+        return self._char(self._create_argument_object(&#34;MOD&#34;, r, k))
+
+    def evaluate(self, c):
+        #=CHAR(EVALUATE(&#34;1+64&#34;))
+        pass
+
+    def concat(self, x, y, *args):
+        &#39;&#39;&#39;
+        Creates CONCATENATE formula
+        &#39;&#39;&#39;
+        return self._create_formula(x, y, &#34;CONCATENATE&#34;, *args)
+
+    def _update_obfuscation_tech(self):
+        self.ob_tech = []
+        if self.config.obfuscate_int:
+            self.ob_tech.append(self.int)
+        if self.config.obfuscate_char:
+            self.ob_tech.append(self.char)
+        if self.config.obfuscate_mid:
+            self.ob_tech.append(self.mid)
+        if self.config.obfuscate_xor:
+            self.ob_tech.append(self.xor)
+        if self.config.obfuscate_mod:
+            self.ob_tech.append(self.mod)
+
+    def _obfuscate_char(self, c):
+
+        if c == &#39;&#34;&#39;:
+            formula = self.char(c)
+        else:
+            self._update_obfuscation_tech()
+            func = random.choice(self.ob_tech)
+            formula = func(c)
+
+        return formula
+
+    def _split_instructions(self, objects, block_size):
+        i = 0
+        temp = []
+        for o in objects:
+            if issubclass(type(o),  Excel4FormulaArgument):
+                # For arguments we need to compute length of full instruction with arguments
+                o_len = o.get_length()
+            elif issubclass(type(o), Cell):
+                # For calls (instructions in cells) we will use references so length we be equal to address of the cell
+                o_len = len(o.get_address())
+            else:
+                raise Excel4UnsupportedTypeException(&#34;Received unsupported type: {}&#34;.format(type(o)))
+
+            if (i+o_len) &gt; block_size:
+                yield temp
+                i = 0
+                temp = []
+            i = i + o_len
+            temp.append(o)
+        if temp:
+            yield temp
+
+    def _obfuscate_formula(self, formula):
+        &#39;&#39;&#39;
+        Obfuscates formula object. Should work for all classes that inherit from Excel4Formula.
+        _obfuscate_formula works as follow:
+        - convert formula with arguments to string ex: =TEST(&#34;A&#34;,&#34;B&#34;);
+        - for each character in formula string:
+         - obfuscate character with random function such as: MID, SUM, MOD etc.
+        - end of loop
+        - generate CONCATENATE formulas in order to concatenate all characters during excel 4.0 macro execution;
+        - pass deobfuscated string to FORMULA call ex: =FORMULA(DEOBFUSCATED, ADDRESS_TO_SAVE_FORMULA)
+
+        :param formula:
+        :return:
+        &#39;&#39;&#39;
+        if not formula._obfuscate_formula:
+            return  []
+        formulas = self._obfuscate_text(str(formula), formula.tag)
+
+        # Obfusacted formula will be deobfusacted and saved into following cell
+        # So you can get result of your formula from this cell
+        # This one is empty because cell will be filled after excel 4.0 macro execute
+        # @HACK
+        if issubclass(type(formula), Excel4LoopFormula):
+            call_reference = Excel4ResultLoop(0, 0)
+        elif issubclass(type(formula), Excel4ConditionFormula):
+            call_reference = Excel4ResultCondition(0, 0)
+        elif issubclass(type(formula), Excel4EndLoopFormula):
+            call_reference = Excel4ResultEndLoop(0, 0)
+        else:
+            call_reference = self._create_result_formula(0, 0)
+        call_reference.tag = formula.tag
+        result_formula = self._create_formula(0, 0, &#34;FORMULA&#34;, formulas[-1], call_reference)
+        call_reference.start_cell = formulas[0]
+        formulas.append(result_formula)
+        formulas.append(call_reference)
+        return formulas
+
+
+    def obfuscate_formula(self, formula):
+        &#39;&#39;&#39;
+
+        :param formula:
+        :return:
+        &#39;&#39;&#39;
+
+        formulas = self._obfuscate_formula(formula)
+        if formulas:
+            formulas[-1].x = formula.x
+            formulas[-1].y = formula.y
+        return formulas
+
+    def obfuscate_formulas(self, fomulas):
+        &#39;&#39;&#39;
+        Obfuscates formulas. Formulas should be ordered by execution. This function also adds obfusacted formulas to the worksheet.
+        :param fomulas:
+        :return:
+        &#39;&#39;&#39;
+        obfuscated_formulas = []
+        column = self.worksheet.get_column(self.macro.trigger_x)
+        if not column:
+            # Raise exception
+            return
+        start_of_macro = None
+        # Find first call in trigger column
+        for cell in column.values():
+            if cell.y &gt;= self.macro.trigger_y:
+                start_of_macro = cell
+                break
+        for f in fomulas:
+            if not f._obfuscate:
+                continue
+
+            if issubclass(type(f), Excel4Formula):
+                # Obfuscate formula call
+                obfuscated = self.obfuscate_formula(f)
+                # If formula is not obfuscated, then continue execution
+                if not obfuscated:
+                    continue
+                # If obfuscated, then formula is splitted into multiple CONCATENATE and FORMULA calls.
+                # Last element in obfuscated variable(list) is cell in which deobfuscated formula
+                # will be placed during macro execution.
+                obfuscated_ref = obfuscated[-1]
+                # Add all formulas to worksheet
+                for o in obfuscated[:-1]:
+                    #self.worksheet.add_above(o, f)
+                    obfuscated_formulas.append(o)
+                # Replace formula f with obfuscated_ref in worksheet
+                self.worksheet.replace_cell(f, obfuscated_ref)
+                # Update references
+                # Formula object (f) holds references to objects in which is used.
+                # We need to change these references to point to the obfuscated_ref
+                obfuscated_ref.x = f.x
+                obfuscated_ref.y = f.y
+                f._change_reference(obfuscated_ref)
+                if start_of_macro == f:
+                    start_of_macro = obfuscated_ref
+
+        # Spread obfuscated formulas across the worksheet
+        self._spread_column(obfuscated_formulas, self.macro.trigger_x, self.macro.trigger_y, start_of_macro)
+        # Redirect macro 4 execution to deobfuscate formulas
+        self.worksheet.replace_cell(start_of_macro, self.macro._create_go_to(start_of_macro.x, start_of_macro.y, obfuscated_formulas[0]))
+        # After deobfuscation redirect execution to original formula
+        start_of_macro.x = obfuscated_formulas[-1].x
+        start_of_macro.y = obfuscated_formulas[-1].y + 1
+        return_stm = self.worksheet.get_cell(obfuscated_formulas[-1].x, obfuscated_formulas[-1].y+1)
+
+        #self.worksheet.add_above(self._create_formula(return_stm,return_stm.y, &#34;PAUSE&#34;), return_stm)
+        self.worksheet.add_above(start_of_macro, return_stm)
+
+
+    def obfuscate_function_name(self, formula):
+        if not issubclass(type(formula), Excel4RegisterFormula):
+            raise Excel4WrongVariableType(&#34;Only instances of Excel4RegisterFormula could be obfuscated. Provided: {}&#34;.format(type(formula)))
+
+        if formula._obfuscate:
+            formula.set_function_text(random_string(random.randint(4, 10)))
+
+        return formula
+
+    def obfuscate_variable_name(self, formula):
+        if not issubclass(type(formula), Excel4Variable):
+            raise Excel4WrongVariableType(&#34;Only instances of Excel4Variable could be obfuscated. Provided: {}&#34;.format(type(formula)))
+
+        if formula._obfuscate:
+            formula.set_name(random_string(random.randint(4, 10)))
+
+        return formula
+
+    def obfuscate_variable_value(self, formula):
+        if not issubclass(type(formula), Excel4Variable):
+            raise Excel4WrongVariableType(&#34;Only instances of Excel4Variable could be obfuscated. Provided: {}&#34;.format(type(formula)))
+
+        formulas = []
+        if formula._obfuscate:
+            # Do not obfuscate numbers
+            try:
+                if is_number(formula.value):
+                    raise Exception(&#34;Obfuscation of numbers not supported&#34;)
+                elif issubclass(type(formula.value), Cell):
+                    # Obufscate address
+                    raise Exception(&#34;Obfuscation of Cell objects not supported&#34;)
+
+                formulas = self._obfuscate_text(formula.value, formula.tag)
+                # Set value as address of cell in which deobfuscated value will be saved
+                formula.value = formulas[-1]
+            except:
+                pass
+        return formulas
+
+    def _obfuscate_variable(self, formula):
+        # Obfuscate variable name
+        #formula.name = random_string(random.randint(4,10))
+        # Obfuscate variable value if it&#39;s behaviour is similar to str
+        formulas = []
+        try:
+            if issubclass(type(formula.value), Excel4Value):
+                if formula.value.is_num():
+                    raise Exception()
+            formulas = self._obfuscate_text(formula.value, formula.tag)
+            # Set value as address of cell in which deobfuscated value will be saved
+            formula.value = formulas[-1]
+        except:
+            pass
+        # Add variable as last call
+        formulas.append(formula)
+        return formulas
+
+
+
+
+    def _obfuscate_text(self, text, tag=&#34;&#34;):
+        &#39;&#39;&#39;
+        Obfuscates every char in text and returns concat formulas that allows to restore original string
+        :param text: string to obfuscate
+        :return:
+        &#39;&#39;&#39;
+
+        text_len = len(text)
+        block_len = self.cell_max_length
+        # Obfusacted characters
+        obfuscated_chars = []
+        # List of concat formulas which allows to restore original string
+        concat_objects = [[]]
+        # Obfusacte every char in text
+        for i in range(0, text_len):
+            c = text[i]
+            obfuscated_chars.append(self._obfuscate_char(c))
+
+        # Pass obfusacted chars to concat formula
+        for o in self._split_instructions(obfuscated_chars, block_len):
+            concat_objects[0].append(self.concat(0, 0, *o))
+
+        # If there is more than one concatenate formula then we need to concatenate these formulas
+        # Here is a little bug. At this stage we don&#39;t know what address has concatenate formula.
+        # So we don&#39;t know the exact length of this formula.
+        i = 0
+        while True:
+            concat_objects.append([])
+            for o in self._split_instructions(concat_objects[i], block_len):
+                concat_objects[i + 1].append(self.concat(0, 0, *o))
+            if len(concat_objects[i + 1]) &lt; 2:
+                break
+            i = i + 1
+        r = []
+        if not tag:
+            tag = random_tag(text)
+        for o in concat_objects:
+            for x in o:
+                x.tag = tag
+                r.append(x)
+        return r</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="excel4lib.macro.excel4_macro_extension.Excel4MacroExtension" href="../excel4_macro_extension.html#excel4lib.macro.excel4_macro_extension.Excel4MacroExtension">Excel4MacroExtension</a></li>
+</ul>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="excel4lib.macro.obfuscator.excel4_rc4_obfuscator.Excel4Rc4Obfuscator" href="excel4_rc4_obfuscator.html#excel4lib.macro.obfuscator.excel4_rc4_obfuscator.Excel4Rc4Obfuscator">Excel4Rc4Obfuscator</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="excel4lib.macro.obfuscator.excel4_obfuscator.Excel4Obfuscator.description"><code class="name">var <span class="ident">description</span></code></dt>
+<dd>
+<div class="desc"><p>Allows to obfuscate formulas,
+scatter them across worksheet, obfuscate variable names and values.</p></div>
+</dd>
+<dt id="excel4lib.macro.obfuscator.excel4_obfuscator.Excel4Obfuscator.name"><code class="name">var <span class="ident">name</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="excel4lib.macro.obfuscator.excel4_obfuscator.Excel4Obfuscator.char"><code class="name flex">
+<span>def <span class="ident">char</span></span>(<span>self, c)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Puts c character in CHAR formula</p>
+<p>:param c: charcater</p>
+<p>:return: CHAR formula call</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def char(self, c):
+    &#39;&#39;&#39;
+    Puts c character in CHAR formula
+
+    :param c: charcater
+
+    :return: CHAR formula call
+    &#39;&#39;&#39;
+    if not is_number(c):
+        c = ord(c)
+    return self._char(c)</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.macro.obfuscator.excel4_obfuscator.Excel4Obfuscator.concat"><code class="name flex">
+<span>def <span class="ident">concat</span></span>(<span>self, x, y, *args)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates CONCATENATE formula</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def concat(self, x, y, *args):
+    &#39;&#39;&#39;
+    Creates CONCATENATE formula
+    &#39;&#39;&#39;
+    return self._create_formula(x, y, &#34;CONCATENATE&#34;, *args)</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.macro.obfuscator.excel4_obfuscator.Excel4Obfuscator.evaluate"><code class="name flex">
+<span>def <span class="ident">evaluate</span></span>(<span>self, c)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def evaluate(self, c):
+    #=CHAR(EVALUATE(&#34;1+64&#34;))
+    pass</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.macro.obfuscator.excel4_obfuscator.Excel4Obfuscator.int"><code class="name flex">
+<span>def <span class="ident">int</span></span>(<span>self, c)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Converts c character to CHAR(INT(C)) call</p>
+<p>:param c: charcater</p>
+<p>:return:</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def int(self, c):
+    &#39;&#39;&#39;
+    Converts c character to CHAR(INT(C)) call
+
+    :param c: charcater
+
+    :return:
+    &#39;&#39;&#39;
+    if not is_number(c):
+        c = ord(c)
+
+    return self._char(self._create_argument_object(&#34;INT&#34;, str(c)))</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.macro.obfuscator.excel4_obfuscator.Excel4Obfuscator.mid"><code class="name flex">
+<span>def <span class="ident">mid</span></span>(<span>self, c)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Converts c character to MID(STR, RAND_INDEX,1) call</p>
+<p>:param c: charcater</p>
+<p>:return:</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def mid(self, c):
+    &#39;&#39;&#39;
+    Converts c character to MID(STR, RAND_INDEX,1) call
+
+    :param c: charcater
+
+    :return:
+    &#39;&#39;&#39;
+    if is_number(c):
+        c = chr(c)
+
+    length = random.randint(3, 8)
+    rand_str = random_string(length)
+    rand_ind = random.randint(0, length)
+    rand_str = rand_str[:rand_ind] + c + rand_str[rand_ind:]
+
+    return self._create_argument_object(&#34;MID&#34;, rand_str, rand_ind+1, 1)</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.macro.obfuscator.excel4_obfuscator.Excel4Obfuscator.mod"><code class="name flex">
+<span>def <span class="ident">mod</span></span>(<span>self, c)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Converts c character to CHAR(MOD(R,K) call</p>
+<p>:param c: charcater</p>
+<p>:return:</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def mod(self, c):
+    &#39;&#39;&#39;
+    Converts c character to CHAR(MOD(R,K) call
+
+    :param c: charcater
+
+    :return:
+    &#39;&#39;&#39;
+    if not is_number(c):
+        c = ord(c)
+    k = random.randint(c + 1, 600)
+    r = k + c
+    return self._char(self._create_argument_object(&#34;MOD&#34;, r, k))</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.macro.obfuscator.excel4_obfuscator.Excel4Obfuscator.obfuscate_formula"><code class="name flex">
+<span>def <span class="ident">obfuscate_formula</span></span>(<span>self, formula)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>:param formula:
+:return:</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def obfuscate_formula(self, formula):
+    &#39;&#39;&#39;
+
+    :param formula:
+    :return:
+    &#39;&#39;&#39;
+
+    formulas = self._obfuscate_formula(formula)
+    if formulas:
+        formulas[-1].x = formula.x
+        formulas[-1].y = formula.y
+    return formulas</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.macro.obfuscator.excel4_obfuscator.Excel4Obfuscator.obfuscate_formulas"><code class="name flex">
+<span>def <span class="ident">obfuscate_formulas</span></span>(<span>self, fomulas)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Obfuscates formulas. Formulas should be ordered by execution. This function also adds obfusacted formulas to the worksheet.
+:param fomulas:
+:return:</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def obfuscate_formulas(self, fomulas):
+    &#39;&#39;&#39;
+    Obfuscates formulas. Formulas should be ordered by execution. This function also adds obfusacted formulas to the worksheet.
+    :param fomulas:
+    :return:
+    &#39;&#39;&#39;
+    obfuscated_formulas = []
+    column = self.worksheet.get_column(self.macro.trigger_x)
+    if not column:
+        # Raise exception
+        return
+    start_of_macro = None
+    # Find first call in trigger column
+    for cell in column.values():
+        if cell.y &gt;= self.macro.trigger_y:
+            start_of_macro = cell
+            break
+    for f in fomulas:
+        if not f._obfuscate:
+            continue
+
+        if issubclass(type(f), Excel4Formula):
+            # Obfuscate formula call
+            obfuscated = self.obfuscate_formula(f)
+            # If formula is not obfuscated, then continue execution
+            if not obfuscated:
+                continue
+            # If obfuscated, then formula is splitted into multiple CONCATENATE and FORMULA calls.
+            # Last element in obfuscated variable(list) is cell in which deobfuscated formula
+            # will be placed during macro execution.
+            obfuscated_ref = obfuscated[-1]
+            # Add all formulas to worksheet
+            for o in obfuscated[:-1]:
+                #self.worksheet.add_above(o, f)
+                obfuscated_formulas.append(o)
+            # Replace formula f with obfuscated_ref in worksheet
+            self.worksheet.replace_cell(f, obfuscated_ref)
+            # Update references
+            # Formula object (f) holds references to objects in which is used.
+            # We need to change these references to point to the obfuscated_ref
+            obfuscated_ref.x = f.x
+            obfuscated_ref.y = f.y
+            f._change_reference(obfuscated_ref)
+            if start_of_macro == f:
+                start_of_macro = obfuscated_ref
+
+    # Spread obfuscated formulas across the worksheet
+    self._spread_column(obfuscated_formulas, self.macro.trigger_x, self.macro.trigger_y, start_of_macro)
+    # Redirect macro 4 execution to deobfuscate formulas
+    self.worksheet.replace_cell(start_of_macro, self.macro._create_go_to(start_of_macro.x, start_of_macro.y, obfuscated_formulas[0]))
+    # After deobfuscation redirect execution to original formula
+    start_of_macro.x = obfuscated_formulas[-1].x
+    start_of_macro.y = obfuscated_formulas[-1].y + 1
+    return_stm = self.worksheet.get_cell(obfuscated_formulas[-1].x, obfuscated_formulas[-1].y+1)
+
+    #self.worksheet.add_above(self._create_formula(return_stm,return_stm.y, &#34;PAUSE&#34;), return_stm)
+    self.worksheet.add_above(start_of_macro, return_stm)</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.macro.obfuscator.excel4_obfuscator.Excel4Obfuscator.obfuscate_function_name"><code class="name flex">
+<span>def <span class="ident">obfuscate_function_name</span></span>(<span>self, formula)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def obfuscate_function_name(self, formula):
+    if not issubclass(type(formula), Excel4RegisterFormula):
+        raise Excel4WrongVariableType(&#34;Only instances of Excel4RegisterFormula could be obfuscated. Provided: {}&#34;.format(type(formula)))
+
+    if formula._obfuscate:
+        formula.set_function_text(random_string(random.randint(4, 10)))
+
+    return formula</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.macro.obfuscator.excel4_obfuscator.Excel4Obfuscator.obfuscate_variable_name"><code class="name flex">
+<span>def <span class="ident">obfuscate_variable_name</span></span>(<span>self, formula)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def obfuscate_variable_name(self, formula):
+    if not issubclass(type(formula), Excel4Variable):
+        raise Excel4WrongVariableType(&#34;Only instances of Excel4Variable could be obfuscated. Provided: {}&#34;.format(type(formula)))
+
+    if formula._obfuscate:
+        formula.set_name(random_string(random.randint(4, 10)))
+
+    return formula</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.macro.obfuscator.excel4_obfuscator.Excel4Obfuscator.obfuscate_variable_value"><code class="name flex">
+<span>def <span class="ident">obfuscate_variable_value</span></span>(<span>self, formula)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def obfuscate_variable_value(self, formula):
+    if not issubclass(type(formula), Excel4Variable):
+        raise Excel4WrongVariableType(&#34;Only instances of Excel4Variable could be obfuscated. Provided: {}&#34;.format(type(formula)))
+
+    formulas = []
+    if formula._obfuscate:
+        # Do not obfuscate numbers
+        try:
+            if is_number(formula.value):
+                raise Exception(&#34;Obfuscation of numbers not supported&#34;)
+            elif issubclass(type(formula.value), Cell):
+                # Obufscate address
+                raise Exception(&#34;Obfuscation of Cell objects not supported&#34;)
+
+            formulas = self._obfuscate_text(formula.value, formula.tag)
+            # Set value as address of cell in which deobfuscated value will be saved
+            formula.value = formulas[-1]
+        except:
+            pass
+    return formulas</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.macro.obfuscator.excel4_obfuscator.Excel4Obfuscator.sum"><code class="name flex">
+<span>def <span class="ident">sum</span></span>(<span>self, c)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Converts c character to CHAR(SUM(R, c-k/k-c) call</p>
+<p>:param c: charcater</p>
+<p>:return:</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def sum(self, c):
+    &#39;&#39;&#39;
+    Converts c character to CHAR(SUM(R, c-k/k-c) call
+
+    :param c: charcater
+
+    :return:
+    &#39;&#39;&#39;
+    if not is_number(c):
+        c = ord(c)
+
+    k = random.randint(1, 1000)
+    while k == c:
+        k = random.randint(1, 1000)
+
+    if k &lt; c:
+        r = c - k
+    else:
+        r = k - c
+
+    return self._char(self._create_argument_object(&#34;SUM&#34;, r, k))</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.macro.obfuscator.excel4_obfuscator.Excel4Obfuscator.xor"><code class="name flex">
+<span>def <span class="ident">xor</span></span>(<span>self, c)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Converts c character to CHAR(BITXOR(R,K) call</p>
+<p>:param c: charcater</p>
+<p>:return:</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def xor(self, c):
+    &#39;&#39;&#39;
+    Converts c character to CHAR(BITXOR(R,K) call
+
+    :param c: charcater
+
+    :return:
+    &#39;&#39;&#39;
+    if not is_number(c):
+        c = ord(c)
+
+    k = random.randint(1, 1000)
+    while k == c:
+        k = random.randint(1, 1000)
+    r = k ^ c
+    return self._char(self._create_argument_object(&#34;BITXOR&#34;, r, k))</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="excel4lib.macro.excel4_macro_extension.Excel4MacroExtension" href="../excel4_macro_extension.html#excel4lib.macro.excel4_macro_extension.Excel4MacroExtension">Excel4MacroExtension</a></b></code>:
+<ul class="hlist">
+<li><code><a title="excel4lib.macro.excel4_macro_extension.Excel4MacroExtension.set_macro" href="../excel4_macro_extension.html#excel4lib.macro.excel4_macro_extension.Excel4MacroExtension.set_macro">set_macro</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="excel4lib.macro.obfuscator" href="index.html">excel4lib.macro.obfuscator</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="excel4lib.macro.obfuscator.excel4_obfuscator.Excel4Obfuscator" href="#excel4lib.macro.obfuscator.excel4_obfuscator.Excel4Obfuscator">Excel4Obfuscator</a></code></h4>
+<ul class="">
+<li><code><a title="excel4lib.macro.obfuscator.excel4_obfuscator.Excel4Obfuscator.char" href="#excel4lib.macro.obfuscator.excel4_obfuscator.Excel4Obfuscator.char">char</a></code></li>
+<li><code><a title="excel4lib.macro.obfuscator.excel4_obfuscator.Excel4Obfuscator.concat" href="#excel4lib.macro.obfuscator.excel4_obfuscator.Excel4Obfuscator.concat">concat</a></code></li>
+<li><code><a title="excel4lib.macro.obfuscator.excel4_obfuscator.Excel4Obfuscator.description" href="#excel4lib.macro.obfuscator.excel4_obfuscator.Excel4Obfuscator.description">description</a></code></li>
+<li><code><a title="excel4lib.macro.obfuscator.excel4_obfuscator.Excel4Obfuscator.evaluate" href="#excel4lib.macro.obfuscator.excel4_obfuscator.Excel4Obfuscator.evaluate">evaluate</a></code></li>
+<li><code><a title="excel4lib.macro.obfuscator.excel4_obfuscator.Excel4Obfuscator.int" href="#excel4lib.macro.obfuscator.excel4_obfuscator.Excel4Obfuscator.int">int</a></code></li>
+<li><code><a title="excel4lib.macro.obfuscator.excel4_obfuscator.Excel4Obfuscator.mid" href="#excel4lib.macro.obfuscator.excel4_obfuscator.Excel4Obfuscator.mid">mid</a></code></li>
+<li><code><a title="excel4lib.macro.obfuscator.excel4_obfuscator.Excel4Obfuscator.mod" href="#excel4lib.macro.obfuscator.excel4_obfuscator.Excel4Obfuscator.mod">mod</a></code></li>
+<li><code><a title="excel4lib.macro.obfuscator.excel4_obfuscator.Excel4Obfuscator.name" href="#excel4lib.macro.obfuscator.excel4_obfuscator.Excel4Obfuscator.name">name</a></code></li>
+<li><code><a title="excel4lib.macro.obfuscator.excel4_obfuscator.Excel4Obfuscator.obfuscate_formula" href="#excel4lib.macro.obfuscator.excel4_obfuscator.Excel4Obfuscator.obfuscate_formula">obfuscate_formula</a></code></li>
+<li><code><a title="excel4lib.macro.obfuscator.excel4_obfuscator.Excel4Obfuscator.obfuscate_formulas" href="#excel4lib.macro.obfuscator.excel4_obfuscator.Excel4Obfuscator.obfuscate_formulas">obfuscate_formulas</a></code></li>
+<li><code><a title="excel4lib.macro.obfuscator.excel4_obfuscator.Excel4Obfuscator.obfuscate_function_name" href="#excel4lib.macro.obfuscator.excel4_obfuscator.Excel4Obfuscator.obfuscate_function_name">obfuscate_function_name</a></code></li>
+<li><code><a title="excel4lib.macro.obfuscator.excel4_obfuscator.Excel4Obfuscator.obfuscate_variable_name" href="#excel4lib.macro.obfuscator.excel4_obfuscator.Excel4Obfuscator.obfuscate_variable_name">obfuscate_variable_name</a></code></li>
+<li><code><a title="excel4lib.macro.obfuscator.excel4_obfuscator.Excel4Obfuscator.obfuscate_variable_value" href="#excel4lib.macro.obfuscator.excel4_obfuscator.Excel4Obfuscator.obfuscate_variable_value">obfuscate_variable_value</a></code></li>
+<li><code><a title="excel4lib.macro.obfuscator.excel4_obfuscator.Excel4Obfuscator.sum" href="#excel4lib.macro.obfuscator.excel4_obfuscator.Excel4Obfuscator.sum">sum</a></code></li>
+<li><code><a title="excel4lib.macro.obfuscator.excel4_obfuscator.Excel4Obfuscator.xor" href="#excel4lib.macro.obfuscator.excel4_obfuscator.Excel4Obfuscator.xor">xor</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,1470 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.9.2" />
+<title>excel4lib.macro.routine.excel4_routine API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>excel4lib.macro.routine.excel4_routine</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">from excel4lib.macro import Excel4Variable, Excel4VariableName
+from excel4lib.macro.excel4_macro_extension import *
+from excel4lib.exception import *
+from excel4lib.utils import *
+
+class Excel4Routine(object):
+    &#39;&#39;&#39;
+    Base class for classes implementing predefined Excel4 macro that can be embedded in the worksheet
+    &#39;&#39;&#39;
+
+    def __init__(self, name, macro):
+        &#39;&#39;&#39;
+
+        :param name: name of the routine
+        :param macro: Excel4Macro object
+        &#39;&#39;&#39;
+        # Name of routine
+        self.name = name
+        # First instruction of routine
+        self.routine_ptr = None
+        # Last instruction of routine (most often RETURN formula)
+        self.routine_end_ptr = None
+        # Excel4Macro object
+        self.macro = macro
+        # Is macro added to worksheet
+        self._enabled = False
+        # Name of routine in macro
+        self.call_name = random_string(random.randint(10,25))
+        # Routine&#39;s arguments
+        self.args = {}
+
+    def set_enabled(self):
+        &#39;&#39;&#39;
+        Sets routine as enabled - as added to the worksheet.
+        &#39;&#39;&#39;
+        self._enabled = True
+
+    def is_enabled(self):
+        &#39;&#39;&#39;
+        Return True if routine is added to worksheet and False if not.
+
+        :return: True if routine is added to worksheet and False if not.
+        &#39;&#39;&#39;
+        return self._enabled
+
+    def get_argument(self, name):
+        &#39;&#39;&#39;
+        Returns argument with `name`
+
+        :param name: name of argument to return
+
+        :return: argument with `name`
+        &#39;&#39;&#39;
+        arg = self.args.get(name, None)
+        if not arg:
+            raise Excel4RoutineMissingArgument(&#34;Missing required argument {} in routine {}. Set this argument by calling set_macro_arguments function.&#34;.format(name, self.name))
+        return arg[&#34;references&#34;][0]
+
+    def set_routine_macro_arguments(self, **kwargs):
+        &#39;&#39;&#39;
+        Sets arguments that will be used during macro execution. Note that all names of Excel4Variables passed to this function will be changed
+
+        :param kwargs: arguments
+        &#39;&#39;&#39;
+        for key in kwargs:
+            var = kwargs[key]
+            if not issubclass(type(var), Excel4Variable):
+                # Wrong type of argument
+                continue
+
+            if key not in self.args:
+                self.args[key] = {&#34;name&#34;: Excel4VariableName(random_string(random.randint(5,20))), &#34;references&#34;:[var]}
+            else:
+                self.args[key][&#34;references&#34;].append(var)
+            var.set_name(self.args[key][&#34;name&#34;].name)
+            # Disable obfuscation of this name
+            # @TODO In the future implement mechanism that will change all references to this name object
+            var.name._obfuscate = False
+
+
+    def generate(self, **kwargs):
+        &#39;&#39;&#39;
+        Generates routine formulas and returns them
+
+        :param kwargs: arguments
+        &#39;&#39;&#39;
+        pass
+
+    def add(self, **kwargs):
+        &#39;&#39;&#39;
+        Adds routine to the worksheet
+
+        :param kwargs: arguments
+        &#39;&#39;&#39;
+        pass
+
+    def ref(self):
+        &#39;&#39;&#39;
+        Returns variable that points to routine start.
+
+        :return: Excel4Variable pointing to start of the routine in macro
+        &#39;&#39;&#39;
+        return self.macro._create_variable(-1, -1, self.call_name, self.routine_ptr)
+
+class Excel4RC4RoutineStr(Excel4Routine):
+    &#39;&#39;&#39;
+    `Excel4RC4RoutineStr` class implements Excel4 Macro that allows to encrypt/decrypt data by using RC4 encryption.
+
+     In order to use RC4 routine you need to:
+
+
+     1. Place key and ciphertext in macro
+
+     2. Call set_macro_arguments function on RC4 routine and pass to this function key and ciphertext variables.
+
+     3. Get addresses of initilization and decryption functions.
+
+     4. Call initialization function in macro.
+
+     5. Call decrypt function in macro.
+
+
+     Example code:
+
+    ```
+    from excel4lib.macro import *
+    from excel4lib.macro.obfuscator import *
+    from excel4lib.utils import *
+    from excel4lib.macro.routine import *
+    # Init routines
+    routines = Excel4Routines()
+    # Create macro object
+    macro = Excel4Macro(&#34;test.csv&#34;,routines=routines)
+    # Generate Key and encrypt plaintext
+    key = RC4.get_key(10)
+    cipher = RC4.encrypt(key, &#34;ABCD&#34;*5)
+    # Add key and cipher to the worksheet
+    text = macro.variable(&#34;text&#34;, cipher)
+    key_ptr = macro.variable(&#34;key&#34;, key)
+    # Set text and key as arguments in RC4 macro
+    macro.routines.get(&#34;Excel4RC4RoutineStr&#34;).set_macro_arguments(text, key_ptr)
+    # Get address of initialization and decryption function
+    init_func, decrypt_func = macro.routines.get(&#34;Excel4RC4RoutineStr&#34;).add()
+    # Call RC4 initilization function
+    macro.formula(init_func.name)
+    # Call decrypt function and display plaintext in ALERT
+    macro.formula(&#34;ALERT&#34;, macro.argument(decrypt_func.name))
+    macro.to_csv_file(&#34;out.csv&#34;)
+    ```
+    &#39;&#39;&#39;
+    def __init__(self, macro):
+        &#39;&#39;&#39;
+
+        :param macro: Excel4Macro object
+        &#39;&#39;&#39;
+        Excel4Routine.__init__(self, &#34;Excel4RC4RoutineStr&#34;, macro)
+        self.initialization_routine_name = random_string(random.randint(10,25))
+        self.initialization_routine_ptr = None
+
+        self._p1 = None
+        self._p2 = None
+
+    def set_macro_arguments(self, input, key):
+        &#39;&#39;&#39;
+        Sets name of input and key variables
+
+        :param input: Excel4Variable that stores data to decrypt
+
+        :param key: Excel4Variable that stores key to use during decryption process
+        &#39;&#39;&#39;
+        self.set_routine_macro_arguments(input=input, key=key)
+
+
+    def allocate_init_table(self):
+        &#39;&#39;&#39;
+        Generates formulas that initialize T table
+
+        :return: list of Excel4Value representing elements of T table
+        &#39;&#39;&#39;
+        formulas = []
+        for i in range(0, 256):
+            val = self.macro._create_value(-1, -1, &#34;&#34;)
+            val._obfuscate = False
+            formulas.append(val)
+        return formulas
+
+    def generate_init_routine(self, t_table):
+        &#39;&#39;&#39;
+        Generates RC4 initialization routine
+
+        :param t_table: list of values generated by allocate_init_table
+
+        :return: list of formulas initializing RC4
+        &#39;&#39;&#39;
+        formulas = []
+        self.initialization_routine_ptr = self.macro._create_value(-1, -1, random_string(random.randint(2, 25)))
+        formulas.append(self.initialization_routine_ptr)
+        cnt = self.macro._create_variable(-1, -1, random_string(random.randint(10, 25)), 0)
+        formulas.append(cnt)
+        formulas.append(self.macro._create_loop(-1,-1, &#34;FOR&#34;, cnt.name, cnt, 255, 1))
+        formulas.append(self.macro._create_formula(-1,-1, &#34;SET.VALUE&#34;, self.macro.argument(&#34;OFFSET&#34;, t_table[0], cnt, 0), cnt))
+        formulas.append(self.macro._create_end_loop(-1,-1, &#34;NEXT&#34;))
+
+        temp = self.macro._create_variable(-1, -1, random_string(random.randint(10, 25)), 0)
+        formulas.append(temp)
+        counter = self.macro._create_variable(-1, -1, random_string(random.randint(10, 25)), 0)
+        formulas.append(counter)
+        key_len = self.macro.argument(&#34;LEN&#34;, self.get_argument(&#34;key&#34;))
+        formulas.append(self.macro._create_loop(-1,-1, &#34;FOR&#34;, counter.name, counter, 255, 1))
+        t_table_ref = self.macro.argument(&#34;OFFSET&#34;, t_table[0], counter, 0)
+
+        key_mod = self.macro.argument(&#34;SUM&#34;, self.macro.argument(&#34;MOD&#34;, counter, key_len), 1)
+        k_table_ref = self.macro.argument(&#34;CODE&#34;, self.macro.argument(&#34;MID&#34;, self.get_argument(&#34;key&#34;), key_mod, 1))
+
+        sum = self.macro.argument(&#34;SUM&#34;, temp, t_table_ref, k_table_ref)
+        mod = self.macro.argument(&#34;MOD&#34;, sum, 256)
+        temp2 = self.macro._create_variable(-1, -1, temp.name, mod)
+        formulas.append(temp2)
+        t_table_ref2 = self.macro.argument(&#34;OFFSET&#34;, t_table[0], temp, 0)
+        swap_temp = self.macro._create_variable(-1, -1, random_string(random.randint(10, 25)),
+                                        self.macro.argument(&#34;EVALUATE&#34;, t_table_ref))
+        formulas.append(swap_temp)
+        formulas.append(self.macro._create_formula(-1,-1, &#34;SET.VALUE&#34;, t_table_ref, self.macro.argument(&#34;EVALUATE&#34;, t_table_ref2)))
+        formulas.append(self.macro._create_formula(-1,-1, &#34;SET.VALUE&#34;, t_table_ref2, swap_temp))
+        formulas.append(self.macro._create_end_loop(-1,-1, &#34;NEXT&#34;))
+
+        self._p1 = self.macro._create_variable(-1, -1, random_string(random.randint(10, 25)), 0)
+        self._p2 = self.macro._create_variable(-1, -1, random_string(random.randint(10, 25)), 0)
+        formulas.append(self._p1)
+        formulas.append(self._p2)
+        formulas.append(self.macro._create_formula(-1,-1, &#34;RETURN&#34;))
+
+        return formulas
+
+    def generate(self):
+        &#39;&#39;&#39;
+        Generates RC4 routine formulas and returns them. Note that this function does not add formulas to the worksheet.
+
+        :return: tuple of formulas representing RC4 macro
+        &#39;&#39;&#39;
+        formulas = []
+        t_table = self.allocate_init_table()
+        init_routine_formulas = self.generate_init_routine(t_table)
+
+        self.routine_ptr = self.macro._create_value(-1, -1,random_string(random.randint(10, 25)))
+        formulas.append(self.routine_ptr)
+        # Initialize output
+        output = self.macro._create_variable(-1, -1,random_string(random.randint(10, 25)), &#34;&#34;)
+        formulas.append(output)
+        # Stores current position in input
+        text_ptr = self.macro._create_variable(-1, -1,random_string(random.randint(10, 25)), 1)
+        formulas.append(text_ptr)
+        formulas.append(self.macro._create_loop(-1,-1,&#34;FOR&#34;, text_ptr.name, text_ptr, self.macro.argument(&#34;LEN&#34;, self.get_argument(&#34;input&#34;)), 4))
+
+        p1_mod = self.macro.argument(&#34;MOD&#34;, self.macro.argument(&#34;SUM&#34;, self._p1, 1), 256)
+        t_table_ref3 = self.macro.argument(&#34;OFFSET&#34;, t_table[0], self._p1, 0)
+        p2_mod = self.macro.argument(&#34;MOD&#34;, self.macro.argument(&#34;SUM&#34;, self._p2, t_table_ref3), 256)
+        t_table_ref4 = self.macro.argument(&#34;OFFSET&#34;, t_table[0], self._p2, 0)
+
+        p1_1 = self.macro._create_variable(-1, -1,self._p1.name, p1_mod)
+        p2_2 = self.macro._create_variable(-1, -1,self._p2.name, p2_mod)
+        formulas.append(p1_1)
+        formulas.append(p2_2)
+        char_to_dec = self.macro.argument(&#34;HEX2DEC&#34;, self.macro.argument(&#34;MID&#34;, self.get_argument(&#34;input&#34;), text_ptr, 4))
+
+        swap_temp = self.macro._create_variable(-1, -1, random_string(random.randint(10, 25)),
+                                        self.macro.argument(&#34;EVALUATE&#34;, t_table_ref3))
+        formulas.append(swap_temp)
+        formulas.append(self.macro._create_formula(-1, -1, &#34;SET.VALUE&#34;, t_table_ref3, self.macro.argument(&#34;EVALUATE&#34;, t_table_ref4)))
+        formulas.append(self.macro._create_formula(-1, -1, &#34;SET.VALUE&#34;, t_table_ref4, swap_temp))
+
+        key = self.macro.argument(&#34;OFFSET&#34;, t_table[0], self.macro.argument(&#34;MOD&#34;, self.macro.argument(&#34;SUM&#34;,
+                                                                                                       self.macro.argument(
+                                                                                                           &#34;OFFSET&#34;,
+                                                                                                           t_table[0],
+                                                                                                           self._p1, 0),
+                                                                                                       self.macro.argument(
+                                                                                                           &#34;OFFSET&#34;,
+                                                                                                           t_table[0],
+                                                                                                           self._p2, 0)),
+                                                                            256), 0)
+
+        formulas.append(self.macro._create_variable(-1, -1, output.name, self.macro.operator(output, &#34;&amp;&#34;, self.macro.argument(&#34;UNICHAR&#34;,
+                                                                                              self.macro.argument(
+                                                                                                  &#34;BITXOR&#34;, key,
+                                                                                                  char_to_dec)))))
+        formulas.append(self.macro._create_end_loop(-1,-1,&#34;NEXT&#34;))
+        formulas.append(self.macro._create_formula(-1,-1, &#34;RETURN&#34;, output))
+
+        return (t_table, init_routine_formulas, formulas)
+
+
+    def ref_init(self):
+        &#39;&#39;&#39;
+        Return variable that points to initialization routine
+
+        :return: Excel4Variable pointing to initialization routine
+        &#39;&#39;&#39;
+        return self.macro._create_variable(-1, -1, self.initialization_routine_name, self.initialization_routine_ptr)
+
+    def add_ref(self):
+        &#39;&#39;&#39;
+        Adds variables pointing to the beginning of init routine and decrption routine to the worksheet
+        &#39;&#39;&#39;
+
+        ref = self.ref()
+        ref_init = self.ref_init()
+        ref.x = self.macro.worksheet._curr_x
+        ref.y = self.macro.worksheet._curr_y
+        ref_init.x = self.macro.worksheet._curr_x
+        ref_init.y = self.macro.worksheet._curr_y + 1
+        self.macro._add_to_worksheet(ref)
+        self.macro._add_to_worksheet(ref_init)
+
+
+        return (ref_init, ref)
+
+    def add(self):
+        &#39;&#39;&#39;
+        Adds RC4 routine to the worksheet and returns two Excel4Variables. One that points to initialization routine
+        and second that points to decryption routine
+
+        :return: tuple of variables that stores references to initialization and decryption routines
+        &#39;&#39;&#39;
+
+        if self.is_enabled():
+            return self.add_ref()
+
+        t_table, init_routine_formulas, formulas = self.generate()
+        # Add formulas to the worksheet
+        self.macro.random_add_to_worksheet(t_table)
+        self.macro.random_add_to_worksheet(init_routine_formulas)
+        self.macro.random_add_to_worksheet(formulas)
+        self.set_enabled()
+        return self.add_ref()
+
+class Excel4Routines(Excel4MacroExtension):
+    &#39;&#39;&#39;
+    `Excel4Routines` allows to add predefined Excel4 macros to the worksheet such as: RC4 decryption routine.
+    `Excel4Routines` stores information about routines, allows to add them and checks if routine is already added to the worksheet.
+    `Excel4Routines` object is used by Excel4Macro
+    &#39;&#39;&#39;
+
+    def __init__(self):
+        Excel4MacroExtension.__init__(self)
+        self.routines = {}
+
+    def set_macro(self, macro):
+        &#39;&#39;&#39;
+        Sets `macro` and worksheet
+        :param macro: Excel4Macro object
+        &#39;&#39;&#39;
+        self.macro = macro
+        self.worksheet = macro.worksheet
+        self._init_routines()
+
+    def _init_routines(self):
+        &#39;&#39;&#39;
+        Adds default routines
+        &#39;&#39;&#39;
+        self.add(Excel4RC4RoutineStr(self.macro))
+
+    def add(self, routine):
+        &#39;&#39;&#39;
+        Adds routine to Excel4Routines object
+        :param routine: Excel4Routine object
+        &#39;&#39;&#39;
+        if routine.name not in self.routines:
+            self.routines[routine.name] = routine
+        else:
+            # Routine with this name already exist
+            pass
+
+    def list(self):
+        &#39;&#39;&#39;
+        Returns names of registered routines
+
+        :return: names of registered routines
+        &#39;&#39;&#39;
+        return self.routines.keys()
+
+    def get(self, name):
+        &#39;&#39;&#39;
+        Returns routine or None if routine does not exist
+
+        :param name: name of routine to return
+
+        :return: routine or None if routine does not exist
+        &#39;&#39;&#39;
+        return self.routines.get(name, None)</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="excel4lib.macro.routine.excel4_routine.Excel4RC4RoutineStr"><code class="flex name class">
+<span>class <span class="ident">Excel4RC4RoutineStr</span></span>
+<span>(</span><span>macro)</span>
+</code></dt>
+<dd>
+<div class="desc"><p><code><a title="excel4lib.macro.routine.excel4_routine.Excel4RC4RoutineStr" href="#excel4lib.macro.routine.excel4_routine.Excel4RC4RoutineStr">Excel4RC4RoutineStr</a></code> class implements Excel4 Macro that allows to encrypt/decrypt data by using RC4 encryption.</p>
+<p>In order to use RC4 routine you need to:</p>
+<ol>
+<li>
+<p>Place key and ciphertext in macro</p>
+</li>
+<li>
+<p>Call set_macro_arguments function on RC4 routine and pass to this function key and ciphertext variables.</p>
+</li>
+<li>
+<p>Get addresses of initilization and decryption functions.</p>
+</li>
+<li>
+<p>Call initialization function in macro.</p>
+</li>
+<li>
+<p>Call decrypt function in macro.</p>
+</li>
+</ol>
+<p>Example code:</p>
+<pre><code>from excel4lib.macro import *
+from excel4lib.macro.obfuscator import *
+from excel4lib.utils import *
+from excel4lib.macro.routine import *
+# Init routines
+routines = Excel4Routines()
+# Create macro object
+macro = Excel4Macro(&quot;test.csv&quot;,routines=routines)
+# Generate Key and encrypt plaintext
+key = RC4.get_key(10)
+cipher = RC4.encrypt(key, &quot;ABCD&quot;*5)
+# Add key and cipher to the worksheet
+text = macro.variable(&quot;text&quot;, cipher)
+key_ptr = macro.variable(&quot;key&quot;, key)
+# Set text and key as arguments in RC4 macro
+macro.routines.get(&quot;Excel4RC4RoutineStr&quot;).set_macro_arguments(text, key_ptr)
+# Get address of initialization and decryption function
+init_func, decrypt_func = macro.routines.get(&quot;Excel4RC4RoutineStr&quot;).add()
+# Call RC4 initilization function
+macro.formula(init_func.name)
+# Call decrypt function and display plaintext in ALERT
+macro.formula(&quot;ALERT&quot;, macro.argument(decrypt_func.name))
+macro.to_csv_file(&quot;out.csv&quot;)
+</code></pre>
+<p>:param macro: Excel4Macro object</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Excel4RC4RoutineStr(Excel4Routine):
+    &#39;&#39;&#39;
+    `Excel4RC4RoutineStr` class implements Excel4 Macro that allows to encrypt/decrypt data by using RC4 encryption.
+
+     In order to use RC4 routine you need to:
+
+
+     1. Place key and ciphertext in macro
+
+     2. Call set_macro_arguments function on RC4 routine and pass to this function key and ciphertext variables.
+
+     3. Get addresses of initilization and decryption functions.
+
+     4. Call initialization function in macro.
+
+     5. Call decrypt function in macro.
+
+
+     Example code:
+
+    ```
+    from excel4lib.macro import *
+    from excel4lib.macro.obfuscator import *
+    from excel4lib.utils import *
+    from excel4lib.macro.routine import *
+    # Init routines
+    routines = Excel4Routines()
+    # Create macro object
+    macro = Excel4Macro(&#34;test.csv&#34;,routines=routines)
+    # Generate Key and encrypt plaintext
+    key = RC4.get_key(10)
+    cipher = RC4.encrypt(key, &#34;ABCD&#34;*5)
+    # Add key and cipher to the worksheet
+    text = macro.variable(&#34;text&#34;, cipher)
+    key_ptr = macro.variable(&#34;key&#34;, key)
+    # Set text and key as arguments in RC4 macro
+    macro.routines.get(&#34;Excel4RC4RoutineStr&#34;).set_macro_arguments(text, key_ptr)
+    # Get address of initialization and decryption function
+    init_func, decrypt_func = macro.routines.get(&#34;Excel4RC4RoutineStr&#34;).add()
+    # Call RC4 initilization function
+    macro.formula(init_func.name)
+    # Call decrypt function and display plaintext in ALERT
+    macro.formula(&#34;ALERT&#34;, macro.argument(decrypt_func.name))
+    macro.to_csv_file(&#34;out.csv&#34;)
+    ```
+    &#39;&#39;&#39;
+    def __init__(self, macro):
+        &#39;&#39;&#39;
+
+        :param macro: Excel4Macro object
+        &#39;&#39;&#39;
+        Excel4Routine.__init__(self, &#34;Excel4RC4RoutineStr&#34;, macro)
+        self.initialization_routine_name = random_string(random.randint(10,25))
+        self.initialization_routine_ptr = None
+
+        self._p1 = None
+        self._p2 = None
+
+    def set_macro_arguments(self, input, key):
+        &#39;&#39;&#39;
+        Sets name of input and key variables
+
+        :param input: Excel4Variable that stores data to decrypt
+
+        :param key: Excel4Variable that stores key to use during decryption process
+        &#39;&#39;&#39;
+        self.set_routine_macro_arguments(input=input, key=key)
+
+
+    def allocate_init_table(self):
+        &#39;&#39;&#39;
+        Generates formulas that initialize T table
+
+        :return: list of Excel4Value representing elements of T table
+        &#39;&#39;&#39;
+        formulas = []
+        for i in range(0, 256):
+            val = self.macro._create_value(-1, -1, &#34;&#34;)
+            val._obfuscate = False
+            formulas.append(val)
+        return formulas
+
+    def generate_init_routine(self, t_table):
+        &#39;&#39;&#39;
+        Generates RC4 initialization routine
+
+        :param t_table: list of values generated by allocate_init_table
+
+        :return: list of formulas initializing RC4
+        &#39;&#39;&#39;
+        formulas = []
+        self.initialization_routine_ptr = self.macro._create_value(-1, -1, random_string(random.randint(2, 25)))
+        formulas.append(self.initialization_routine_ptr)
+        cnt = self.macro._create_variable(-1, -1, random_string(random.randint(10, 25)), 0)
+        formulas.append(cnt)
+        formulas.append(self.macro._create_loop(-1,-1, &#34;FOR&#34;, cnt.name, cnt, 255, 1))
+        formulas.append(self.macro._create_formula(-1,-1, &#34;SET.VALUE&#34;, self.macro.argument(&#34;OFFSET&#34;, t_table[0], cnt, 0), cnt))
+        formulas.append(self.macro._create_end_loop(-1,-1, &#34;NEXT&#34;))
+
+        temp = self.macro._create_variable(-1, -1, random_string(random.randint(10, 25)), 0)
+        formulas.append(temp)
+        counter = self.macro._create_variable(-1, -1, random_string(random.randint(10, 25)), 0)
+        formulas.append(counter)
+        key_len = self.macro.argument(&#34;LEN&#34;, self.get_argument(&#34;key&#34;))
+        formulas.append(self.macro._create_loop(-1,-1, &#34;FOR&#34;, counter.name, counter, 255, 1))
+        t_table_ref = self.macro.argument(&#34;OFFSET&#34;, t_table[0], counter, 0)
+
+        key_mod = self.macro.argument(&#34;SUM&#34;, self.macro.argument(&#34;MOD&#34;, counter, key_len), 1)
+        k_table_ref = self.macro.argument(&#34;CODE&#34;, self.macro.argument(&#34;MID&#34;, self.get_argument(&#34;key&#34;), key_mod, 1))
+
+        sum = self.macro.argument(&#34;SUM&#34;, temp, t_table_ref, k_table_ref)
+        mod = self.macro.argument(&#34;MOD&#34;, sum, 256)
+        temp2 = self.macro._create_variable(-1, -1, temp.name, mod)
+        formulas.append(temp2)
+        t_table_ref2 = self.macro.argument(&#34;OFFSET&#34;, t_table[0], temp, 0)
+        swap_temp = self.macro._create_variable(-1, -1, random_string(random.randint(10, 25)),
+                                        self.macro.argument(&#34;EVALUATE&#34;, t_table_ref))
+        formulas.append(swap_temp)
+        formulas.append(self.macro._create_formula(-1,-1, &#34;SET.VALUE&#34;, t_table_ref, self.macro.argument(&#34;EVALUATE&#34;, t_table_ref2)))
+        formulas.append(self.macro._create_formula(-1,-1, &#34;SET.VALUE&#34;, t_table_ref2, swap_temp))
+        formulas.append(self.macro._create_end_loop(-1,-1, &#34;NEXT&#34;))
+
+        self._p1 = self.macro._create_variable(-1, -1, random_string(random.randint(10, 25)), 0)
+        self._p2 = self.macro._create_variable(-1, -1, random_string(random.randint(10, 25)), 0)
+        formulas.append(self._p1)
+        formulas.append(self._p2)
+        formulas.append(self.macro._create_formula(-1,-1, &#34;RETURN&#34;))
+
+        return formulas
+
+    def generate(self):
+        &#39;&#39;&#39;
+        Generates RC4 routine formulas and returns them. Note that this function does not add formulas to the worksheet.
+
+        :return: tuple of formulas representing RC4 macro
+        &#39;&#39;&#39;
+        formulas = []
+        t_table = self.allocate_init_table()
+        init_routine_formulas = self.generate_init_routine(t_table)
+
+        self.routine_ptr = self.macro._create_value(-1, -1,random_string(random.randint(10, 25)))
+        formulas.append(self.routine_ptr)
+        # Initialize output
+        output = self.macro._create_variable(-1, -1,random_string(random.randint(10, 25)), &#34;&#34;)
+        formulas.append(output)
+        # Stores current position in input
+        text_ptr = self.macro._create_variable(-1, -1,random_string(random.randint(10, 25)), 1)
+        formulas.append(text_ptr)
+        formulas.append(self.macro._create_loop(-1,-1,&#34;FOR&#34;, text_ptr.name, text_ptr, self.macro.argument(&#34;LEN&#34;, self.get_argument(&#34;input&#34;)), 4))
+
+        p1_mod = self.macro.argument(&#34;MOD&#34;, self.macro.argument(&#34;SUM&#34;, self._p1, 1), 256)
+        t_table_ref3 = self.macro.argument(&#34;OFFSET&#34;, t_table[0], self._p1, 0)
+        p2_mod = self.macro.argument(&#34;MOD&#34;, self.macro.argument(&#34;SUM&#34;, self._p2, t_table_ref3), 256)
+        t_table_ref4 = self.macro.argument(&#34;OFFSET&#34;, t_table[0], self._p2, 0)
+
+        p1_1 = self.macro._create_variable(-1, -1,self._p1.name, p1_mod)
+        p2_2 = self.macro._create_variable(-1, -1,self._p2.name, p2_mod)
+        formulas.append(p1_1)
+        formulas.append(p2_2)
+        char_to_dec = self.macro.argument(&#34;HEX2DEC&#34;, self.macro.argument(&#34;MID&#34;, self.get_argument(&#34;input&#34;), text_ptr, 4))
+
+        swap_temp = self.macro._create_variable(-1, -1, random_string(random.randint(10, 25)),
+                                        self.macro.argument(&#34;EVALUATE&#34;, t_table_ref3))
+        formulas.append(swap_temp)
+        formulas.append(self.macro._create_formula(-1, -1, &#34;SET.VALUE&#34;, t_table_ref3, self.macro.argument(&#34;EVALUATE&#34;, t_table_ref4)))
+        formulas.append(self.macro._create_formula(-1, -1, &#34;SET.VALUE&#34;, t_table_ref4, swap_temp))
+
+        key = self.macro.argument(&#34;OFFSET&#34;, t_table[0], self.macro.argument(&#34;MOD&#34;, self.macro.argument(&#34;SUM&#34;,
+                                                                                                       self.macro.argument(
+                                                                                                           &#34;OFFSET&#34;,
+                                                                                                           t_table[0],
+                                                                                                           self._p1, 0),
+                                                                                                       self.macro.argument(
+                                                                                                           &#34;OFFSET&#34;,
+                                                                                                           t_table[0],
+                                                                                                           self._p2, 0)),
+                                                                            256), 0)
+
+        formulas.append(self.macro._create_variable(-1, -1, output.name, self.macro.operator(output, &#34;&amp;&#34;, self.macro.argument(&#34;UNICHAR&#34;,
+                                                                                              self.macro.argument(
+                                                                                                  &#34;BITXOR&#34;, key,
+                                                                                                  char_to_dec)))))
+        formulas.append(self.macro._create_end_loop(-1,-1,&#34;NEXT&#34;))
+        formulas.append(self.macro._create_formula(-1,-1, &#34;RETURN&#34;, output))
+
+        return (t_table, init_routine_formulas, formulas)
+
+
+    def ref_init(self):
+        &#39;&#39;&#39;
+        Return variable that points to initialization routine
+
+        :return: Excel4Variable pointing to initialization routine
+        &#39;&#39;&#39;
+        return self.macro._create_variable(-1, -1, self.initialization_routine_name, self.initialization_routine_ptr)
+
+    def add_ref(self):
+        &#39;&#39;&#39;
+        Adds variables pointing to the beginning of init routine and decrption routine to the worksheet
+        &#39;&#39;&#39;
+
+        ref = self.ref()
+        ref_init = self.ref_init()
+        ref.x = self.macro.worksheet._curr_x
+        ref.y = self.macro.worksheet._curr_y
+        ref_init.x = self.macro.worksheet._curr_x
+        ref_init.y = self.macro.worksheet._curr_y + 1
+        self.macro._add_to_worksheet(ref)
+        self.macro._add_to_worksheet(ref_init)
+
+
+        return (ref_init, ref)
+
+    def add(self):
+        &#39;&#39;&#39;
+        Adds RC4 routine to the worksheet and returns two Excel4Variables. One that points to initialization routine
+        and second that points to decryption routine
+
+        :return: tuple of variables that stores references to initialization and decryption routines
+        &#39;&#39;&#39;
+
+        if self.is_enabled():
+            return self.add_ref()
+
+        t_table, init_routine_formulas, formulas = self.generate()
+        # Add formulas to the worksheet
+        self.macro.random_add_to_worksheet(t_table)
+        self.macro.random_add_to_worksheet(init_routine_formulas)
+        self.macro.random_add_to_worksheet(formulas)
+        self.set_enabled()
+        return self.add_ref()</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="excel4lib.macro.routine.excel4_routine.Excel4Routine" href="#excel4lib.macro.routine.excel4_routine.Excel4Routine">Excel4Routine</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="excel4lib.macro.routine.excel4_routine.Excel4RC4RoutineStr.add"><code class="name flex">
+<span>def <span class="ident">add</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Adds RC4 routine to the worksheet and returns two Excel4Variables. One that points to initialization routine
+and second that points to decryption routine</p>
+<p>:return: tuple of variables that stores references to initialization and decryption routines</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add(self):
+    &#39;&#39;&#39;
+    Adds RC4 routine to the worksheet and returns two Excel4Variables. One that points to initialization routine
+    and second that points to decryption routine
+
+    :return: tuple of variables that stores references to initialization and decryption routines
+    &#39;&#39;&#39;
+
+    if self.is_enabled():
+        return self.add_ref()
+
+    t_table, init_routine_formulas, formulas = self.generate()
+    # Add formulas to the worksheet
+    self.macro.random_add_to_worksheet(t_table)
+    self.macro.random_add_to_worksheet(init_routine_formulas)
+    self.macro.random_add_to_worksheet(formulas)
+    self.set_enabled()
+    return self.add_ref()</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.macro.routine.excel4_routine.Excel4RC4RoutineStr.add_ref"><code class="name flex">
+<span>def <span class="ident">add_ref</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Adds variables pointing to the beginning of init routine and decrption routine to the worksheet</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_ref(self):
+    &#39;&#39;&#39;
+    Adds variables pointing to the beginning of init routine and decrption routine to the worksheet
+    &#39;&#39;&#39;
+
+    ref = self.ref()
+    ref_init = self.ref_init()
+    ref.x = self.macro.worksheet._curr_x
+    ref.y = self.macro.worksheet._curr_y
+    ref_init.x = self.macro.worksheet._curr_x
+    ref_init.y = self.macro.worksheet._curr_y + 1
+    self.macro._add_to_worksheet(ref)
+    self.macro._add_to_worksheet(ref_init)
+
+
+    return (ref_init, ref)</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.macro.routine.excel4_routine.Excel4RC4RoutineStr.allocate_init_table"><code class="name flex">
+<span>def <span class="ident">allocate_init_table</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Generates formulas that initialize T table</p>
+<p>:return: list of Excel4Value representing elements of T table</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def allocate_init_table(self):
+    &#39;&#39;&#39;
+    Generates formulas that initialize T table
+
+    :return: list of Excel4Value representing elements of T table
+    &#39;&#39;&#39;
+    formulas = []
+    for i in range(0, 256):
+        val = self.macro._create_value(-1, -1, &#34;&#34;)
+        val._obfuscate = False
+        formulas.append(val)
+    return formulas</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.macro.routine.excel4_routine.Excel4RC4RoutineStr.generate"><code class="name flex">
+<span>def <span class="ident">generate</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Generates RC4 routine formulas and returns them. Note that this function does not add formulas to the worksheet.</p>
+<p>:return: tuple of formulas representing RC4 macro</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def generate(self):
+    &#39;&#39;&#39;
+    Generates RC4 routine formulas and returns them. Note that this function does not add formulas to the worksheet.
+
+    :return: tuple of formulas representing RC4 macro
+    &#39;&#39;&#39;
+    formulas = []
+    t_table = self.allocate_init_table()
+    init_routine_formulas = self.generate_init_routine(t_table)
+
+    self.routine_ptr = self.macro._create_value(-1, -1,random_string(random.randint(10, 25)))
+    formulas.append(self.routine_ptr)
+    # Initialize output
+    output = self.macro._create_variable(-1, -1,random_string(random.randint(10, 25)), &#34;&#34;)
+    formulas.append(output)
+    # Stores current position in input
+    text_ptr = self.macro._create_variable(-1, -1,random_string(random.randint(10, 25)), 1)
+    formulas.append(text_ptr)
+    formulas.append(self.macro._create_loop(-1,-1,&#34;FOR&#34;, text_ptr.name, text_ptr, self.macro.argument(&#34;LEN&#34;, self.get_argument(&#34;input&#34;)), 4))
+
+    p1_mod = self.macro.argument(&#34;MOD&#34;, self.macro.argument(&#34;SUM&#34;, self._p1, 1), 256)
+    t_table_ref3 = self.macro.argument(&#34;OFFSET&#34;, t_table[0], self._p1, 0)
+    p2_mod = self.macro.argument(&#34;MOD&#34;, self.macro.argument(&#34;SUM&#34;, self._p2, t_table_ref3), 256)
+    t_table_ref4 = self.macro.argument(&#34;OFFSET&#34;, t_table[0], self._p2, 0)
+
+    p1_1 = self.macro._create_variable(-1, -1,self._p1.name, p1_mod)
+    p2_2 = self.macro._create_variable(-1, -1,self._p2.name, p2_mod)
+    formulas.append(p1_1)
+    formulas.append(p2_2)
+    char_to_dec = self.macro.argument(&#34;HEX2DEC&#34;, self.macro.argument(&#34;MID&#34;, self.get_argument(&#34;input&#34;), text_ptr, 4))
+
+    swap_temp = self.macro._create_variable(-1, -1, random_string(random.randint(10, 25)),
+                                    self.macro.argument(&#34;EVALUATE&#34;, t_table_ref3))
+    formulas.append(swap_temp)
+    formulas.append(self.macro._create_formula(-1, -1, &#34;SET.VALUE&#34;, t_table_ref3, self.macro.argument(&#34;EVALUATE&#34;, t_table_ref4)))
+    formulas.append(self.macro._create_formula(-1, -1, &#34;SET.VALUE&#34;, t_table_ref4, swap_temp))
+
+    key = self.macro.argument(&#34;OFFSET&#34;, t_table[0], self.macro.argument(&#34;MOD&#34;, self.macro.argument(&#34;SUM&#34;,
+                                                                                                   self.macro.argument(
+                                                                                                       &#34;OFFSET&#34;,
+                                                                                                       t_table[0],
+                                                                                                       self._p1, 0),
+                                                                                                   self.macro.argument(
+                                                                                                       &#34;OFFSET&#34;,
+                                                                                                       t_table[0],
+                                                                                                       self._p2, 0)),
+                                                                        256), 0)
+
+    formulas.append(self.macro._create_variable(-1, -1, output.name, self.macro.operator(output, &#34;&amp;&#34;, self.macro.argument(&#34;UNICHAR&#34;,
+                                                                                          self.macro.argument(
+                                                                                              &#34;BITXOR&#34;, key,
+                                                                                              char_to_dec)))))
+    formulas.append(self.macro._create_end_loop(-1,-1,&#34;NEXT&#34;))
+    formulas.append(self.macro._create_formula(-1,-1, &#34;RETURN&#34;, output))
+
+    return (t_table, init_routine_formulas, formulas)</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.macro.routine.excel4_routine.Excel4RC4RoutineStr.generate_init_routine"><code class="name flex">
+<span>def <span class="ident">generate_init_routine</span></span>(<span>self, t_table)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Generates RC4 initialization routine</p>
+<p>:param t_table: list of values generated by allocate_init_table</p>
+<p>:return: list of formulas initializing RC4</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def generate_init_routine(self, t_table):
+    &#39;&#39;&#39;
+    Generates RC4 initialization routine
+
+    :param t_table: list of values generated by allocate_init_table
+
+    :return: list of formulas initializing RC4
+    &#39;&#39;&#39;
+    formulas = []
+    self.initialization_routine_ptr = self.macro._create_value(-1, -1, random_string(random.randint(2, 25)))
+    formulas.append(self.initialization_routine_ptr)
+    cnt = self.macro._create_variable(-1, -1, random_string(random.randint(10, 25)), 0)
+    formulas.append(cnt)
+    formulas.append(self.macro._create_loop(-1,-1, &#34;FOR&#34;, cnt.name, cnt, 255, 1))
+    formulas.append(self.macro._create_formula(-1,-1, &#34;SET.VALUE&#34;, self.macro.argument(&#34;OFFSET&#34;, t_table[0], cnt, 0), cnt))
+    formulas.append(self.macro._create_end_loop(-1,-1, &#34;NEXT&#34;))
+
+    temp = self.macro._create_variable(-1, -1, random_string(random.randint(10, 25)), 0)
+    formulas.append(temp)
+    counter = self.macro._create_variable(-1, -1, random_string(random.randint(10, 25)), 0)
+    formulas.append(counter)
+    key_len = self.macro.argument(&#34;LEN&#34;, self.get_argument(&#34;key&#34;))
+    formulas.append(self.macro._create_loop(-1,-1, &#34;FOR&#34;, counter.name, counter, 255, 1))
+    t_table_ref = self.macro.argument(&#34;OFFSET&#34;, t_table[0], counter, 0)
+
+    key_mod = self.macro.argument(&#34;SUM&#34;, self.macro.argument(&#34;MOD&#34;, counter, key_len), 1)
+    k_table_ref = self.macro.argument(&#34;CODE&#34;, self.macro.argument(&#34;MID&#34;, self.get_argument(&#34;key&#34;), key_mod, 1))
+
+    sum = self.macro.argument(&#34;SUM&#34;, temp, t_table_ref, k_table_ref)
+    mod = self.macro.argument(&#34;MOD&#34;, sum, 256)
+    temp2 = self.macro._create_variable(-1, -1, temp.name, mod)
+    formulas.append(temp2)
+    t_table_ref2 = self.macro.argument(&#34;OFFSET&#34;, t_table[0], temp, 0)
+    swap_temp = self.macro._create_variable(-1, -1, random_string(random.randint(10, 25)),
+                                    self.macro.argument(&#34;EVALUATE&#34;, t_table_ref))
+    formulas.append(swap_temp)
+    formulas.append(self.macro._create_formula(-1,-1, &#34;SET.VALUE&#34;, t_table_ref, self.macro.argument(&#34;EVALUATE&#34;, t_table_ref2)))
+    formulas.append(self.macro._create_formula(-1,-1, &#34;SET.VALUE&#34;, t_table_ref2, swap_temp))
+    formulas.append(self.macro._create_end_loop(-1,-1, &#34;NEXT&#34;))
+
+    self._p1 = self.macro._create_variable(-1, -1, random_string(random.randint(10, 25)), 0)
+    self._p2 = self.macro._create_variable(-1, -1, random_string(random.randint(10, 25)), 0)
+    formulas.append(self._p1)
+    formulas.append(self._p2)
+    formulas.append(self.macro._create_formula(-1,-1, &#34;RETURN&#34;))
+
+    return formulas</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.macro.routine.excel4_routine.Excel4RC4RoutineStr.ref_init"><code class="name flex">
+<span>def <span class="ident">ref_init</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Return variable that points to initialization routine</p>
+<p>:return: Excel4Variable pointing to initialization routine</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ref_init(self):
+    &#39;&#39;&#39;
+    Return variable that points to initialization routine
+
+    :return: Excel4Variable pointing to initialization routine
+    &#39;&#39;&#39;
+    return self.macro._create_variable(-1, -1, self.initialization_routine_name, self.initialization_routine_ptr)</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.macro.routine.excel4_routine.Excel4RC4RoutineStr.set_macro_arguments"><code class="name flex">
+<span>def <span class="ident">set_macro_arguments</span></span>(<span>self, input, key)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Sets name of input and key variables</p>
+<p>:param input: Excel4Variable that stores data to decrypt</p>
+<p>:param key: Excel4Variable that stores key to use during decryption process</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_macro_arguments(self, input, key):
+    &#39;&#39;&#39;
+    Sets name of input and key variables
+
+    :param input: Excel4Variable that stores data to decrypt
+
+    :param key: Excel4Variable that stores key to use during decryption process
+    &#39;&#39;&#39;
+    self.set_routine_macro_arguments(input=input, key=key)</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="excel4lib.macro.routine.excel4_routine.Excel4Routine" href="#excel4lib.macro.routine.excel4_routine.Excel4Routine">Excel4Routine</a></b></code>:
+<ul class="hlist">
+<li><code><a title="excel4lib.macro.routine.excel4_routine.Excel4Routine.get_argument" href="#excel4lib.macro.routine.excel4_routine.Excel4Routine.get_argument">get_argument</a></code></li>
+<li><code><a title="excel4lib.macro.routine.excel4_routine.Excel4Routine.is_enabled" href="#excel4lib.macro.routine.excel4_routine.Excel4Routine.is_enabled">is_enabled</a></code></li>
+<li><code><a title="excel4lib.macro.routine.excel4_routine.Excel4Routine.ref" href="#excel4lib.macro.routine.excel4_routine.Excel4Routine.ref">ref</a></code></li>
+<li><code><a title="excel4lib.macro.routine.excel4_routine.Excel4Routine.set_enabled" href="#excel4lib.macro.routine.excel4_routine.Excel4Routine.set_enabled">set_enabled</a></code></li>
+<li><code><a title="excel4lib.macro.routine.excel4_routine.Excel4Routine.set_routine_macro_arguments" href="#excel4lib.macro.routine.excel4_routine.Excel4Routine.set_routine_macro_arguments">set_routine_macro_arguments</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="excel4lib.macro.routine.excel4_routine.Excel4Routine"><code class="flex name class">
+<span>class <span class="ident">Excel4Routine</span></span>
+<span>(</span><span>name, macro)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Base class for classes implementing predefined Excel4 macro that can be embedded in the worksheet</p>
+<p>:param name: name of the routine
+:param macro: Excel4Macro object</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Excel4Routine(object):
+    &#39;&#39;&#39;
+    Base class for classes implementing predefined Excel4 macro that can be embedded in the worksheet
+    &#39;&#39;&#39;
+
+    def __init__(self, name, macro):
+        &#39;&#39;&#39;
+
+        :param name: name of the routine
+        :param macro: Excel4Macro object
+        &#39;&#39;&#39;
+        # Name of routine
+        self.name = name
+        # First instruction of routine
+        self.routine_ptr = None
+        # Last instruction of routine (most often RETURN formula)
+        self.routine_end_ptr = None
+        # Excel4Macro object
+        self.macro = macro
+        # Is macro added to worksheet
+        self._enabled = False
+        # Name of routine in macro
+        self.call_name = random_string(random.randint(10,25))
+        # Routine&#39;s arguments
+        self.args = {}
+
+    def set_enabled(self):
+        &#39;&#39;&#39;
+        Sets routine as enabled - as added to the worksheet.
+        &#39;&#39;&#39;
+        self._enabled = True
+
+    def is_enabled(self):
+        &#39;&#39;&#39;
+        Return True if routine is added to worksheet and False if not.
+
+        :return: True if routine is added to worksheet and False if not.
+        &#39;&#39;&#39;
+        return self._enabled
+
+    def get_argument(self, name):
+        &#39;&#39;&#39;
+        Returns argument with `name`
+
+        :param name: name of argument to return
+
+        :return: argument with `name`
+        &#39;&#39;&#39;
+        arg = self.args.get(name, None)
+        if not arg:
+            raise Excel4RoutineMissingArgument(&#34;Missing required argument {} in routine {}. Set this argument by calling set_macro_arguments function.&#34;.format(name, self.name))
+        return arg[&#34;references&#34;][0]
+
+    def set_routine_macro_arguments(self, **kwargs):
+        &#39;&#39;&#39;
+        Sets arguments that will be used during macro execution. Note that all names of Excel4Variables passed to this function will be changed
+
+        :param kwargs: arguments
+        &#39;&#39;&#39;
+        for key in kwargs:
+            var = kwargs[key]
+            if not issubclass(type(var), Excel4Variable):
+                # Wrong type of argument
+                continue
+
+            if key not in self.args:
+                self.args[key] = {&#34;name&#34;: Excel4VariableName(random_string(random.randint(5,20))), &#34;references&#34;:[var]}
+            else:
+                self.args[key][&#34;references&#34;].append(var)
+            var.set_name(self.args[key][&#34;name&#34;].name)
+            # Disable obfuscation of this name
+            # @TODO In the future implement mechanism that will change all references to this name object
+            var.name._obfuscate = False
+
+
+    def generate(self, **kwargs):
+        &#39;&#39;&#39;
+        Generates routine formulas and returns them
+
+        :param kwargs: arguments
+        &#39;&#39;&#39;
+        pass
+
+    def add(self, **kwargs):
+        &#39;&#39;&#39;
+        Adds routine to the worksheet
+
+        :param kwargs: arguments
+        &#39;&#39;&#39;
+        pass
+
+    def ref(self):
+        &#39;&#39;&#39;
+        Returns variable that points to routine start.
+
+        :return: Excel4Variable pointing to start of the routine in macro
+        &#39;&#39;&#39;
+        return self.macro._create_variable(-1, -1, self.call_name, self.routine_ptr)</code></pre>
+</details>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="excel4lib.macro.routine.excel4_routine.Excel4RC4RoutineStr" href="#excel4lib.macro.routine.excel4_routine.Excel4RC4RoutineStr">Excel4RC4RoutineStr</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="excel4lib.macro.routine.excel4_routine.Excel4Routine.add"><code class="name flex">
+<span>def <span class="ident">add</span></span>(<span>self, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Adds routine to the worksheet</p>
+<p>:param kwargs: arguments</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add(self, **kwargs):
+    &#39;&#39;&#39;
+    Adds routine to the worksheet
+
+    :param kwargs: arguments
+    &#39;&#39;&#39;
+    pass</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.macro.routine.excel4_routine.Excel4Routine.generate"><code class="name flex">
+<span>def <span class="ident">generate</span></span>(<span>self, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Generates routine formulas and returns them</p>
+<p>:param kwargs: arguments</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def generate(self, **kwargs):
+    &#39;&#39;&#39;
+    Generates routine formulas and returns them
+
+    :param kwargs: arguments
+    &#39;&#39;&#39;
+    pass</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.macro.routine.excel4_routine.Excel4Routine.get_argument"><code class="name flex">
+<span>def <span class="ident">get_argument</span></span>(<span>self, name)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns argument with <code>name</code></p>
+<p>:param name: name of argument to return</p>
+<p>:return: argument with <code>name</code></p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_argument(self, name):
+    &#39;&#39;&#39;
+    Returns argument with `name`
+
+    :param name: name of argument to return
+
+    :return: argument with `name`
+    &#39;&#39;&#39;
+    arg = self.args.get(name, None)
+    if not arg:
+        raise Excel4RoutineMissingArgument(&#34;Missing required argument {} in routine {}. Set this argument by calling set_macro_arguments function.&#34;.format(name, self.name))
+    return arg[&#34;references&#34;][0]</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.macro.routine.excel4_routine.Excel4Routine.is_enabled"><code class="name flex">
+<span>def <span class="ident">is_enabled</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Return True if routine is added to worksheet and False if not.</p>
+<p>:return: True if routine is added to worksheet and False if not.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def is_enabled(self):
+    &#39;&#39;&#39;
+    Return True if routine is added to worksheet and False if not.
+
+    :return: True if routine is added to worksheet and False if not.
+    &#39;&#39;&#39;
+    return self._enabled</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.macro.routine.excel4_routine.Excel4Routine.ref"><code class="name flex">
+<span>def <span class="ident">ref</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns variable that points to routine start.</p>
+<p>:return: Excel4Variable pointing to start of the routine in macro</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ref(self):
+    &#39;&#39;&#39;
+    Returns variable that points to routine start.
+
+    :return: Excel4Variable pointing to start of the routine in macro
+    &#39;&#39;&#39;
+    return self.macro._create_variable(-1, -1, self.call_name, self.routine_ptr)</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.macro.routine.excel4_routine.Excel4Routine.set_enabled"><code class="name flex">
+<span>def <span class="ident">set_enabled</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Sets routine as enabled - as added to the worksheet.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_enabled(self):
+    &#39;&#39;&#39;
+    Sets routine as enabled - as added to the worksheet.
+    &#39;&#39;&#39;
+    self._enabled = True</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.macro.routine.excel4_routine.Excel4Routine.set_routine_macro_arguments"><code class="name flex">
+<span>def <span class="ident">set_routine_macro_arguments</span></span>(<span>self, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Sets arguments that will be used during macro execution. Note that all names of Excel4Variables passed to this function will be changed</p>
+<p>:param kwargs: arguments</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_routine_macro_arguments(self, **kwargs):
+    &#39;&#39;&#39;
+    Sets arguments that will be used during macro execution. Note that all names of Excel4Variables passed to this function will be changed
+
+    :param kwargs: arguments
+    &#39;&#39;&#39;
+    for key in kwargs:
+        var = kwargs[key]
+        if not issubclass(type(var), Excel4Variable):
+            # Wrong type of argument
+            continue
+
+        if key not in self.args:
+            self.args[key] = {&#34;name&#34;: Excel4VariableName(random_string(random.randint(5,20))), &#34;references&#34;:[var]}
+        else:
+            self.args[key][&#34;references&#34;].append(var)
+        var.set_name(self.args[key][&#34;name&#34;].name)
+        # Disable obfuscation of this name
+        # @TODO In the future implement mechanism that will change all references to this name object
+        var.name._obfuscate = False</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="excel4lib.macro.routine.excel4_routine.Excel4Routines"><code class="flex name class">
+<span>class <span class="ident">Excel4Routines</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p><code><a title="excel4lib.macro.routine.excel4_routine.Excel4Routines" href="#excel4lib.macro.routine.excel4_routine.Excel4Routines">Excel4Routines</a></code> allows to add predefined Excel4 macros to the worksheet such as: RC4 decryption routine.
+<code><a title="excel4lib.macro.routine.excel4_routine.Excel4Routines" href="#excel4lib.macro.routine.excel4_routine.Excel4Routines">Excel4Routines</a></code> stores information about routines, allows to add them and checks if routine is already added to the worksheet.
+<code><a title="excel4lib.macro.routine.excel4_routine.Excel4Routines" href="#excel4lib.macro.routine.excel4_routine.Excel4Routines">Excel4Routines</a></code> object is used by Excel4Macro</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Excel4Routines(Excel4MacroExtension):
+    &#39;&#39;&#39;
+    `Excel4Routines` allows to add predefined Excel4 macros to the worksheet such as: RC4 decryption routine.
+    `Excel4Routines` stores information about routines, allows to add them and checks if routine is already added to the worksheet.
+    `Excel4Routines` object is used by Excel4Macro
+    &#39;&#39;&#39;
+
+    def __init__(self):
+        Excel4MacroExtension.__init__(self)
+        self.routines = {}
+
+    def set_macro(self, macro):
+        &#39;&#39;&#39;
+        Sets `macro` and worksheet
+        :param macro: Excel4Macro object
+        &#39;&#39;&#39;
+        self.macro = macro
+        self.worksheet = macro.worksheet
+        self._init_routines()
+
+    def _init_routines(self):
+        &#39;&#39;&#39;
+        Adds default routines
+        &#39;&#39;&#39;
+        self.add(Excel4RC4RoutineStr(self.macro))
+
+    def add(self, routine):
+        &#39;&#39;&#39;
+        Adds routine to Excel4Routines object
+        :param routine: Excel4Routine object
+        &#39;&#39;&#39;
+        if routine.name not in self.routines:
+            self.routines[routine.name] = routine
+        else:
+            # Routine with this name already exist
+            pass
+
+    def list(self):
+        &#39;&#39;&#39;
+        Returns names of registered routines
+
+        :return: names of registered routines
+        &#39;&#39;&#39;
+        return self.routines.keys()
+
+    def get(self, name):
+        &#39;&#39;&#39;
+        Returns routine or None if routine does not exist
+
+        :param name: name of routine to return
+
+        :return: routine or None if routine does not exist
+        &#39;&#39;&#39;
+        return self.routines.get(name, None)</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="excel4lib.macro.excel4_macro_extension.Excel4MacroExtension" href="../excel4_macro_extension.html#excel4lib.macro.excel4_macro_extension.Excel4MacroExtension">Excel4MacroExtension</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="excel4lib.macro.routine.excel4_routine.Excel4Routines.add"><code class="name flex">
+<span>def <span class="ident">add</span></span>(<span>self, routine)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Adds routine to Excel4Routines object
+:param routine: Excel4Routine object</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add(self, routine):
+    &#39;&#39;&#39;
+    Adds routine to Excel4Routines object
+    :param routine: Excel4Routine object
+    &#39;&#39;&#39;
+    if routine.name not in self.routines:
+        self.routines[routine.name] = routine
+    else:
+        # Routine with this name already exist
+        pass</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.macro.routine.excel4_routine.Excel4Routines.get"><code class="name flex">
+<span>def <span class="ident">get</span></span>(<span>self, name)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns routine or None if routine does not exist</p>
+<p>:param name: name of routine to return</p>
+<p>:return: routine or None if routine does not exist</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get(self, name):
+    &#39;&#39;&#39;
+    Returns routine or None if routine does not exist
+
+    :param name: name of routine to return
+
+    :return: routine or None if routine does not exist
+    &#39;&#39;&#39;
+    return self.routines.get(name, None)</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.macro.routine.excel4_routine.Excel4Routines.list"><code class="name flex">
+<span>def <span class="ident">list</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns names of registered routines</p>
+<p>:return: names of registered routines</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def list(self):
+    &#39;&#39;&#39;
+    Returns names of registered routines
+
+    :return: names of registered routines
+    &#39;&#39;&#39;
+    return self.routines.keys()</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.macro.routine.excel4_routine.Excel4Routines.set_macro"><code class="name flex">
+<span>def <span class="ident">set_macro</span></span>(<span>self, macro)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Sets <code>macro</code> and worksheet
+:param macro: Excel4Macro object</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_macro(self, macro):
+    &#39;&#39;&#39;
+    Sets `macro` and worksheet
+    :param macro: Excel4Macro object
+    &#39;&#39;&#39;
+    self.macro = macro
+    self.worksheet = macro.worksheet
+    self._init_routines()</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="excel4lib.macro.routine" href="index.html">excel4lib.macro.routine</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="excel4lib.macro.routine.excel4_routine.Excel4RC4RoutineStr" href="#excel4lib.macro.routine.excel4_routine.Excel4RC4RoutineStr">Excel4RC4RoutineStr</a></code></h4>
+<ul class="">
+<li><code><a title="excel4lib.macro.routine.excel4_routine.Excel4RC4RoutineStr.add" href="#excel4lib.macro.routine.excel4_routine.Excel4RC4RoutineStr.add">add</a></code></li>
+<li><code><a title="excel4lib.macro.routine.excel4_routine.Excel4RC4RoutineStr.add_ref" href="#excel4lib.macro.routine.excel4_routine.Excel4RC4RoutineStr.add_ref">add_ref</a></code></li>
+<li><code><a title="excel4lib.macro.routine.excel4_routine.Excel4RC4RoutineStr.allocate_init_table" href="#excel4lib.macro.routine.excel4_routine.Excel4RC4RoutineStr.allocate_init_table">allocate_init_table</a></code></li>
+<li><code><a title="excel4lib.macro.routine.excel4_routine.Excel4RC4RoutineStr.generate" href="#excel4lib.macro.routine.excel4_routine.Excel4RC4RoutineStr.generate">generate</a></code></li>
+<li><code><a title="excel4lib.macro.routine.excel4_routine.Excel4RC4RoutineStr.generate_init_routine" href="#excel4lib.macro.routine.excel4_routine.Excel4RC4RoutineStr.generate_init_routine">generate_init_routine</a></code></li>
+<li><code><a title="excel4lib.macro.routine.excel4_routine.Excel4RC4RoutineStr.ref_init" href="#excel4lib.macro.routine.excel4_routine.Excel4RC4RoutineStr.ref_init">ref_init</a></code></li>
+<li><code><a title="excel4lib.macro.routine.excel4_routine.Excel4RC4RoutineStr.set_macro_arguments" href="#excel4lib.macro.routine.excel4_routine.Excel4RC4RoutineStr.set_macro_arguments">set_macro_arguments</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="excel4lib.macro.routine.excel4_routine.Excel4Routine" href="#excel4lib.macro.routine.excel4_routine.Excel4Routine">Excel4Routine</a></code></h4>
+<ul class="">
+<li><code><a title="excel4lib.macro.routine.excel4_routine.Excel4Routine.add" href="#excel4lib.macro.routine.excel4_routine.Excel4Routine.add">add</a></code></li>
+<li><code><a title="excel4lib.macro.routine.excel4_routine.Excel4Routine.generate" href="#excel4lib.macro.routine.excel4_routine.Excel4Routine.generate">generate</a></code></li>
+<li><code><a title="excel4lib.macro.routine.excel4_routine.Excel4Routine.get_argument" href="#excel4lib.macro.routine.excel4_routine.Excel4Routine.get_argument">get_argument</a></code></li>
+<li><code><a title="excel4lib.macro.routine.excel4_routine.Excel4Routine.is_enabled" href="#excel4lib.macro.routine.excel4_routine.Excel4Routine.is_enabled">is_enabled</a></code></li>
+<li><code><a title="excel4lib.macro.routine.excel4_routine.Excel4Routine.ref" href="#excel4lib.macro.routine.excel4_routine.Excel4Routine.ref">ref</a></code></li>
+<li><code><a title="excel4lib.macro.routine.excel4_routine.Excel4Routine.set_enabled" href="#excel4lib.macro.routine.excel4_routine.Excel4Routine.set_enabled">set_enabled</a></code></li>
+<li><code><a title="excel4lib.macro.routine.excel4_routine.Excel4Routine.set_routine_macro_arguments" href="#excel4lib.macro.routine.excel4_routine.Excel4Routine.set_routine_macro_arguments">set_routine_macro_arguments</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="excel4lib.macro.routine.excel4_routine.Excel4Routines" href="#excel4lib.macro.routine.excel4_routine.Excel4Routines">Excel4Routines</a></code></h4>
+<ul class="">
+<li><code><a title="excel4lib.macro.routine.excel4_routine.Excel4Routines.add" href="#excel4lib.macro.routine.excel4_routine.Excel4Routines.add">add</a></code></li>
+<li><code><a title="excel4lib.macro.routine.excel4_routine.Excel4Routines.get" href="#excel4lib.macro.routine.excel4_routine.Excel4Routines.get">get</a></code></li>
+<li><code><a title="excel4lib.macro.routine.excel4_routine.Excel4Routines.list" href="#excel4lib.macro.routine.excel4_routine.Excel4Routines.list">list</a></code></li>
+<li><code><a title="excel4lib.macro.routine.excel4_routine.Excel4Routines.set_macro" href="#excel4lib.macro.routine.excel4_routine.Excel4Routines.set_macro">set_macro</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+</footer>
+</body>
+</html>

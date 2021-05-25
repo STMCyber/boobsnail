@@ -1,0 +1,1197 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.9.2" />
+<title>excel4lib.lang.excel4_translator API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>excel4lib.lang.excel4_translator</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">from excel4lib.config import *
+from excel4lib.config.excel4_translator_config import Excel4MissingTranslationLevel
+from excel4lib.utils import *
+from excel4lib.exception import *
+
+
+class Excel4Translator(object):
+    &#39;&#39;&#39;
+    `Excel4Translator` class allows to translate english formulas to another language.
+
+    `Excel4Translator` stores translation files in the langs directory in .json format.
+    Translation files have the following format:
+    ```
+    {
+      &#34;arguments_separator&#34;: &#34;,&#34;,
+      &#34;name&#34;: &#34;LANG_NAME&#34;,
+      &#34;row_character&#34;: &#34;ROW_CHARACTER&#34;,
+      &#34;col_character&#34;: &#34;COL_CHARACTER&#34;,
+      &#34;translation&#34;: {
+            &#34;ENG_FORMULA&#34;:&#34;TRANSLATION_FORMULA&#34;,
+            (...)
+        }
+    }
+    ```
+    - `arguments_separator` -  stores character used to separate formula arguments;
+    - `name` -  stores the name of language. It should be the same as the file name, with no extension for example, pl_PL (then file name is pl_pl.json);
+    - `row_character` - stores character used to translate ROW character in RC_STYLE;
+    - `col_character` - stores character used to translate COLUMN character when RC_STYLE is used;
+    - `translation` - stores formulas translations in form KEY:VALUE where KEY is formula in english and VALUE
+    is translation of this formula to corresponding language
+    &#39;&#39;&#39;
+
+    # Reference to configuration
+    config = Excel4Config.translator
+
+    # Current language - the language into which the text is to be translated
+    language = config.language
+
+
+    # Language from which translation is done
+    # By default we use formulas in English
+    # If you want to translate for example from Polish to English, then change Excel4Translator.native_language to pl_PL
+    # and set Excel4Translator.language variable to en_US. Then create file en_US.json as translations file.
+    # If Excel4Translator.language is equal to Excel4Translator.native_language then translation is not done
+    native_language = &#34;en_US&#34;
+
+    # Current language translations
+    translations = {native_language:{}}
+
+    # Default arguments separator. Returned when arguments_separator key is not defined in translations
+    arguments_separator = &#34;,&#34;
+
+    # Default characters for rows and cols.
+    row_character = &#34;R&#34;
+    col_character = &#34;C&#34;
+
+    @staticmethod
+    def init():
+        &#39;&#39;&#39;
+        Initializes translator and loads `Excel4Translator.language` translation into memory.
+        &#39;&#39;&#39;
+        Excel4Translator.load_translations()
+
+    @staticmethod
+    def check_translations():
+        &#39;&#39;&#39;
+        Checks if translations have required keys. If not then `Excel4RequiredKeyMissingException` is raised.
+        &#39;&#39;&#39;
+
+        # Do not check if current language is equal to native
+        if Excel4Translator.is_native():
+            return
+
+        req = [&#34;translation&#34;]
+        translations_path = join_path(Excel4Translator.config.translations_directory,
+                                      Excel4Translator.language + Excel4Translator.config.translations_ext)
+        for k in req:
+            if k not in Excel4Translator.translations[Excel4Translator.language]:
+                raise Excel4RequiredKeyMissingException(
+                    &#34;{} key is missing in translations {}&#34;.format(k, translations_path))
+
+    @staticmethod
+    def load_translations(lang=None):
+        &#39;&#39;&#39;
+        Loads translation defined in `lang` into memory. If `lang` is None then `Excel4Translator.language` is loaded.
+        If translation file does not exist or could not be found then `Excel4PathNotExistException` is raiesd.
+        &#39;&#39;&#39;
+        # Do not load if current language is equal to native
+        if (not lang) and Excel4Translator.is_native():
+            return
+
+        if not lang:
+            lang = Excel4Translator.language
+
+        if lang in Excel4Translator.translations:
+            return
+
+        translations_path = join_path(Excel4Translator.config.translations_directory,
+                                      lang + Excel4Translator.config.translations_ext)
+
+        # Check if file with translations exists
+        if not is_path(translations_path):
+            raise Excel4PathNotExistException(&#34;File with translations {} does not exist&#34;.format(translations_path))
+        Excel4Translator.translations[lang] = load_json_file(translations_path)
+
+        # Check if translations have all required keys
+        Excel4Translator.check_translations()
+
+    @staticmethod
+    def set_language(lang):
+        &#39;&#39;&#39;
+        Sets current language (`Excel4Translator.langauge`) to `lang` and loads translation.
+        :param lang: name of the language
+        &#39;&#39;&#39;
+
+        # Save current language
+        temp = Excel4Translator.language
+        Excel4Translator.language = lang
+        try:
+            Excel4Translator.load_translations()
+        except Exception as ex:
+            # Restore language
+            Excel4Translator.language = temp
+            raise ex
+
+    @staticmethod
+    def is_native():
+        &#39;&#39;&#39;
+        Checks if  `Excel4Translator.language` is equal to `Excel4Translator.native_language`
+
+        :return: True if yes and False if not
+        &#39;&#39;&#39;
+        return Excel4Translator.language == Excel4Translator.native_language
+
+    @staticmethod
+    def translate(formula, lang = None):
+        &#39;&#39;&#39;
+        Translates formula to `lang`. If `lang` is None then current language `Excel4Translator.language` is used.
+
+        :param formula: name of formula to translate
+
+        :param lang: name of the language
+
+        :return: string translated formula
+        &#39;&#39;&#39;
+        lang_b = None
+        # Init translations
+        if not Excel4Translator.translations:
+            Excel4Translator.init()
+        # If formula is empty or it contains spaces then do not translate
+        if (not formula) or (&#34; &#34; in formula):
+            return formula
+        if lang and (lang != Excel4Translator.language):
+            lang_b = Excel4Translator.language
+            Excel4Translator.set_language(lang)
+
+        # Do not translate if current language is equal to native
+        if Excel4Translator.is_native():
+            return formula
+
+        if not Excel4Translator.get_value(&#34;translation&#34;):
+            return
+
+        if formula not in Excel4Translator.translations[Excel4Translator.language][&#34;translation&#34;]:
+
+            # Raise exception if translation is missing
+            if Excel4Translator.config.missing_translation == Excel4MissingTranslationLevel.EXCEPTION:
+                translations_path = join_path(Excel4Translator.config.translations_directory,
+                                              Excel4Translator.language + Excel4Translator.config.translations_ext)
+                raise Excel4TranslationMissingException(
+                    &#34;Translation of {} formula is missing in translations {} file&#34;.format(formula, translations_path))
+            # Print if translation is missing
+            elif Excel4Translator.config.missing_translation == Excel4MissingTranslationLevel.LOG:
+                translations_path = join_path(Excel4Translator.config.translations_directory,
+                                              Excel4Translator.language + Excel4Translator.config.translations_ext)
+                print(&#34;[!] Translation of {} formula is missing in translations {} file&#34;.format(formula, translations_path))
+
+            return formula
+        translation_f = Excel4Translator.translations[Excel4Translator.language][&#34;translation&#34;][formula]
+        if lang_b:
+            Excel4Translator.set_language(lang_b)
+        return translation_f
+    @staticmethod
+    def t(formula, lang=None):
+        &#39;&#39;&#39;
+        Translates formula to `lang`. If `lang` is None then current language `Excel4Translator.language` is used.
+
+        :param formula: name of formula to translate
+
+        :param lang: name of the language
+
+        :return: string translated formula
+        &#39;&#39;&#39;
+        return Excel4Translator.translate(formula, lang)
+
+    @staticmethod
+    def translate_address(address):
+        &#39;&#39;&#39;
+        Translates cell address
+
+        :param address: address of cell to translate in RC_STYLE reference style
+
+        :return: string translated address
+        &#39;&#39;&#39;
+        # Init translations
+        if not Excel4Translator.translations:
+            Excel4Translator.init()
+
+        # Do not translate if current language is equal to native
+        if Excel4Translator.is_native():
+            return address
+
+        # Do not translate if reference style is set to A1
+        if not Excel4Config.rc_reference_style:
+            return address
+
+        return address.replace(Excel4Translator.row_character, Excel4Translator.get_row_character()).replace(Excel4Translator.col_character, Excel4Translator.get_col_character())
+
+    @staticmethod
+    def t_a(address):
+        &#39;&#39;&#39;
+        Translates cell address
+
+        :param address: address of cell to translate in RC_STYLE reference style
+
+        :return: string translated address
+        &#39;&#39;&#39;
+        return Excel4Translator.translate_address(address)
+
+    @staticmethod
+    def get_value(key_name):
+        &#39;&#39;&#39;
+        Returns value stored under `key_name` from  `Excel4Translator.translations`.
+        If key does not exist then `Excel4RequiredKeyMissingException` is raised.
+
+        :param key_name:
+
+        :return: value stored under `key_name` in `Excel4Translator.translations` object
+        &#39;&#39;&#39;
+        if key_name not in Excel4Translator.translations[Excel4Translator.language]:
+            translations_path = join_path(Excel4Translator.config.translations_directory,
+                                          Excel4Translator.language + Excel4Translator.config.translations_ext)
+            raise Excel4RequiredKeyMissingException(
+                &#34;{} key is missing in translations {}&#34;.format(key_name, translations_path))
+        return Excel4Translator.translations[Excel4Translator.language][key_name]
+
+    @staticmethod
+    def get_arguments_separator(lang=None):
+        &#39;&#39;&#39;
+        Returns arguments separator for `lang`. If `lang` is None then current lanauge is used (`Excel4Translator.language`).
+
+        :param lang: name of the language
+        &#39;&#39;&#39;
+        if (not lang) and Excel4Translator.is_native():
+            return Excel4Translator.arguments_separator
+
+        if not lang:
+            lang = Excel4Translator.language
+
+        if lang not in Excel4Translator.translations:
+            Excel4Translator.load_translations(lang)
+
+
+
+        return Excel4Translator.translations[lang].get(&#34;arguments_separator&#34;, Excel4Translator.arguments_separator)
+
+    @staticmethod
+    def get_row_character(lang=None):
+        &#39;&#39;&#39;
+        Returns row character for `lang`. If `lang` is None then current lanauge is used (`Excel4Translator.language`).
+
+        :param lang: name of the language
+        &#39;&#39;&#39;
+        if (not lang) and Excel4Translator.is_native():
+            return Excel4Translator.row_character
+
+        if not lang:
+            lang = Excel4Translator.language
+
+        if lang not in Excel4Translator.translations:
+            Excel4Translator.load_translations(lang)
+
+        return Excel4Translator.translations[lang].get(&#34;row_character&#34;, Excel4Translator.row_character)
+
+    @staticmethod
+    def get_col_character(lang=None):
+        &#39;&#39;&#39;
+        Returns column character for `lang`. If `lang` is None then current lanauge is used (`Excel4Translator.language`).
+
+        :param lang: name of the language
+        &#39;&#39;&#39;
+        if (not lang) and Excel4Translator.is_native():
+            return Excel4Translator.col_character
+        if not lang:
+            lang = Excel4Translator.language
+
+        if lang not in Excel4Translator.translations:
+            Excel4Translator.load_translations(lang)
+
+        return Excel4Translator.translations[lang].get(&#34;col_character&#34;, Excel4Translator.col_character)
+
+    @staticmethod
+    def get_languages():
+        &#39;&#39;&#39;
+        Returns list of available languages.
+        &#39;&#39;&#39;
+        translations_path = Excel4Translator.config.translations_directory
+        langs = []
+        for l in os.listdir(translations_path):
+            if (Excel4Translator.config.translations_ext == l.lower().split(&#34;.&#34;)[-1]) or (Excel4Translator.config.translations_ext == &#34;.&#34;+l.lower().split(&#34;.&#34;)[-1]):
+                langs.append(&#34;.&#34;.join(l.split(&#34;.&#34;)[:-1]))
+        return langs</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="excel4lib.lang.excel4_translator.Excel4Translator"><code class="flex name class">
+<span>class <span class="ident">Excel4Translator</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p><code><a title="excel4lib.lang.excel4_translator.Excel4Translator" href="#excel4lib.lang.excel4_translator.Excel4Translator">Excel4Translator</a></code> class allows to translate english formulas to another language.</p>
+<p><code><a title="excel4lib.lang.excel4_translator.Excel4Translator" href="#excel4lib.lang.excel4_translator.Excel4Translator">Excel4Translator</a></code> stores translation files in the langs directory in .json format.
+Translation files have the following format:</p>
+<pre><code>{
+  &quot;arguments_separator&quot;: &quot;,&quot;,
+  &quot;name&quot;: &quot;LANG_NAME&quot;,
+  &quot;row_character&quot;: &quot;ROW_CHARACTER&quot;,
+  &quot;col_character&quot;: &quot;COL_CHARACTER&quot;,
+  &quot;translation&quot;: {
+        &quot;ENG_FORMULA&quot;:&quot;TRANSLATION_FORMULA&quot;,
+        (...)
+    }
+}
+</code></pre>
+<ul>
+<li><code>arguments_separator</code> -
+stores character used to separate formula arguments;</li>
+<li><code>name</code> -
+stores the name of language. It should be the same as the file name, with no extension for example, pl_PL (then file name is pl_pl.json);</li>
+<li><code>row_character</code> - stores character used to translate ROW character in RC_STYLE;</li>
+<li><code>col_character</code> - stores character used to translate COLUMN character when RC_STYLE is used;</li>
+<li><code>translation</code> - stores formulas translations in form KEY:VALUE where KEY is formula in english and VALUE
+is translation of this formula to corresponding language</li>
+</ul></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Excel4Translator(object):
+    &#39;&#39;&#39;
+    `Excel4Translator` class allows to translate english formulas to another language.
+
+    `Excel4Translator` stores translation files in the langs directory in .json format.
+    Translation files have the following format:
+    ```
+    {
+      &#34;arguments_separator&#34;: &#34;,&#34;,
+      &#34;name&#34;: &#34;LANG_NAME&#34;,
+      &#34;row_character&#34;: &#34;ROW_CHARACTER&#34;,
+      &#34;col_character&#34;: &#34;COL_CHARACTER&#34;,
+      &#34;translation&#34;: {
+            &#34;ENG_FORMULA&#34;:&#34;TRANSLATION_FORMULA&#34;,
+            (...)
+        }
+    }
+    ```
+    - `arguments_separator` -  stores character used to separate formula arguments;
+    - `name` -  stores the name of language. It should be the same as the file name, with no extension for example, pl_PL (then file name is pl_pl.json);
+    - `row_character` - stores character used to translate ROW character in RC_STYLE;
+    - `col_character` - stores character used to translate COLUMN character when RC_STYLE is used;
+    - `translation` - stores formulas translations in form KEY:VALUE where KEY is formula in english and VALUE
+    is translation of this formula to corresponding language
+    &#39;&#39;&#39;
+
+    # Reference to configuration
+    config = Excel4Config.translator
+
+    # Current language - the language into which the text is to be translated
+    language = config.language
+
+
+    # Language from which translation is done
+    # By default we use formulas in English
+    # If you want to translate for example from Polish to English, then change Excel4Translator.native_language to pl_PL
+    # and set Excel4Translator.language variable to en_US. Then create file en_US.json as translations file.
+    # If Excel4Translator.language is equal to Excel4Translator.native_language then translation is not done
+    native_language = &#34;en_US&#34;
+
+    # Current language translations
+    translations = {native_language:{}}
+
+    # Default arguments separator. Returned when arguments_separator key is not defined in translations
+    arguments_separator = &#34;,&#34;
+
+    # Default characters for rows and cols.
+    row_character = &#34;R&#34;
+    col_character = &#34;C&#34;
+
+    @staticmethod
+    def init():
+        &#39;&#39;&#39;
+        Initializes translator and loads `Excel4Translator.language` translation into memory.
+        &#39;&#39;&#39;
+        Excel4Translator.load_translations()
+
+    @staticmethod
+    def check_translations():
+        &#39;&#39;&#39;
+        Checks if translations have required keys. If not then `Excel4RequiredKeyMissingException` is raised.
+        &#39;&#39;&#39;
+
+        # Do not check if current language is equal to native
+        if Excel4Translator.is_native():
+            return
+
+        req = [&#34;translation&#34;]
+        translations_path = join_path(Excel4Translator.config.translations_directory,
+                                      Excel4Translator.language + Excel4Translator.config.translations_ext)
+        for k in req:
+            if k not in Excel4Translator.translations[Excel4Translator.language]:
+                raise Excel4RequiredKeyMissingException(
+                    &#34;{} key is missing in translations {}&#34;.format(k, translations_path))
+
+    @staticmethod
+    def load_translations(lang=None):
+        &#39;&#39;&#39;
+        Loads translation defined in `lang` into memory. If `lang` is None then `Excel4Translator.language` is loaded.
+        If translation file does not exist or could not be found then `Excel4PathNotExistException` is raiesd.
+        &#39;&#39;&#39;
+        # Do not load if current language is equal to native
+        if (not lang) and Excel4Translator.is_native():
+            return
+
+        if not lang:
+            lang = Excel4Translator.language
+
+        if lang in Excel4Translator.translations:
+            return
+
+        translations_path = join_path(Excel4Translator.config.translations_directory,
+                                      lang + Excel4Translator.config.translations_ext)
+
+        # Check if file with translations exists
+        if not is_path(translations_path):
+            raise Excel4PathNotExistException(&#34;File with translations {} does not exist&#34;.format(translations_path))
+        Excel4Translator.translations[lang] = load_json_file(translations_path)
+
+        # Check if translations have all required keys
+        Excel4Translator.check_translations()
+
+    @staticmethod
+    def set_language(lang):
+        &#39;&#39;&#39;
+        Sets current language (`Excel4Translator.langauge`) to `lang` and loads translation.
+        :param lang: name of the language
+        &#39;&#39;&#39;
+
+        # Save current language
+        temp = Excel4Translator.language
+        Excel4Translator.language = lang
+        try:
+            Excel4Translator.load_translations()
+        except Exception as ex:
+            # Restore language
+            Excel4Translator.language = temp
+            raise ex
+
+    @staticmethod
+    def is_native():
+        &#39;&#39;&#39;
+        Checks if  `Excel4Translator.language` is equal to `Excel4Translator.native_language`
+
+        :return: True if yes and False if not
+        &#39;&#39;&#39;
+        return Excel4Translator.language == Excel4Translator.native_language
+
+    @staticmethod
+    def translate(formula, lang = None):
+        &#39;&#39;&#39;
+        Translates formula to `lang`. If `lang` is None then current language `Excel4Translator.language` is used.
+
+        :param formula: name of formula to translate
+
+        :param lang: name of the language
+
+        :return: string translated formula
+        &#39;&#39;&#39;
+        lang_b = None
+        # Init translations
+        if not Excel4Translator.translations:
+            Excel4Translator.init()
+        # If formula is empty or it contains spaces then do not translate
+        if (not formula) or (&#34; &#34; in formula):
+            return formula
+        if lang and (lang != Excel4Translator.language):
+            lang_b = Excel4Translator.language
+            Excel4Translator.set_language(lang)
+
+        # Do not translate if current language is equal to native
+        if Excel4Translator.is_native():
+            return formula
+
+        if not Excel4Translator.get_value(&#34;translation&#34;):
+            return
+
+        if formula not in Excel4Translator.translations[Excel4Translator.language][&#34;translation&#34;]:
+
+            # Raise exception if translation is missing
+            if Excel4Translator.config.missing_translation == Excel4MissingTranslationLevel.EXCEPTION:
+                translations_path = join_path(Excel4Translator.config.translations_directory,
+                                              Excel4Translator.language + Excel4Translator.config.translations_ext)
+                raise Excel4TranslationMissingException(
+                    &#34;Translation of {} formula is missing in translations {} file&#34;.format(formula, translations_path))
+            # Print if translation is missing
+            elif Excel4Translator.config.missing_translation == Excel4MissingTranslationLevel.LOG:
+                translations_path = join_path(Excel4Translator.config.translations_directory,
+                                              Excel4Translator.language + Excel4Translator.config.translations_ext)
+                print(&#34;[!] Translation of {} formula is missing in translations {} file&#34;.format(formula, translations_path))
+
+            return formula
+        translation_f = Excel4Translator.translations[Excel4Translator.language][&#34;translation&#34;][formula]
+        if lang_b:
+            Excel4Translator.set_language(lang_b)
+        return translation_f
+    @staticmethod
+    def t(formula, lang=None):
+        &#39;&#39;&#39;
+        Translates formula to `lang`. If `lang` is None then current language `Excel4Translator.language` is used.
+
+        :param formula: name of formula to translate
+
+        :param lang: name of the language
+
+        :return: string translated formula
+        &#39;&#39;&#39;
+        return Excel4Translator.translate(formula, lang)
+
+    @staticmethod
+    def translate_address(address):
+        &#39;&#39;&#39;
+        Translates cell address
+
+        :param address: address of cell to translate in RC_STYLE reference style
+
+        :return: string translated address
+        &#39;&#39;&#39;
+        # Init translations
+        if not Excel4Translator.translations:
+            Excel4Translator.init()
+
+        # Do not translate if current language is equal to native
+        if Excel4Translator.is_native():
+            return address
+
+        # Do not translate if reference style is set to A1
+        if not Excel4Config.rc_reference_style:
+            return address
+
+        return address.replace(Excel4Translator.row_character, Excel4Translator.get_row_character()).replace(Excel4Translator.col_character, Excel4Translator.get_col_character())
+
+    @staticmethod
+    def t_a(address):
+        &#39;&#39;&#39;
+        Translates cell address
+
+        :param address: address of cell to translate in RC_STYLE reference style
+
+        :return: string translated address
+        &#39;&#39;&#39;
+        return Excel4Translator.translate_address(address)
+
+    @staticmethod
+    def get_value(key_name):
+        &#39;&#39;&#39;
+        Returns value stored under `key_name` from  `Excel4Translator.translations`.
+        If key does not exist then `Excel4RequiredKeyMissingException` is raised.
+
+        :param key_name:
+
+        :return: value stored under `key_name` in `Excel4Translator.translations` object
+        &#39;&#39;&#39;
+        if key_name not in Excel4Translator.translations[Excel4Translator.language]:
+            translations_path = join_path(Excel4Translator.config.translations_directory,
+                                          Excel4Translator.language + Excel4Translator.config.translations_ext)
+            raise Excel4RequiredKeyMissingException(
+                &#34;{} key is missing in translations {}&#34;.format(key_name, translations_path))
+        return Excel4Translator.translations[Excel4Translator.language][key_name]
+
+    @staticmethod
+    def get_arguments_separator(lang=None):
+        &#39;&#39;&#39;
+        Returns arguments separator for `lang`. If `lang` is None then current lanauge is used (`Excel4Translator.language`).
+
+        :param lang: name of the language
+        &#39;&#39;&#39;
+        if (not lang) and Excel4Translator.is_native():
+            return Excel4Translator.arguments_separator
+
+        if not lang:
+            lang = Excel4Translator.language
+
+        if lang not in Excel4Translator.translations:
+            Excel4Translator.load_translations(lang)
+
+
+
+        return Excel4Translator.translations[lang].get(&#34;arguments_separator&#34;, Excel4Translator.arguments_separator)
+
+    @staticmethod
+    def get_row_character(lang=None):
+        &#39;&#39;&#39;
+        Returns row character for `lang`. If `lang` is None then current lanauge is used (`Excel4Translator.language`).
+
+        :param lang: name of the language
+        &#39;&#39;&#39;
+        if (not lang) and Excel4Translator.is_native():
+            return Excel4Translator.row_character
+
+        if not lang:
+            lang = Excel4Translator.language
+
+        if lang not in Excel4Translator.translations:
+            Excel4Translator.load_translations(lang)
+
+        return Excel4Translator.translations[lang].get(&#34;row_character&#34;, Excel4Translator.row_character)
+
+    @staticmethod
+    def get_col_character(lang=None):
+        &#39;&#39;&#39;
+        Returns column character for `lang`. If `lang` is None then current lanauge is used (`Excel4Translator.language`).
+
+        :param lang: name of the language
+        &#39;&#39;&#39;
+        if (not lang) and Excel4Translator.is_native():
+            return Excel4Translator.col_character
+        if not lang:
+            lang = Excel4Translator.language
+
+        if lang not in Excel4Translator.translations:
+            Excel4Translator.load_translations(lang)
+
+        return Excel4Translator.translations[lang].get(&#34;col_character&#34;, Excel4Translator.col_character)
+
+    @staticmethod
+    def get_languages():
+        &#39;&#39;&#39;
+        Returns list of available languages.
+        &#39;&#39;&#39;
+        translations_path = Excel4Translator.config.translations_directory
+        langs = []
+        for l in os.listdir(translations_path):
+            if (Excel4Translator.config.translations_ext == l.lower().split(&#34;.&#34;)[-1]) or (Excel4Translator.config.translations_ext == &#34;.&#34;+l.lower().split(&#34;.&#34;)[-1]):
+                langs.append(&#34;.&#34;.join(l.split(&#34;.&#34;)[:-1]))
+        return langs</code></pre>
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="excel4lib.lang.excel4_translator.Excel4Translator.arguments_separator"><code class="name">var <span class="ident">arguments_separator</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="excel4lib.lang.excel4_translator.Excel4Translator.col_character"><code class="name">var <span class="ident">col_character</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="excel4lib.lang.excel4_translator.Excel4Translator.config"><code class="name">var <span class="ident">config</span></code></dt>
+<dd>
+<div class="desc"><p><code>Excel4TranslatorConfig</code> is used as global configuration class.
+It enables static and programmable change of behavior of <code><a title="excel4lib.lang.excel4_translator.Excel4Translator" href="#excel4lib.lang.excel4_translator.Excel4Translator">Excel4Translator</a></code> object.</p></div>
+</dd>
+<dt id="excel4lib.lang.excel4_translator.Excel4Translator.language"><code class="name">var <span class="ident">language</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="excel4lib.lang.excel4_translator.Excel4Translator.native_language"><code class="name">var <span class="ident">native_language</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="excel4lib.lang.excel4_translator.Excel4Translator.row_character"><code class="name">var <span class="ident">row_character</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="excel4lib.lang.excel4_translator.Excel4Translator.translations"><code class="name">var <span class="ident">translations</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Static methods</h3>
+<dl>
+<dt id="excel4lib.lang.excel4_translator.Excel4Translator.check_translations"><code class="name flex">
+<span>def <span class="ident">check_translations</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Checks if translations have required keys. If not then <code>Excel4RequiredKeyMissingException</code> is raised.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def check_translations():
+    &#39;&#39;&#39;
+    Checks if translations have required keys. If not then `Excel4RequiredKeyMissingException` is raised.
+    &#39;&#39;&#39;
+
+    # Do not check if current language is equal to native
+    if Excel4Translator.is_native():
+        return
+
+    req = [&#34;translation&#34;]
+    translations_path = join_path(Excel4Translator.config.translations_directory,
+                                  Excel4Translator.language + Excel4Translator.config.translations_ext)
+    for k in req:
+        if k not in Excel4Translator.translations[Excel4Translator.language]:
+            raise Excel4RequiredKeyMissingException(
+                &#34;{} key is missing in translations {}&#34;.format(k, translations_path))</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.lang.excel4_translator.Excel4Translator.get_arguments_separator"><code class="name flex">
+<span>def <span class="ident">get_arguments_separator</span></span>(<span>lang=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns arguments separator for <code>lang</code>. If <code>lang</code> is None then current lanauge is used (<code><a title="excel4lib.lang.excel4_translator.Excel4Translator.language" href="#excel4lib.lang.excel4_translator.Excel4Translator.language">Excel4Translator.language</a></code>).</p>
+<p>:param lang: name of the language</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def get_arguments_separator(lang=None):
+    &#39;&#39;&#39;
+    Returns arguments separator for `lang`. If `lang` is None then current lanauge is used (`Excel4Translator.language`).
+
+    :param lang: name of the language
+    &#39;&#39;&#39;
+    if (not lang) and Excel4Translator.is_native():
+        return Excel4Translator.arguments_separator
+
+    if not lang:
+        lang = Excel4Translator.language
+
+    if lang not in Excel4Translator.translations:
+        Excel4Translator.load_translations(lang)
+
+
+
+    return Excel4Translator.translations[lang].get(&#34;arguments_separator&#34;, Excel4Translator.arguments_separator)</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.lang.excel4_translator.Excel4Translator.get_col_character"><code class="name flex">
+<span>def <span class="ident">get_col_character</span></span>(<span>lang=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns column character for <code>lang</code>. If <code>lang</code> is None then current lanauge is used (<code><a title="excel4lib.lang.excel4_translator.Excel4Translator.language" href="#excel4lib.lang.excel4_translator.Excel4Translator.language">Excel4Translator.language</a></code>).</p>
+<p>:param lang: name of the language</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def get_col_character(lang=None):
+    &#39;&#39;&#39;
+    Returns column character for `lang`. If `lang` is None then current lanauge is used (`Excel4Translator.language`).
+
+    :param lang: name of the language
+    &#39;&#39;&#39;
+    if (not lang) and Excel4Translator.is_native():
+        return Excel4Translator.col_character
+    if not lang:
+        lang = Excel4Translator.language
+
+    if lang not in Excel4Translator.translations:
+        Excel4Translator.load_translations(lang)
+
+    return Excel4Translator.translations[lang].get(&#34;col_character&#34;, Excel4Translator.col_character)</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.lang.excel4_translator.Excel4Translator.get_languages"><code class="name flex">
+<span>def <span class="ident">get_languages</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns list of available languages.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def get_languages():
+    &#39;&#39;&#39;
+    Returns list of available languages.
+    &#39;&#39;&#39;
+    translations_path = Excel4Translator.config.translations_directory
+    langs = []
+    for l in os.listdir(translations_path):
+        if (Excel4Translator.config.translations_ext == l.lower().split(&#34;.&#34;)[-1]) or (Excel4Translator.config.translations_ext == &#34;.&#34;+l.lower().split(&#34;.&#34;)[-1]):
+            langs.append(&#34;.&#34;.join(l.split(&#34;.&#34;)[:-1]))
+    return langs</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.lang.excel4_translator.Excel4Translator.get_row_character"><code class="name flex">
+<span>def <span class="ident">get_row_character</span></span>(<span>lang=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns row character for <code>lang</code>. If <code>lang</code> is None then current lanauge is used (<code><a title="excel4lib.lang.excel4_translator.Excel4Translator.language" href="#excel4lib.lang.excel4_translator.Excel4Translator.language">Excel4Translator.language</a></code>).</p>
+<p>:param lang: name of the language</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def get_row_character(lang=None):
+    &#39;&#39;&#39;
+    Returns row character for `lang`. If `lang` is None then current lanauge is used (`Excel4Translator.language`).
+
+    :param lang: name of the language
+    &#39;&#39;&#39;
+    if (not lang) and Excel4Translator.is_native():
+        return Excel4Translator.row_character
+
+    if not lang:
+        lang = Excel4Translator.language
+
+    if lang not in Excel4Translator.translations:
+        Excel4Translator.load_translations(lang)
+
+    return Excel4Translator.translations[lang].get(&#34;row_character&#34;, Excel4Translator.row_character)</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.lang.excel4_translator.Excel4Translator.get_value"><code class="name flex">
+<span>def <span class="ident">get_value</span></span>(<span>key_name)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns value stored under <code>key_name</code> from
+<code><a title="excel4lib.lang.excel4_translator.Excel4Translator.translations" href="#excel4lib.lang.excel4_translator.Excel4Translator.translations">Excel4Translator.translations</a></code>.
+If key does not exist then <code>Excel4RequiredKeyMissingException</code> is raised.</p>
+<p>:param key_name:</p>
+<p>:return: value stored under <code>key_name</code> in <code><a title="excel4lib.lang.excel4_translator.Excel4Translator.translations" href="#excel4lib.lang.excel4_translator.Excel4Translator.translations">Excel4Translator.translations</a></code> object</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def get_value(key_name):
+    &#39;&#39;&#39;
+    Returns value stored under `key_name` from  `Excel4Translator.translations`.
+    If key does not exist then `Excel4RequiredKeyMissingException` is raised.
+
+    :param key_name:
+
+    :return: value stored under `key_name` in `Excel4Translator.translations` object
+    &#39;&#39;&#39;
+    if key_name not in Excel4Translator.translations[Excel4Translator.language]:
+        translations_path = join_path(Excel4Translator.config.translations_directory,
+                                      Excel4Translator.language + Excel4Translator.config.translations_ext)
+        raise Excel4RequiredKeyMissingException(
+            &#34;{} key is missing in translations {}&#34;.format(key_name, translations_path))
+    return Excel4Translator.translations[Excel4Translator.language][key_name]</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.lang.excel4_translator.Excel4Translator.init"><code class="name flex">
+<span>def <span class="ident">init</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Initializes translator and loads <code><a title="excel4lib.lang.excel4_translator.Excel4Translator.language" href="#excel4lib.lang.excel4_translator.Excel4Translator.language">Excel4Translator.language</a></code> translation into memory.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def init():
+    &#39;&#39;&#39;
+    Initializes translator and loads `Excel4Translator.language` translation into memory.
+    &#39;&#39;&#39;
+    Excel4Translator.load_translations()</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.lang.excel4_translator.Excel4Translator.is_native"><code class="name flex">
+<span>def <span class="ident">is_native</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Checks if
+<code><a title="excel4lib.lang.excel4_translator.Excel4Translator.language" href="#excel4lib.lang.excel4_translator.Excel4Translator.language">Excel4Translator.language</a></code> is equal to <code><a title="excel4lib.lang.excel4_translator.Excel4Translator.native_language" href="#excel4lib.lang.excel4_translator.Excel4Translator.native_language">Excel4Translator.native_language</a></code></p>
+<p>:return: True if yes and False if not</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def is_native():
+    &#39;&#39;&#39;
+    Checks if  `Excel4Translator.language` is equal to `Excel4Translator.native_language`
+
+    :return: True if yes and False if not
+    &#39;&#39;&#39;
+    return Excel4Translator.language == Excel4Translator.native_language</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.lang.excel4_translator.Excel4Translator.load_translations"><code class="name flex">
+<span>def <span class="ident">load_translations</span></span>(<span>lang=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Loads translation defined in <code>lang</code> into memory. If <code>lang</code> is None then <code><a title="excel4lib.lang.excel4_translator.Excel4Translator.language" href="#excel4lib.lang.excel4_translator.Excel4Translator.language">Excel4Translator.language</a></code> is loaded.
+If translation file does not exist or could not be found then <code>Excel4PathNotExistException</code> is raiesd.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def load_translations(lang=None):
+    &#39;&#39;&#39;
+    Loads translation defined in `lang` into memory. If `lang` is None then `Excel4Translator.language` is loaded.
+    If translation file does not exist or could not be found then `Excel4PathNotExistException` is raiesd.
+    &#39;&#39;&#39;
+    # Do not load if current language is equal to native
+    if (not lang) and Excel4Translator.is_native():
+        return
+
+    if not lang:
+        lang = Excel4Translator.language
+
+    if lang in Excel4Translator.translations:
+        return
+
+    translations_path = join_path(Excel4Translator.config.translations_directory,
+                                  lang + Excel4Translator.config.translations_ext)
+
+    # Check if file with translations exists
+    if not is_path(translations_path):
+        raise Excel4PathNotExistException(&#34;File with translations {} does not exist&#34;.format(translations_path))
+    Excel4Translator.translations[lang] = load_json_file(translations_path)
+
+    # Check if translations have all required keys
+    Excel4Translator.check_translations()</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.lang.excel4_translator.Excel4Translator.set_language"><code class="name flex">
+<span>def <span class="ident">set_language</span></span>(<span>lang)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Sets current language (<code>Excel4Translator.langauge</code>) to <code>lang</code> and loads translation.
+:param lang: name of the language</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def set_language(lang):
+    &#39;&#39;&#39;
+    Sets current language (`Excel4Translator.langauge`) to `lang` and loads translation.
+    :param lang: name of the language
+    &#39;&#39;&#39;
+
+    # Save current language
+    temp = Excel4Translator.language
+    Excel4Translator.language = lang
+    try:
+        Excel4Translator.load_translations()
+    except Exception as ex:
+        # Restore language
+        Excel4Translator.language = temp
+        raise ex</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.lang.excel4_translator.Excel4Translator.t"><code class="name flex">
+<span>def <span class="ident">t</span></span>(<span>formula, lang=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Translates formula to <code>lang</code>. If <code>lang</code> is None then current language <code><a title="excel4lib.lang.excel4_translator.Excel4Translator.language" href="#excel4lib.lang.excel4_translator.Excel4Translator.language">Excel4Translator.language</a></code> is used.</p>
+<p>:param formula: name of formula to translate</p>
+<p>:param lang: name of the language</p>
+<p>:return: string translated formula</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def t(formula, lang=None):
+    &#39;&#39;&#39;
+    Translates formula to `lang`. If `lang` is None then current language `Excel4Translator.language` is used.
+
+    :param formula: name of formula to translate
+
+    :param lang: name of the language
+
+    :return: string translated formula
+    &#39;&#39;&#39;
+    return Excel4Translator.translate(formula, lang)</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.lang.excel4_translator.Excel4Translator.t_a"><code class="name flex">
+<span>def <span class="ident">t_a</span></span>(<span>address)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Translates cell address</p>
+<p>:param address: address of cell to translate in RC_STYLE reference style</p>
+<p>:return: string translated address</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def t_a(address):
+    &#39;&#39;&#39;
+    Translates cell address
+
+    :param address: address of cell to translate in RC_STYLE reference style
+
+    :return: string translated address
+    &#39;&#39;&#39;
+    return Excel4Translator.translate_address(address)</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.lang.excel4_translator.Excel4Translator.translate"><code class="name flex">
+<span>def <span class="ident">translate</span></span>(<span>formula, lang=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Translates formula to <code>lang</code>. If <code>lang</code> is None then current language <code><a title="excel4lib.lang.excel4_translator.Excel4Translator.language" href="#excel4lib.lang.excel4_translator.Excel4Translator.language">Excel4Translator.language</a></code> is used.</p>
+<p>:param formula: name of formula to translate</p>
+<p>:param lang: name of the language</p>
+<p>:return: string translated formula</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def translate(formula, lang = None):
+    &#39;&#39;&#39;
+    Translates formula to `lang`. If `lang` is None then current language `Excel4Translator.language` is used.
+
+    :param formula: name of formula to translate
+
+    :param lang: name of the language
+
+    :return: string translated formula
+    &#39;&#39;&#39;
+    lang_b = None
+    # Init translations
+    if not Excel4Translator.translations:
+        Excel4Translator.init()
+    # If formula is empty or it contains spaces then do not translate
+    if (not formula) or (&#34; &#34; in formula):
+        return formula
+    if lang and (lang != Excel4Translator.language):
+        lang_b = Excel4Translator.language
+        Excel4Translator.set_language(lang)
+
+    # Do not translate if current language is equal to native
+    if Excel4Translator.is_native():
+        return formula
+
+    if not Excel4Translator.get_value(&#34;translation&#34;):
+        return
+
+    if formula not in Excel4Translator.translations[Excel4Translator.language][&#34;translation&#34;]:
+
+        # Raise exception if translation is missing
+        if Excel4Translator.config.missing_translation == Excel4MissingTranslationLevel.EXCEPTION:
+            translations_path = join_path(Excel4Translator.config.translations_directory,
+                                          Excel4Translator.language + Excel4Translator.config.translations_ext)
+            raise Excel4TranslationMissingException(
+                &#34;Translation of {} formula is missing in translations {} file&#34;.format(formula, translations_path))
+        # Print if translation is missing
+        elif Excel4Translator.config.missing_translation == Excel4MissingTranslationLevel.LOG:
+            translations_path = join_path(Excel4Translator.config.translations_directory,
+                                          Excel4Translator.language + Excel4Translator.config.translations_ext)
+            print(&#34;[!] Translation of {} formula is missing in translations {} file&#34;.format(formula, translations_path))
+
+        return formula
+    translation_f = Excel4Translator.translations[Excel4Translator.language][&#34;translation&#34;][formula]
+    if lang_b:
+        Excel4Translator.set_language(lang_b)
+    return translation_f</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.lang.excel4_translator.Excel4Translator.translate_address"><code class="name flex">
+<span>def <span class="ident">translate_address</span></span>(<span>address)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Translates cell address</p>
+<p>:param address: address of cell to translate in RC_STYLE reference style</p>
+<p>:return: string translated address</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def translate_address(address):
+    &#39;&#39;&#39;
+    Translates cell address
+
+    :param address: address of cell to translate in RC_STYLE reference style
+
+    :return: string translated address
+    &#39;&#39;&#39;
+    # Init translations
+    if not Excel4Translator.translations:
+        Excel4Translator.init()
+
+    # Do not translate if current language is equal to native
+    if Excel4Translator.is_native():
+        return address
+
+    # Do not translate if reference style is set to A1
+    if not Excel4Config.rc_reference_style:
+        return address
+
+    return address.replace(Excel4Translator.row_character, Excel4Translator.get_row_character()).replace(Excel4Translator.col_character, Excel4Translator.get_col_character())</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="excel4lib.lang" href="index.html">excel4lib.lang</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="excel4lib.lang.excel4_translator.Excel4Translator" href="#excel4lib.lang.excel4_translator.Excel4Translator">Excel4Translator</a></code></h4>
+<ul class="">
+<li><code><a title="excel4lib.lang.excel4_translator.Excel4Translator.arguments_separator" href="#excel4lib.lang.excel4_translator.Excel4Translator.arguments_separator">arguments_separator</a></code></li>
+<li><code><a title="excel4lib.lang.excel4_translator.Excel4Translator.check_translations" href="#excel4lib.lang.excel4_translator.Excel4Translator.check_translations">check_translations</a></code></li>
+<li><code><a title="excel4lib.lang.excel4_translator.Excel4Translator.col_character" href="#excel4lib.lang.excel4_translator.Excel4Translator.col_character">col_character</a></code></li>
+<li><code><a title="excel4lib.lang.excel4_translator.Excel4Translator.config" href="#excel4lib.lang.excel4_translator.Excel4Translator.config">config</a></code></li>
+<li><code><a title="excel4lib.lang.excel4_translator.Excel4Translator.get_arguments_separator" href="#excel4lib.lang.excel4_translator.Excel4Translator.get_arguments_separator">get_arguments_separator</a></code></li>
+<li><code><a title="excel4lib.lang.excel4_translator.Excel4Translator.get_col_character" href="#excel4lib.lang.excel4_translator.Excel4Translator.get_col_character">get_col_character</a></code></li>
+<li><code><a title="excel4lib.lang.excel4_translator.Excel4Translator.get_languages" href="#excel4lib.lang.excel4_translator.Excel4Translator.get_languages">get_languages</a></code></li>
+<li><code><a title="excel4lib.lang.excel4_translator.Excel4Translator.get_row_character" href="#excel4lib.lang.excel4_translator.Excel4Translator.get_row_character">get_row_character</a></code></li>
+<li><code><a title="excel4lib.lang.excel4_translator.Excel4Translator.get_value" href="#excel4lib.lang.excel4_translator.Excel4Translator.get_value">get_value</a></code></li>
+<li><code><a title="excel4lib.lang.excel4_translator.Excel4Translator.init" href="#excel4lib.lang.excel4_translator.Excel4Translator.init">init</a></code></li>
+<li><code><a title="excel4lib.lang.excel4_translator.Excel4Translator.is_native" href="#excel4lib.lang.excel4_translator.Excel4Translator.is_native">is_native</a></code></li>
+<li><code><a title="excel4lib.lang.excel4_translator.Excel4Translator.language" href="#excel4lib.lang.excel4_translator.Excel4Translator.language">language</a></code></li>
+<li><code><a title="excel4lib.lang.excel4_translator.Excel4Translator.load_translations" href="#excel4lib.lang.excel4_translator.Excel4Translator.load_translations">load_translations</a></code></li>
+<li><code><a title="excel4lib.lang.excel4_translator.Excel4Translator.native_language" href="#excel4lib.lang.excel4_translator.Excel4Translator.native_language">native_language</a></code></li>
+<li><code><a title="excel4lib.lang.excel4_translator.Excel4Translator.row_character" href="#excel4lib.lang.excel4_translator.Excel4Translator.row_character">row_character</a></code></li>
+<li><code><a title="excel4lib.lang.excel4_translator.Excel4Translator.set_language" href="#excel4lib.lang.excel4_translator.Excel4Translator.set_language">set_language</a></code></li>
+<li><code><a title="excel4lib.lang.excel4_translator.Excel4Translator.t" href="#excel4lib.lang.excel4_translator.Excel4Translator.t">t</a></code></li>
+<li><code><a title="excel4lib.lang.excel4_translator.Excel4Translator.t_a" href="#excel4lib.lang.excel4_translator.Excel4Translator.t_a">t_a</a></code></li>
+<li><code><a title="excel4lib.lang.excel4_translator.Excel4Translator.translate" href="#excel4lib.lang.excel4_translator.Excel4Translator.translate">translate</a></code></li>
+<li><code><a title="excel4lib.lang.excel4_translator.Excel4Translator.translate_address" href="#excel4lib.lang.excel4_translator.Excel4Translator.translate_address">translate_address</a></code></li>
+<li><code><a title="excel4lib.lang.excel4_translator.Excel4Translator.translations" href="#excel4lib.lang.excel4_translator.Excel4Translator.translations">translations</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+</footer>
+</body>
+</html>

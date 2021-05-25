@@ -1,0 +1,10 @@
+cffi==1.14.5
+cryptography==3.4.7
+lark-parser==0.11.2
+msoffcrypto-tool==4.11.0
+olefile==0.46
+pycparser==2.20
+pyxlsb2==0.0.2
+untangle==1.1.1
+XLMMacroDeobfuscator==0.1.6
+xlrd2==1.2.6

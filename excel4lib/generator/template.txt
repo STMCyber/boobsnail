@@ -1,0 +1,39 @@
+import sys
+from excel4lib.generator.generator import *
+from excel4lib.lang import *
+
+class Excel4{CLASS_NAME}Generator(Excel4Generator):
+    description = "{CLASS_DESC}"
+    name = "Excel4{CLASS_NAME}Generator"
+
+    def __init__(self, worksheet_name="{CLASS_NAME}"):
+        Excel4Generator.__init__(self, worksheet_name, Excel4Obfuscator(), desc=Excel4{CLASS_NAME}Generator.description)
+
+    def custom_args(self):
+        '''
+        Adds command line arguments to ArgumentParser
+        :return:
+        '''
+        pass
+
+    def generate_macro(self):
+        pass
+
+    @staticmethod
+    def run(args):
+        '''
+        Runs generator
+        :param args: cli arguments
+        :return:
+        '''
+        generator = Excel4{CLASS_NAME}Generator()
+        generator.init_args()
+        if len(args) == 0:
+            generator.args_parser.print_help()
+            sys.exit(1)
+        generator.parse(args)
+        generator.generate()
+
+
+if __name__ == '__main__':
+    Excel4{CLASS_NAME}Generator.run(sys.argv[1:])

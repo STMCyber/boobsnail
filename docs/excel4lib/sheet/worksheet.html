@@ -1,0 +1,1246 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.9.2" />
+<title>excel4lib.sheet.worksheet API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>excel4lib.sheet.worksheet</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">from .cell import *
+
+class AlreadyReservedException(Exception):
+    pass
+
+class CouldNotMoveCellException(Exception):
+    pass
+
+class Worksheet(object):
+    &#39;&#39;&#39;
+    Represents Excel Worksheet
+    &#39;&#39;&#39;
+    def __init__(self, name = &#34;&#34;):
+        # Name of worksheet
+        self.name = name
+
+        # Allocated cells {x:{y:CELL} (...)}
+        self.cells = {}
+
+        # Current coordinates
+        self._curr_x = 1
+        self._curr_y = 1
+
+        # Worksheet boundaries
+        self._max_x = 1
+        self._max_y = 1
+
+        # Cells sorted by tag name
+        self.cells_tag = {}
+
+
+    def get_column(self, x):
+        &#39;&#39;&#39;
+        Returns all cells in column x
+        :param x: number of column
+        :return: returns all cells in column x
+        &#39;&#39;&#39;
+        return self.cells.get(x, None)
+
+    def worksheet_iterate(self):
+        &#39;&#39;&#39;
+        Returns cords from 1,1 to self._max_x and self._max_y
+        :return: cords in form (x, y)
+        &#39;&#39;&#39;
+        i = 0
+        j = 0
+        while i &lt; self._max_x:
+            j = 0
+            while j &lt; self._max_y:
+                yield (i+1, j+1)
+                j = j + 1
+            i = i + 1
+
+    def cell_iterate(self):
+        &#39;&#39;&#39;
+        Iterate through cells
+        :return: returns cell
+        &#39;&#39;&#39;
+        i = 0
+        j = 0
+        while i &lt; self._max_x:
+            j = 0
+            while j &lt; self._max_y:
+                cell = self.get_cell(i + 1, j + 1)
+                if cell:
+                    yield cell
+                j = j + 1
+            i = i + 1
+
+    def column_iterate(self):
+        &#39;&#39;&#39;
+        Iterate through columns
+        :return: returns all cells in column
+        &#39;&#39;&#39;
+        for c in self.cells.keys():
+            yield (c, self.cells[c])
+
+    def get_current_cords(self):
+        &#39;&#39;&#39;
+        Returns current cords
+        :return:
+        &#39;&#39;&#39;
+        return (self._curr_x, self._curr_y)
+
+    def set_current_cords(self, x, y):
+        &#39;&#39;&#39;
+        Sets current cords
+        :param x:
+        :param y:
+        :return:
+        &#39;&#39;&#39;
+        self._curr_x = x
+        self._curr_y = y
+
+    def get_cell(self, x, y):
+        &#39;&#39;&#39;
+        Returns cell
+        :param x: column
+        :param y: row
+        :return: cell
+        &#39;&#39;&#39;
+
+        if (x in self.cells) and (y in self.cells[x]):
+            return self.cells[x][y]
+        return None
+
+    def move_cell(self, cell):
+        &#39;&#39;&#39;
+        Moves cell to next one. If next one is reserved then moves this reserved cell to the next one.
+        :param cell:
+        :return:
+        &#39;&#39;&#39;
+
+        next_cell = self.get_cell(cell.x, cell.y + 1)
+        if next_cell is not None:
+            # Reserved, check if we can move this cell
+            #if cell.is_fixed():
+            #    raise CouldNotMoveCellException(&#34;Cell {} is fixed&#34;.format(cell.get_address()))
+            self.move_cell(next_cell)
+
+        # Move to the next one
+        self.cells[cell.x][cell.y + 1] = cell
+        # Remove
+        del self.cells[cell.x][cell.y]
+        # Overwrite y
+        cell.y = cell.y + 1
+        self._update_boundaries(cell)
+
+    def is_reserved(self, x, y, height=1):
+        &#39;&#39;&#39;
+        Checks if any of celll from x, y + height is reserved. return True if yes and False if not
+        :param x:
+        :param y:
+        :param height:
+        :return:
+        &#39;&#39;&#39;
+        for i in range(0, height):
+            if self.get_cell(x, y + i) is not None:
+                return True
+
+        return False
+
+    def create_next_cell(self, value=&#34;&#34;, tag=&#34;&#34;):
+        &#39;&#39;&#39;
+        Creates and adds cell to worksheet at current x and y
+        :param value: cell value
+        :param tag: cell tag
+        :return:
+        &#39;&#39;&#39;
+        cell = Cell(self._curr_x, self._curr_y, value, tag)
+        return self.add_cell(cell)
+
+    def create_cell(self, x, y, value=&#34;&#34;, tag=&#34;&#34;):
+        &#39;&#39;&#39;
+        Creates and adds cell to worksheet
+        :param x: column
+        :param y: row
+        :param value: cell value
+        :param tag: cell tag
+        :return:
+        &#39;&#39;&#39;
+        cell = Cell(x, y, value, tag)
+        return self.add_cell(cell)
+
+    def add_next_cell(self, cell):
+        &#39;&#39;&#39;
+        Adds next cell to worksheet at current x and y
+        :param value: cell value
+        :param tag: cell tag
+        :return:
+        &#39;&#39;&#39;
+        cell.x = self._curr_x
+        cell.y = self._curr_y
+        return self.add_cell(cell)
+
+    def add_cell(self, cell):
+        &#39;&#39;&#39;
+        Adds cell to worksheet and moves to the next row
+        :param cell: sheet.Cell object
+        :return: sheet.Cell object
+        &#39;&#39;&#39;
+        cell = self._add_cell(cell)
+        self._move_row()
+        return cell
+
+    def replace_cell(self, cell1 , cell2):
+        &#39;&#39;&#39;
+        Replaces cell1 with cell2
+        :param cell1:
+        :param cell2:
+        :return:
+        &#39;&#39;&#39;
+        cell2.x = cell1.x
+        cell2.y = cell1.y
+        self.cells[cell1.x][cell1.y] = cell2
+
+    def add_above(self, cell, ref):
+        &#39;&#39;&#39;
+        Adds cell above ref. If above cell is reserved then all cells under ref are moved
+        :param cell:
+        :param ref:
+        :return:
+        &#39;&#39;&#39;
+        cords = self.get_current_cords()
+        # Check if cell above is reserved
+        if (ref.y == 1) or (self.is_reserved(ref.x, ref.y - 1)):
+            # Copy cords
+            cell.x = ref.x
+            cell.y = ref.y
+            # Move ref one cell down. What if cell under this one could not be moved?
+            self.move_cell(ref)
+        else:
+            # Set cords
+            cell.x = ref.x
+            cell.y = ref.y - 1
+        # Add cell to the worksheet
+        self.add_cell(cell)
+        self.set_current_cords(cords[0], cords[1])
+
+    def get_cells_by_tag(self, tag):
+        &#39;&#39;&#39;
+        Return cells by tag
+        :param tag:
+        :return:
+        &#39;&#39;&#39;
+        return self.cells_tag.get(tag, [])
+
+    def _add_cell_tag(self, cell):
+        if cell.tag in self.cells_tag:
+            self.cells_tag[cell.tag].append(cell)
+        else:
+            self.cells_tag[cell.tag] = [cell]
+
+    def _remove_cell_tag(self, cell):
+        pass
+
+    def _add_cell(self, cell):
+
+        &#39;&#39;&#39;
+        Adds cell to worksheet
+        :param cell: sheet.Cell object
+        :return: sheet.Cell object
+        &#39;&#39;&#39;
+        if cell.block_add:
+            return cell
+
+        # Check if cell is not reserved
+        if cell.x not in self.cells:
+            self.cells[cell.x] = {cell.y : cell}
+            self._update_boundaries(cell)
+            self._add_cell_tag(cell)
+            return cell
+        if cell.y not in self.cells[cell.x]:
+            self.cells[cell.x][cell.y] = cell
+            self._update_boundaries(cell)
+            self._add_cell_tag(cell)
+            return cell
+        raise AlreadyReservedException(&#34;Cell {} already reserved&#34;.format(cell.get_address()))
+
+    def _update_boundaries(self, cell):
+        &#39;&#39;&#39;
+        Updates worksheet boundaries. When new cell is added this function checks if x and y are in boundaries. If not then x_max and y_max are updated.
+        :param cell:
+        :return:
+        &#39;&#39;&#39;
+        if cell.x &gt; self._max_x:
+            self._max_x = cell.x
+        if cell.y &gt; self._max_y:
+            self._max_y = cell.y
+
+    def remove_cell(self, cell):
+        &#39;&#39;&#39;
+        Removes cell from the worksheet
+        :param cell: cell to remove
+        :return: True if cell is delted and Flase if not
+        &#39;&#39;&#39;
+        if (cell.x in self.cells) and (cell.y in self.cells[cell.x]):
+            # Remove
+            del self.cells[cell.x][cell.y]
+            return True
+        return False
+
+    def to_csv(self, separator=&#34;;&#34;):
+        &#39;&#39;&#39;
+        Dumps all cells to CSV format
+        :return: cells as CSV
+        &#39;&#39;&#39;
+        csv = &#34;&#34;
+        i = 0
+        while i &lt; self._max_y:
+            j = 0
+            while j &lt; self._max_x:
+                cell = self.get_cell(j+1, i+1)
+                value = &#34;&#34;
+                if cell:
+                    value = str(cell)
+                csv = csv + value + separator
+                j = j + 1
+            csv = csv + &#34;\n&#34;
+            i = i + 1
+
+        return csv
+
+    def _move_row(self):
+        &#39;&#39;&#39;
+        Moves to the next row
+        &#39;&#39;&#39;
+        self._set_curr_row(self._curr_y + 1)
+
+    def _set_curr_row(self, y):
+        &#39;&#39;&#39;
+        Sets current row to y
+        :param y: number of row
+        &#39;&#39;&#39;
+        self._curr_y = y
+
+    def _move_col(self):
+        &#39;&#39;&#39;
+        Moves to the next column
+        &#39;&#39;&#39;
+        self._set_curr_col(self._curr_x + 1)
+
+    def _set_curr_col(self, x):
+        &#39;&#39;&#39;
+        Sets current col to x
+        :param x: number of column
+        &#39;&#39;&#39;
+        self._curr_x = x</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="excel4lib.sheet.worksheet.AlreadyReservedException"><code class="flex name class">
+<span>class <span class="ident">AlreadyReservedException</span></span>
+<span>(</span><span>*args, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Common base class for all non-exit exceptions.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class AlreadyReservedException(Exception):
+    pass</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>builtins.Exception</li>
+<li>builtins.BaseException</li>
+</ul>
+</dd>
+<dt id="excel4lib.sheet.worksheet.CouldNotMoveCellException"><code class="flex name class">
+<span>class <span class="ident">CouldNotMoveCellException</span></span>
+<span>(</span><span>*args, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Common base class for all non-exit exceptions.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class CouldNotMoveCellException(Exception):
+    pass</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>builtins.Exception</li>
+<li>builtins.BaseException</li>
+</ul>
+</dd>
+<dt id="excel4lib.sheet.worksheet.Worksheet"><code class="flex name class">
+<span>class <span class="ident">Worksheet</span></span>
+<span>(</span><span>name='')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Represents Excel Worksheet</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Worksheet(object):
+    &#39;&#39;&#39;
+    Represents Excel Worksheet
+    &#39;&#39;&#39;
+    def __init__(self, name = &#34;&#34;):
+        # Name of worksheet
+        self.name = name
+
+        # Allocated cells {x:{y:CELL} (...)}
+        self.cells = {}
+
+        # Current coordinates
+        self._curr_x = 1
+        self._curr_y = 1
+
+        # Worksheet boundaries
+        self._max_x = 1
+        self._max_y = 1
+
+        # Cells sorted by tag name
+        self.cells_tag = {}
+
+
+    def get_column(self, x):
+        &#39;&#39;&#39;
+        Returns all cells in column x
+        :param x: number of column
+        :return: returns all cells in column x
+        &#39;&#39;&#39;
+        return self.cells.get(x, None)
+
+    def worksheet_iterate(self):
+        &#39;&#39;&#39;
+        Returns cords from 1,1 to self._max_x and self._max_y
+        :return: cords in form (x, y)
+        &#39;&#39;&#39;
+        i = 0
+        j = 0
+        while i &lt; self._max_x:
+            j = 0
+            while j &lt; self._max_y:
+                yield (i+1, j+1)
+                j = j + 1
+            i = i + 1
+
+    def cell_iterate(self):
+        &#39;&#39;&#39;
+        Iterate through cells
+        :return: returns cell
+        &#39;&#39;&#39;
+        i = 0
+        j = 0
+        while i &lt; self._max_x:
+            j = 0
+            while j &lt; self._max_y:
+                cell = self.get_cell(i + 1, j + 1)
+                if cell:
+                    yield cell
+                j = j + 1
+            i = i + 1
+
+    def column_iterate(self):
+        &#39;&#39;&#39;
+        Iterate through columns
+        :return: returns all cells in column
+        &#39;&#39;&#39;
+        for c in self.cells.keys():
+            yield (c, self.cells[c])
+
+    def get_current_cords(self):
+        &#39;&#39;&#39;
+        Returns current cords
+        :return:
+        &#39;&#39;&#39;
+        return (self._curr_x, self._curr_y)
+
+    def set_current_cords(self, x, y):
+        &#39;&#39;&#39;
+        Sets current cords
+        :param x:
+        :param y:
+        :return:
+        &#39;&#39;&#39;
+        self._curr_x = x
+        self._curr_y = y
+
+    def get_cell(self, x, y):
+        &#39;&#39;&#39;
+        Returns cell
+        :param x: column
+        :param y: row
+        :return: cell
+        &#39;&#39;&#39;
+
+        if (x in self.cells) and (y in self.cells[x]):
+            return self.cells[x][y]
+        return None
+
+    def move_cell(self, cell):
+        &#39;&#39;&#39;
+        Moves cell to next one. If next one is reserved then moves this reserved cell to the next one.
+        :param cell:
+        :return:
+        &#39;&#39;&#39;
+
+        next_cell = self.get_cell(cell.x, cell.y + 1)
+        if next_cell is not None:
+            # Reserved, check if we can move this cell
+            #if cell.is_fixed():
+            #    raise CouldNotMoveCellException(&#34;Cell {} is fixed&#34;.format(cell.get_address()))
+            self.move_cell(next_cell)
+
+        # Move to the next one
+        self.cells[cell.x][cell.y + 1] = cell
+        # Remove
+        del self.cells[cell.x][cell.y]
+        # Overwrite y
+        cell.y = cell.y + 1
+        self._update_boundaries(cell)
+
+    def is_reserved(self, x, y, height=1):
+        &#39;&#39;&#39;
+        Checks if any of celll from x, y + height is reserved. return True if yes and False if not
+        :param x:
+        :param y:
+        :param height:
+        :return:
+        &#39;&#39;&#39;
+        for i in range(0, height):
+            if self.get_cell(x, y + i) is not None:
+                return True
+
+        return False
+
+    def create_next_cell(self, value=&#34;&#34;, tag=&#34;&#34;):
+        &#39;&#39;&#39;
+        Creates and adds cell to worksheet at current x and y
+        :param value: cell value
+        :param tag: cell tag
+        :return:
+        &#39;&#39;&#39;
+        cell = Cell(self._curr_x, self._curr_y, value, tag)
+        return self.add_cell(cell)
+
+    def create_cell(self, x, y, value=&#34;&#34;, tag=&#34;&#34;):
+        &#39;&#39;&#39;
+        Creates and adds cell to worksheet
+        :param x: column
+        :param y: row
+        :param value: cell value
+        :param tag: cell tag
+        :return:
+        &#39;&#39;&#39;
+        cell = Cell(x, y, value, tag)
+        return self.add_cell(cell)
+
+    def add_next_cell(self, cell):
+        &#39;&#39;&#39;
+        Adds next cell to worksheet at current x and y
+        :param value: cell value
+        :param tag: cell tag
+        :return:
+        &#39;&#39;&#39;
+        cell.x = self._curr_x
+        cell.y = self._curr_y
+        return self.add_cell(cell)
+
+    def add_cell(self, cell):
+        &#39;&#39;&#39;
+        Adds cell to worksheet and moves to the next row
+        :param cell: sheet.Cell object
+        :return: sheet.Cell object
+        &#39;&#39;&#39;
+        cell = self._add_cell(cell)
+        self._move_row()
+        return cell
+
+    def replace_cell(self, cell1 , cell2):
+        &#39;&#39;&#39;
+        Replaces cell1 with cell2
+        :param cell1:
+        :param cell2:
+        :return:
+        &#39;&#39;&#39;
+        cell2.x = cell1.x
+        cell2.y = cell1.y
+        self.cells[cell1.x][cell1.y] = cell2
+
+    def add_above(self, cell, ref):
+        &#39;&#39;&#39;
+        Adds cell above ref. If above cell is reserved then all cells under ref are moved
+        :param cell:
+        :param ref:
+        :return:
+        &#39;&#39;&#39;
+        cords = self.get_current_cords()
+        # Check if cell above is reserved
+        if (ref.y == 1) or (self.is_reserved(ref.x, ref.y - 1)):
+            # Copy cords
+            cell.x = ref.x
+            cell.y = ref.y
+            # Move ref one cell down. What if cell under this one could not be moved?
+            self.move_cell(ref)
+        else:
+            # Set cords
+            cell.x = ref.x
+            cell.y = ref.y - 1
+        # Add cell to the worksheet
+        self.add_cell(cell)
+        self.set_current_cords(cords[0], cords[1])
+
+    def get_cells_by_tag(self, tag):
+        &#39;&#39;&#39;
+        Return cells by tag
+        :param tag:
+        :return:
+        &#39;&#39;&#39;
+        return self.cells_tag.get(tag, [])
+
+    def _add_cell_tag(self, cell):
+        if cell.tag in self.cells_tag:
+            self.cells_tag[cell.tag].append(cell)
+        else:
+            self.cells_tag[cell.tag] = [cell]
+
+    def _remove_cell_tag(self, cell):
+        pass
+
+    def _add_cell(self, cell):
+
+        &#39;&#39;&#39;
+        Adds cell to worksheet
+        :param cell: sheet.Cell object
+        :return: sheet.Cell object
+        &#39;&#39;&#39;
+        if cell.block_add:
+            return cell
+
+        # Check if cell is not reserved
+        if cell.x not in self.cells:
+            self.cells[cell.x] = {cell.y : cell}
+            self._update_boundaries(cell)
+            self._add_cell_tag(cell)
+            return cell
+        if cell.y not in self.cells[cell.x]:
+            self.cells[cell.x][cell.y] = cell
+            self._update_boundaries(cell)
+            self._add_cell_tag(cell)
+            return cell
+        raise AlreadyReservedException(&#34;Cell {} already reserved&#34;.format(cell.get_address()))
+
+    def _update_boundaries(self, cell):
+        &#39;&#39;&#39;
+        Updates worksheet boundaries. When new cell is added this function checks if x and y are in boundaries. If not then x_max and y_max are updated.
+        :param cell:
+        :return:
+        &#39;&#39;&#39;
+        if cell.x &gt; self._max_x:
+            self._max_x = cell.x
+        if cell.y &gt; self._max_y:
+            self._max_y = cell.y
+
+    def remove_cell(self, cell):
+        &#39;&#39;&#39;
+        Removes cell from the worksheet
+        :param cell: cell to remove
+        :return: True if cell is delted and Flase if not
+        &#39;&#39;&#39;
+        if (cell.x in self.cells) and (cell.y in self.cells[cell.x]):
+            # Remove
+            del self.cells[cell.x][cell.y]
+            return True
+        return False
+
+    def to_csv(self, separator=&#34;;&#34;):
+        &#39;&#39;&#39;
+        Dumps all cells to CSV format
+        :return: cells as CSV
+        &#39;&#39;&#39;
+        csv = &#34;&#34;
+        i = 0
+        while i &lt; self._max_y:
+            j = 0
+            while j &lt; self._max_x:
+                cell = self.get_cell(j+1, i+1)
+                value = &#34;&#34;
+                if cell:
+                    value = str(cell)
+                csv = csv + value + separator
+                j = j + 1
+            csv = csv + &#34;\n&#34;
+            i = i + 1
+
+        return csv
+
+    def _move_row(self):
+        &#39;&#39;&#39;
+        Moves to the next row
+        &#39;&#39;&#39;
+        self._set_curr_row(self._curr_y + 1)
+
+    def _set_curr_row(self, y):
+        &#39;&#39;&#39;
+        Sets current row to y
+        :param y: number of row
+        &#39;&#39;&#39;
+        self._curr_y = y
+
+    def _move_col(self):
+        &#39;&#39;&#39;
+        Moves to the next column
+        &#39;&#39;&#39;
+        self._set_curr_col(self._curr_x + 1)
+
+    def _set_curr_col(self, x):
+        &#39;&#39;&#39;
+        Sets current col to x
+        :param x: number of column
+        &#39;&#39;&#39;
+        self._curr_x = x</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="excel4lib.sheet.worksheet.Worksheet.add_above"><code class="name flex">
+<span>def <span class="ident">add_above</span></span>(<span>self, cell, ref)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Adds cell above ref. If above cell is reserved then all cells under ref are moved
+:param cell:
+:param ref:
+:return:</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_above(self, cell, ref):
+    &#39;&#39;&#39;
+    Adds cell above ref. If above cell is reserved then all cells under ref are moved
+    :param cell:
+    :param ref:
+    :return:
+    &#39;&#39;&#39;
+    cords = self.get_current_cords()
+    # Check if cell above is reserved
+    if (ref.y == 1) or (self.is_reserved(ref.x, ref.y - 1)):
+        # Copy cords
+        cell.x = ref.x
+        cell.y = ref.y
+        # Move ref one cell down. What if cell under this one could not be moved?
+        self.move_cell(ref)
+    else:
+        # Set cords
+        cell.x = ref.x
+        cell.y = ref.y - 1
+    # Add cell to the worksheet
+    self.add_cell(cell)
+    self.set_current_cords(cords[0], cords[1])</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.sheet.worksheet.Worksheet.add_cell"><code class="name flex">
+<span>def <span class="ident">add_cell</span></span>(<span>self, cell)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Adds cell to worksheet and moves to the next row
+:param cell: sheet.Cell object
+:return: sheet.Cell object</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_cell(self, cell):
+    &#39;&#39;&#39;
+    Adds cell to worksheet and moves to the next row
+    :param cell: sheet.Cell object
+    :return: sheet.Cell object
+    &#39;&#39;&#39;
+    cell = self._add_cell(cell)
+    self._move_row()
+    return cell</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.sheet.worksheet.Worksheet.add_next_cell"><code class="name flex">
+<span>def <span class="ident">add_next_cell</span></span>(<span>self, cell)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Adds next cell to worksheet at current x and y
+:param value: cell value
+:param tag: cell tag
+:return:</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_next_cell(self, cell):
+    &#39;&#39;&#39;
+    Adds next cell to worksheet at current x and y
+    :param value: cell value
+    :param tag: cell tag
+    :return:
+    &#39;&#39;&#39;
+    cell.x = self._curr_x
+    cell.y = self._curr_y
+    return self.add_cell(cell)</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.sheet.worksheet.Worksheet.cell_iterate"><code class="name flex">
+<span>def <span class="ident">cell_iterate</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Iterate through cells
+:return: returns cell</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def cell_iterate(self):
+    &#39;&#39;&#39;
+    Iterate through cells
+    :return: returns cell
+    &#39;&#39;&#39;
+    i = 0
+    j = 0
+    while i &lt; self._max_x:
+        j = 0
+        while j &lt; self._max_y:
+            cell = self.get_cell(i + 1, j + 1)
+            if cell:
+                yield cell
+            j = j + 1
+        i = i + 1</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.sheet.worksheet.Worksheet.column_iterate"><code class="name flex">
+<span>def <span class="ident">column_iterate</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Iterate through columns
+:return: returns all cells in column</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def column_iterate(self):
+    &#39;&#39;&#39;
+    Iterate through columns
+    :return: returns all cells in column
+    &#39;&#39;&#39;
+    for c in self.cells.keys():
+        yield (c, self.cells[c])</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.sheet.worksheet.Worksheet.create_cell"><code class="name flex">
+<span>def <span class="ident">create_cell</span></span>(<span>self, x, y, value='', tag='')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates and adds cell to worksheet
+:param x: column
+:param y: row
+:param value: cell value
+:param tag: cell tag
+:return:</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def create_cell(self, x, y, value=&#34;&#34;, tag=&#34;&#34;):
+    &#39;&#39;&#39;
+    Creates and adds cell to worksheet
+    :param x: column
+    :param y: row
+    :param value: cell value
+    :param tag: cell tag
+    :return:
+    &#39;&#39;&#39;
+    cell = Cell(x, y, value, tag)
+    return self.add_cell(cell)</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.sheet.worksheet.Worksheet.create_next_cell"><code class="name flex">
+<span>def <span class="ident">create_next_cell</span></span>(<span>self, value='', tag='')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates and adds cell to worksheet at current x and y
+:param value: cell value
+:param tag: cell tag
+:return:</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def create_next_cell(self, value=&#34;&#34;, tag=&#34;&#34;):
+    &#39;&#39;&#39;
+    Creates and adds cell to worksheet at current x and y
+    :param value: cell value
+    :param tag: cell tag
+    :return:
+    &#39;&#39;&#39;
+    cell = Cell(self._curr_x, self._curr_y, value, tag)
+    return self.add_cell(cell)</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.sheet.worksheet.Worksheet.get_cell"><code class="name flex">
+<span>def <span class="ident">get_cell</span></span>(<span>self, x, y)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns cell
+:param x: column
+:param y: row
+:return: cell</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_cell(self, x, y):
+    &#39;&#39;&#39;
+    Returns cell
+    :param x: column
+    :param y: row
+    :return: cell
+    &#39;&#39;&#39;
+
+    if (x in self.cells) and (y in self.cells[x]):
+        return self.cells[x][y]
+    return None</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.sheet.worksheet.Worksheet.get_cells_by_tag"><code class="name flex">
+<span>def <span class="ident">get_cells_by_tag</span></span>(<span>self, tag)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Return cells by tag
+:param tag:
+:return:</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_cells_by_tag(self, tag):
+    &#39;&#39;&#39;
+    Return cells by tag
+    :param tag:
+    :return:
+    &#39;&#39;&#39;
+    return self.cells_tag.get(tag, [])</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.sheet.worksheet.Worksheet.get_column"><code class="name flex">
+<span>def <span class="ident">get_column</span></span>(<span>self, x)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns all cells in column x
+:param x: number of column
+:return: returns all cells in column x</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_column(self, x):
+    &#39;&#39;&#39;
+    Returns all cells in column x
+    :param x: number of column
+    :return: returns all cells in column x
+    &#39;&#39;&#39;
+    return self.cells.get(x, None)</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.sheet.worksheet.Worksheet.get_current_cords"><code class="name flex">
+<span>def <span class="ident">get_current_cords</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns current cords
+:return:</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_current_cords(self):
+    &#39;&#39;&#39;
+    Returns current cords
+    :return:
+    &#39;&#39;&#39;
+    return (self._curr_x, self._curr_y)</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.sheet.worksheet.Worksheet.is_reserved"><code class="name flex">
+<span>def <span class="ident">is_reserved</span></span>(<span>self, x, y, height=1)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Checks if any of celll from x, y + height is reserved. return True if yes and False if not
+:param x:
+:param y:
+:param height:
+:return:</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def is_reserved(self, x, y, height=1):
+    &#39;&#39;&#39;
+    Checks if any of celll from x, y + height is reserved. return True if yes and False if not
+    :param x:
+    :param y:
+    :param height:
+    :return:
+    &#39;&#39;&#39;
+    for i in range(0, height):
+        if self.get_cell(x, y + i) is not None:
+            return True
+
+    return False</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.sheet.worksheet.Worksheet.move_cell"><code class="name flex">
+<span>def <span class="ident">move_cell</span></span>(<span>self, cell)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Moves cell to next one. If next one is reserved then moves this reserved cell to the next one.
+:param cell:
+:return:</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def move_cell(self, cell):
+    &#39;&#39;&#39;
+    Moves cell to next one. If next one is reserved then moves this reserved cell to the next one.
+    :param cell:
+    :return:
+    &#39;&#39;&#39;
+
+    next_cell = self.get_cell(cell.x, cell.y + 1)
+    if next_cell is not None:
+        # Reserved, check if we can move this cell
+        #if cell.is_fixed():
+        #    raise CouldNotMoveCellException(&#34;Cell {} is fixed&#34;.format(cell.get_address()))
+        self.move_cell(next_cell)
+
+    # Move to the next one
+    self.cells[cell.x][cell.y + 1] = cell
+    # Remove
+    del self.cells[cell.x][cell.y]
+    # Overwrite y
+    cell.y = cell.y + 1
+    self._update_boundaries(cell)</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.sheet.worksheet.Worksheet.remove_cell"><code class="name flex">
+<span>def <span class="ident">remove_cell</span></span>(<span>self, cell)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Removes cell from the worksheet
+:param cell: cell to remove
+:return: True if cell is delted and Flase if not</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def remove_cell(self, cell):
+    &#39;&#39;&#39;
+    Removes cell from the worksheet
+    :param cell: cell to remove
+    :return: True if cell is delted and Flase if not
+    &#39;&#39;&#39;
+    if (cell.x in self.cells) and (cell.y in self.cells[cell.x]):
+        # Remove
+        del self.cells[cell.x][cell.y]
+        return True
+    return False</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.sheet.worksheet.Worksheet.replace_cell"><code class="name flex">
+<span>def <span class="ident">replace_cell</span></span>(<span>self, cell1, cell2)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Replaces cell1 with cell2
+:param cell1:
+:param cell2:
+:return:</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def replace_cell(self, cell1 , cell2):
+    &#39;&#39;&#39;
+    Replaces cell1 with cell2
+    :param cell1:
+    :param cell2:
+    :return:
+    &#39;&#39;&#39;
+    cell2.x = cell1.x
+    cell2.y = cell1.y
+    self.cells[cell1.x][cell1.y] = cell2</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.sheet.worksheet.Worksheet.set_current_cords"><code class="name flex">
+<span>def <span class="ident">set_current_cords</span></span>(<span>self, x, y)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Sets current cords
+:param x:
+:param y:
+:return:</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_current_cords(self, x, y):
+    &#39;&#39;&#39;
+    Sets current cords
+    :param x:
+    :param y:
+    :return:
+    &#39;&#39;&#39;
+    self._curr_x = x
+    self._curr_y = y</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.sheet.worksheet.Worksheet.to_csv"><code class="name flex">
+<span>def <span class="ident">to_csv</span></span>(<span>self, separator=';')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Dumps all cells to CSV format
+:return: cells as CSV</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def to_csv(self, separator=&#34;;&#34;):
+    &#39;&#39;&#39;
+    Dumps all cells to CSV format
+    :return: cells as CSV
+    &#39;&#39;&#39;
+    csv = &#34;&#34;
+    i = 0
+    while i &lt; self._max_y:
+        j = 0
+        while j &lt; self._max_x:
+            cell = self.get_cell(j+1, i+1)
+            value = &#34;&#34;
+            if cell:
+                value = str(cell)
+            csv = csv + value + separator
+            j = j + 1
+        csv = csv + &#34;\n&#34;
+        i = i + 1
+
+    return csv</code></pre>
+</details>
+</dd>
+<dt id="excel4lib.sheet.worksheet.Worksheet.worksheet_iterate"><code class="name flex">
+<span>def <span class="ident">worksheet_iterate</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns cords from 1,1 to self._max_x and self._max_y
+:return: cords in form (x, y)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def worksheet_iterate(self):
+    &#39;&#39;&#39;
+    Returns cords from 1,1 to self._max_x and self._max_y
+    :return: cords in form (x, y)
+    &#39;&#39;&#39;
+    i = 0
+    j = 0
+    while i &lt; self._max_x:
+        j = 0
+        while j &lt; self._max_y:
+            yield (i+1, j+1)
+            j = j + 1
+        i = i + 1</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="excel4lib.sheet" href="index.html">excel4lib.sheet</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="excel4lib.sheet.worksheet.AlreadyReservedException" href="#excel4lib.sheet.worksheet.AlreadyReservedException">AlreadyReservedException</a></code></h4>
+</li>
+<li>
+<h4><code><a title="excel4lib.sheet.worksheet.CouldNotMoveCellException" href="#excel4lib.sheet.worksheet.CouldNotMoveCellException">CouldNotMoveCellException</a></code></h4>
+</li>
+<li>
+<h4><code><a title="excel4lib.sheet.worksheet.Worksheet" href="#excel4lib.sheet.worksheet.Worksheet">Worksheet</a></code></h4>
+<ul class="two-column">
+<li><code><a title="excel4lib.sheet.worksheet.Worksheet.add_above" href="#excel4lib.sheet.worksheet.Worksheet.add_above">add_above</a></code></li>
+<li><code><a title="excel4lib.sheet.worksheet.Worksheet.add_cell" href="#excel4lib.sheet.worksheet.Worksheet.add_cell">add_cell</a></code></li>
+<li><code><a title="excel4lib.sheet.worksheet.Worksheet.add_next_cell" href="#excel4lib.sheet.worksheet.Worksheet.add_next_cell">add_next_cell</a></code></li>
+<li><code><a title="excel4lib.sheet.worksheet.Worksheet.cell_iterate" href="#excel4lib.sheet.worksheet.Worksheet.cell_iterate">cell_iterate</a></code></li>
+<li><code><a title="excel4lib.sheet.worksheet.Worksheet.column_iterate" href="#excel4lib.sheet.worksheet.Worksheet.column_iterate">column_iterate</a></code></li>
+<li><code><a title="excel4lib.sheet.worksheet.Worksheet.create_cell" href="#excel4lib.sheet.worksheet.Worksheet.create_cell">create_cell</a></code></li>
+<li><code><a title="excel4lib.sheet.worksheet.Worksheet.create_next_cell" href="#excel4lib.sheet.worksheet.Worksheet.create_next_cell">create_next_cell</a></code></li>
+<li><code><a title="excel4lib.sheet.worksheet.Worksheet.get_cell" href="#excel4lib.sheet.worksheet.Worksheet.get_cell">get_cell</a></code></li>
+<li><code><a title="excel4lib.sheet.worksheet.Worksheet.get_cells_by_tag" href="#excel4lib.sheet.worksheet.Worksheet.get_cells_by_tag">get_cells_by_tag</a></code></li>
+<li><code><a title="excel4lib.sheet.worksheet.Worksheet.get_column" href="#excel4lib.sheet.worksheet.Worksheet.get_column">get_column</a></code></li>
+<li><code><a title="excel4lib.sheet.worksheet.Worksheet.get_current_cords" href="#excel4lib.sheet.worksheet.Worksheet.get_current_cords">get_current_cords</a></code></li>
+<li><code><a title="excel4lib.sheet.worksheet.Worksheet.is_reserved" href="#excel4lib.sheet.worksheet.Worksheet.is_reserved">is_reserved</a></code></li>
+<li><code><a title="excel4lib.sheet.worksheet.Worksheet.move_cell" href="#excel4lib.sheet.worksheet.Worksheet.move_cell">move_cell</a></code></li>
+<li><code><a title="excel4lib.sheet.worksheet.Worksheet.remove_cell" href="#excel4lib.sheet.worksheet.Worksheet.remove_cell">remove_cell</a></code></li>
+<li><code><a title="excel4lib.sheet.worksheet.Worksheet.replace_cell" href="#excel4lib.sheet.worksheet.Worksheet.replace_cell">replace_cell</a></code></li>
+<li><code><a title="excel4lib.sheet.worksheet.Worksheet.set_current_cords" href="#excel4lib.sheet.worksheet.Worksheet.set_current_cords">set_current_cords</a></code></li>
+<li><code><a title="excel4lib.sheet.worksheet.Worksheet.to_csv" href="#excel4lib.sheet.worksheet.Worksheet.to_csv">to_csv</a></code></li>
+<li><code><a title="excel4lib.sheet.worksheet.Worksheet.worksheet_iterate" href="#excel4lib.sheet.worksheet.Worksheet.worksheet_iterate">worksheet_iterate</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+</footer>
+</body>
+</html>
