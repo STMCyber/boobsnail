@@ -188,4 +188,5 @@ cmd="calc";=EXEC(CONCATENATE(cmd,R2C1));
 
 ## Articles
 [The first step in Excel 4.0 for Red Team](https://blog.stmcyber.com/excel-4-0-for-red-team/)
+
 [BoobSnail - Excel 4.0 macro generator](https://blog.stmcyber.com/boobsnail-excel-4-0-macro-generator/)
