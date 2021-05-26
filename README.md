@@ -124,7 +124,7 @@ Result:
 cmd="calc.exe";
 =URUCHOM.PROGRAM(cmd);
 ```
-For now, only the Polish language is supported. If you want to use another language you need to add translations in the excel4lib/lang/langs directory.
+For now, only the English and Polish language is supported. If you want to use another language you need to add translations in the excel4lib/lang/langs directory.
 
 For sure, you will need to create a formula that takes another formula as an argument. You can do this by using Excel4Macro.argument function.
 ```python
